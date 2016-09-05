@@ -15,14 +15,18 @@ class pedido extends Model
     	return this->belongsTo('App\mesa');
     }
 
-    public function bebida(){
-    	return this->belognsTo('App\bebida');
+    public function pedidosComidas(){
+        return this->belongsTo('App\pedido-comida');
     }
-    public function comida(){
-    	return this->belognsTo('App\comida');
+
+    public function pedidosBebidas(){
+        return this->belongsTo('App\pedido-bebida');
     }
-    public function postre(){
-    	return this->belognsTo('App\postre');
+
+    public function pedidosPostres(){
+        return this->belongsTo('App\pedido-postre');
     }
+
+
 }
 

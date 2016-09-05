@@ -11,8 +11,8 @@ class postre extends Model
 
     protected $fillable = ['nombre', 'ingrediente', 'categoria','precio','celiaco','tiempo_preparacion'];
 
-    public function pedidos(){
+    public function pedidosPostres(){
 
-    	return this->hasMany('App\pedido');
+    	return this->belongsTo('App\pedido-postre');
     }
 }

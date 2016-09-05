@@ -11,8 +11,8 @@ class bebida extends Model
 
     protected $fillable = ['nombre', 'ingrediente', 'categoria','precio','celiaco','tiempo_servicio'];
 
-    public function pedidos(){
+    public function pedidosBebida(){
 
-    	return this->hasMany('App\pedido');
+    	return this->belongsTo('App\pedido-bebida');
     }
 }

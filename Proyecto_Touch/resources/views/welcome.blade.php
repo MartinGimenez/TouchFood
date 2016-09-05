@@ -38,11 +38,32 @@
         </style>
     </head>
     <body>
-        <div class="container">
-            <div class="content">
-                <div class="title">Laravel 5</div>
-                <div class="quote">{{ Inspiring::quote() }}</div>
-            </div>
-        </div>
+       <html lang="es">
+<head>
+<title>Formulario</title>
+<meta charset="utf-8">
+<script src="form.js"></script>
+<script src="http://code.jquery.com/jquery-3.0.0.min.js"></script>
+<script >
+    $(document).on("ready", function(){
+        $("h1").text("cambieeee");
+    });
+
+</script>
+</head>
+
+<body>
+<fieldset>
+<center>
+<h1>Formulario</h1>
+    <form name="formulario" id="formulario_id" method="GET">
+        Usuario:  <input type="text" id="nombre"> <br/><br/>
+        Contraseña:  <input type="text" id="apellido"><br/><br/>
+    </form>
+</center>
+</fieldset>
+<body>
+
+</html>
     </body>
 </html>

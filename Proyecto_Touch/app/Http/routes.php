@@ -14,4 +14,3 @@
 Route::get('menu', function () {
     return view('welcome');
 });
-Route::get('menu', 'TestController@view');
