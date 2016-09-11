@@ -13,6 +13,6 @@ class comida extends Model
 
     public function pedidosComidas(){
 
-    	return this->belongsTo('App\pedido-comida');
+    	return $this->belongsTo('App\pedido-comida');
     }
 }
