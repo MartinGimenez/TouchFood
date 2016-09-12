@@ -1,0 +1,29 @@
+<?php $__env->startSection('content'); ?>
+<div class="row">
+	<div class="col s4">	
+	<ul class="collection with-header">
+    	<li class="collection-header"><h4>Comidas</h4></li>
+	    <?php foreach($categorias_comidas as $categoria_comidas): ?>
+	    <li class="collection-item"><div><?php echo e($categoria_comidas->categoria); ?><a href="comidas/<?php echo e($categoria_comidas->categoria); ?>" class="secondary-content"><i class="material-icons">send</i></a></div></li>	          	
+	    <?php endforeach; ?>
+	</ul>
+	</div>
+	<div class="col s4">	
+	<ul class="collection with-header">
+    	<li class="collection-header"><h4>Bebidas</h4></li>
+	    <?php foreach($categorias_bebidas as $categoria_bebidas): ?>
+	    <li class="collection-item"><div><?php echo e($categoria_bebidas->categoria); ?><a href="bebidas/<?php echo e($categoria_bebidas->categoria); ?>" class="secondary-content"><i class="material-icons">send</i></a></div></li>	          	
+	    <?php endforeach; ?>
+	</ul>
+	</div>
+	<div class="col s4">	
+	<ul class="collection with-header">
+    	<li class="collection-header"><h4>Postres</h4></li>
+	    <?php foreach($categorias_postres as $categoria_postres): ?>
+	    <li class="collection-item"><div><?php echo e($categoria_postres->categoria); ?><a href="postres/<?php echo e($categoria_postres->categoria); ?>" class="secondary-content"><i class="material-icons">send</i></a></div></li>	          	
+	    <?php endforeach; ?>
+	</ul>
+	</div>
+</div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('app.template.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
