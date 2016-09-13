@@ -43,3 +43,10 @@ Route::group(['prefix' => 'menu' ], function(){
 
 
 
+Route::group(['prefix' => 'admin' ], function(){
+
+	
+	Route::resource('mesas','MesasController');
+});
+
+
