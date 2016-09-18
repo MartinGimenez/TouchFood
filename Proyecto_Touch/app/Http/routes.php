@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('menu', function () {
-    return view('welcome');
-});
+Route::get('bienvenida', 'BienvenidaController@index');
 
 Route::get('auth/login', [
 	'uses'	=>	'Auth\AuthController@getLogin',

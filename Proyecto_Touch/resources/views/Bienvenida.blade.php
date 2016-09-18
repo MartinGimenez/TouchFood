@@ -39,7 +39,7 @@
     <!-- ESTO SON LAS IMAGENES QUE SE MUEVEN EN EL MEDIO -->
     <div>
       <div class="carousel carousel-slider">
-        <a class="carousel-item" href="#one!"><img src="images/Bienvenida/imagenprincipal.jpg"></a>
+        <a class="carousel-item" href="#one!"><img src="C:\xampp\htdocs\Proyecto_Touch\public\images\Bienvenida"></a>
         <a class="carousel-item" href="#two!"><img src="images/Bienvenida//imagenprincipal2.jpg"></a>
         <a class="carousel-item" href="#three!"><img src="images/Bienvenida//imagenprincipal3.jpg"></a>
         <a class="carousel-item" href="#four!"><img src="images/Bienvenida//imagenprincipal4.jpg"></a>
@@ -64,7 +64,7 @@
         <!--div class="card red darken-1"-->
         <div class="row">
           <div align="center">
-            <a class="waves-effect waves-light btn-large red darken-2"><i class="material-icons right large material-icons">mode_edit</i>Quiero hacer mi pedido!</a>
+            <a class="waves-effect waves-light btn-large red darken-2" href="{{ route('menu.categorias') }}"><i class="material-icons right large material-icons">mode_edit</i>Quiero hacer mi pedido!</a>
           </div> 
         </div>
       </div>
