@@ -14,55 +14,66 @@
 
     <body>
 
-  <nav>
-    <div class="nav-wrapper red lighten-1">
-      <a href="#!" class="brand-logo right">Logo</a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-      <ul class="left hide-on-med-and-down">
-        <li><a href="{{ route('menu.categorias') }}">Menú</a></li>
-        <li><a href="badges.html">Pedido</a></li>
-        <li><a href="collapsible.html">Pago</a></li>
-      </ul>
-      <ul class="side-nav" id="mobile-demo">
-        <li><a href="sass.html">Menú</a></li>
-        <li><a href="badges.html">Pedido</a></li>
-        <li><a href="collapsible.html">Pago</a></li>
-      </ul>
-    </div>
-  </nav>
+  <body class="red darken-3">
+
+    <!--      ENCABEZADO      -->
+    <nav>
+      <div class="nav-wrapper red darken-2 z-depth-3">
+        <font FACE="Mistral" SIZE=10 COLOR="white" center><b>Touch</b></font>
+        <font FACE="Mistral" SIZE=10 COLOR="white" center>Food</font>
+        <img src="images/IconoPrincipal4.jpg">
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <!--ul class="right hide-on-med-and-down">
+          <li><a href="{{ route('menu.categorias') }}">Menú</a></li>
+          <li><a href="badges.html">Pedido</a></li>
+          <li><a href="collapsible.html">Pago</a></li>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+          <li><a href="sass.html">Menú</a></li>
+          <li><a href="badges.html">Pedido</a></li>
+          <li><a href="collapsible.html">Pago</a></li>
+        </ul-->
+      </div>
+    </nav>
 
   <section>
     @yield('content')
   </section>
 
-  <footer class="page-footer red lighten-1">
-    <div class="container">
-     		<div class="row">
-        		<div class="col l4 s12">
-          		<h5 class="white-text">Sobre nosotros</h5>
-          		<p class="grey-text text-lighten-4">Restaurante_test es una novedosa propuesta gastronómica. Ideal para todo el público que desee comer de la mejor manera. ¡Te esperamos!</p>
-        		</div>
-            <div class="col l4 s12">
-              <h5 class="white-text">Contáctanos</h5>
-              <p class="grey-text text-lighten-4">+54 11 1234-5678</p>
-            </div>
-        		<div class="col l4 s12">
-          		<h5 class="white-text">Siguenos</h5>
-          		<ul>
-                <li><a class="grey-text text-lighten-3" href="#!">Facebook     </a><img src="images/facebook_icono.png" class="circle"></li>
-                <li><a class="grey-text text-lighten-3" href="#!">Twitter     </a><img src="images/twitter_icono.jpg" class="circle"></li>
-                <li><a class="grey-text text-lighten-3" href="#!">Instagram     </a><img src="images/instagram_icono.png" class="circle"></li>
-          		</ul>
-        		</div>
-      	</div>
-    	</div>
-    	<div class="footer-copyright">
-      	<div class="container">
-      		© 2016 Copyright 
-      		<a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-      	</div>
-    	</div>
-  </footer>
+  <!--      FOOTER        -->
+    <footer class="page-footer red darken-2 z-depth-3">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Contáctanos</h5>
+            <p class="grey-text text-lighten-4">Nos encantaría recibir sus opiniones, queremos mejorar para que usted disfrute.</p>
+          </div>
+
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Síguenos</h5>
+              <ul>
+                <li><a class="grey-text text-lighten-3" href="#!">Facebook     </a><img src="http://latingsm.com/forum/images/misc/facebook-share.png" class="circle"><a class="grey-text text-lighten-3" href="http://www.facebook.com/touchfood.ar"> Touch Food</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Twitter     </a><img src="http://www.sportlife.es/img/header/twitter-mini.png" class="circle"><a class="grey-text text-lighten-3" href="http://www.twitter.com/touchfood_ar"> Touch Food</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Instagram     </a><img src="https://www.panasonic.com/content/panasonic/es/es/_jcr_content/footer/sociallinks.image3.png" class="circle"><a class="grey-text text-lighten-3" href="http://www.instagram.com/TouchFood_ARG"> Touch Food</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Gmail     </a><img src="https://davidcastellanos.files.wordpress.com/2009/05/gmail-logo.gif?w=460" class="circle"><a class="grey-text text-lighten-3"> TouchFood.ar@gmail.com</a></li>
+              </ul>
+          </div>
+          <div class="col l6 s12">
+            <h5 class="white-text">Tu comida a un toque</h5>
+            <font FACE="Mistral" SIZE=10 COLOR="white" center><b>Touch</b></font>
+            <font FACE="Mistral" SIZE=10 COLOR="white" center>Food</font>
+            <p class="grey-text text-lighten-4"></p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+        © 2016 Copyright 
+        <a class="grey-text text-lighten-4 right" href="#!">Argentina <img src="http://www.abc.es/includes_comun/especiales/mundial-baloncesto/img/banderas/8178.jpg"></a>
+        </div>
+      </div>
+    </footer>
+    <!--    FIN     DEL     FOOTER-->
 
 
 
