@@ -18,8 +18,8 @@ class ComidasController extends Controller
      */
     public function index()
     {
-        $comidas = DB::table('comidas')->where('categoria','vegetales')->paginate(9)->get();
-        return view('app.menu.comidas.index')->with('comidas',$comidas);
+       $comidas = DB::table('comidas')->paginate(10);
+        return view('pruebascroll')->with('comidas',$comidas);
     }
 
     /**

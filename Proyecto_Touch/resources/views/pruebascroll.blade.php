@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-	<html>
-	<head>
-    	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <html>
+  <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
       <!--Import Google Icon Font-->
         <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
@@ -19,7 +19,8 @@
     <!--      ENCABEZADO      -->
     <nav>
       <div class="nav-wrapper red darken-2 z-depth-3">
-        <a href="#!" class="brand-logo center">Touchfood</a>
+
+      <a href="#!" class="brand-logo center">Touchfood</a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="left hide-on-med-and-down">
           <li><a href="{{ route('menu.categorias') }}" <button type="button" class="waves-effect waves-light btn-large red darken-2">Menú</button></a></li>
@@ -34,9 +35,29 @@
       </div>
     </nav>
 
-  <section>
-    @yield('content')
-  </section>
+
+    <div class="contenedor">
+        <ul id="comidas" class="collection red darken-2">
+          @foreach($comidas as $comida)
+            <li class="collection-item avatar red darken-2">
+              <img src="images/pollo.png" alt="" class="circle">
+              <span class="title">{{ ucwords($comida->nombre) }}</span>
+              <p>${{ ucwords($comida->precio) }}<br>
+              {{ ucwords($comida->ingredientes) }}
+              </p>
+              <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+            </li>
+          @endforeach
+        </ul>
+      
+
+      <span style="visibility: hidden;">
+          {!! $comidas->render() !!}    
+      </span>
+
+      <div class="loading"></div>
+    </div>
+
 
   <!--      FOOTER        -->
     <footer class="page-footer red darken-2 z-depth-3">
@@ -75,8 +96,34 @@
 
 
 
+
+
+
+
+
+
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="{!! asset('js/materialize.min.js') !!}" ></script>
+    <script type="text/javascript" src="{!! asset('js/jquery.infinitescroll.min.js') !!}" ></script>
     <script src="{!! asset('js/init.js') !!}" ></script>
+    <script>
+      
+    $('#comidas').infinitescroll({
+        navSelector  : "ul.pagination",                
+        nextSelector : "ul.pagination li:last-child a",
+        itemSelector : "#comidas li.collection-item",
+    loading: {
+      finished: undefined,
+      finishedMsg: "No se encontraron más comidas para mostrar",
+      img: "{!! asset('images/ajax-loader.gif') !!}",
+      msg: null,
+      msgText: "Cargando...",
+      selector: ".loading",
+      speed: 'fast',
+      start: undefined
+      }
+    });
+</script>
+
     </body>
 </html>

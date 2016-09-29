@@ -1,6 +1,4 @@
-@extends('app.template.main')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 <div class="row">
 	<!--div class="col s1">
 		<img src="https://loscervantinos.files.wordpress.com/2014/03/mancare.jpg">
@@ -27,9 +25,9 @@
                     </div>
                 </div>
                 <li class="collection-header red darken-2"></li>
-                   @foreach($categorias_comidas as $categoria_comidas)
-                   <li class="collection-item red darken-1"><div> {{ ucwords($categoria_comidas->categoria) }}<a href="comidas/{{$categoria_comidas->categoria }}" class="grey-text text-lighten-4 right"><i class="material-icons">view_headline</i></a></div></li>             
-                @endforeach
+                   <?php foreach($categorias_comidas as $categoria_comidas): ?>
+                   <li class="collection-item red darken-1"><div> <?php echo e(ucwords($categoria_comidas->categoria)); ?><a href="comidas/<?php echo e($categoria_comidas->categoria); ?>" class="grey-text text-lighten-4 right"><i class="material-icons">view_headline</i></a></div></li>             
+                <?php endforeach; ?>
             </ul>
         </div>
     </div>
@@ -44,9 +42,9 @@
     				</div>
     			</div>
     			<li class="collection-header red darken-2"></li>
-	    		@foreach($categorias_bebidas as $categoria_bebidas)
-	   			<li class="collection-item red darken-1"><div>{{ ucwords($categoria_bebidas->categoria) }}<a href="bebidas/{{$categoria_bebidas->categoria }}" class="grey-text text-lighten-4 right"><i class="material-icons">view_headline</i></a></div></li>	          	
-	    		@endforeach
+	    		<?php foreach($categorias_bebidas as $categoria_bebidas): ?>
+	   			<li class="collection-item red darken-1"><div><?php echo e(ucwords($categoria_bebidas->categoria)); ?><a href="bebidas/<?php echo e($categoria_bebidas->categoria); ?>" class="grey-text text-lighten-4 right"><i class="material-icons">view_headline</i></a></div></li>	          	
+	    		<?php endforeach; ?>
 			</ul>
         </div>
     </div>
@@ -61,9 +59,9 @@
                     </div>
                 </div>
                 <li class="collection-header red darken-2"></li>
-                @foreach($categorias_postres as $categoria_postres)
-                <li class="collection-item red darken-1"><div>{{ ucwords($categoria_postres->categoria) }}<a href="postres/{{$categoria_postres->categoria }}" class="grey-text text-lighten-4 right"><i class="material-icons">view_headline</i></a></div></li>             
-                @endforeach
+                <?php foreach($categorias_postres as $categoria_postres): ?>
+                <li class="collection-item red darken-1"><div><?php echo e(ucwords($categoria_postres->categoria)); ?><a href="postres/<?php echo e($categoria_postres->categoria); ?>" class="grey-text text-lighten-4 right"><i class="material-icons">view_headline</i></a></div></li>             
+                <?php endforeach; ?>
             </ul>
             </ul>
         </div>
@@ -73,4 +71,5 @@
 
 </div>
 
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('app.template.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
