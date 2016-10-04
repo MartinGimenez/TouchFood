@@ -13,10 +13,10 @@ class mesa extends Model
 
     public function pedidos(){
 
-    	return this->hasMany('App\pedido');
+    	return $this->hasMany('App\pedido');
     }
 
     public function oferente(){
-    	return this->belognsTo('App\oferente');
+    	return $this->belognsTo('App\oferente');
     }
 }

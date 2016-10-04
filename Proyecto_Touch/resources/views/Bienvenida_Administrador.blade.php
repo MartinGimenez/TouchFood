@@ -11,74 +11,64 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
 
-  <body class="red darken-3">
+  <body class="grey darken-3">
 
-    <!--      ENCABEZADO      -->
     <nav>
       <div class="nav-wrapper red darken-2 z-depth-3">
-        <font FACE="Mistral" SIZE=10 COLOR="white" center><b>Touch</b></font>
-        <font FACE="Mistral" SIZE=10 COLOR="white" center>Food</font>
-        <img src="images/IconoPrincipal4.jpg">
-        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <a href="#!" class="brand-logo center">Touchfood</a>
       </div>
     </nav>
-    <!-- FIN      DEL     ENCABEZADO-->
 
-    <div class="row">
-      <div class="section red darken-3">
-        <div class="col s7">
-          <div class="col s6">
-            <h2 class="header white-text text-darken-3 lighten-3">Bienvenidos a TouchFood</h2>
-            <p class="white-text text-darken-3 lighten-3">Nos especializamos en hacer que usted se sienta más cómodo.</p>
-          </div>
 
-          <div class="col s6">
-            <h1></h1>
-          </div>
-          <div class="col s6">
-            <img src="images/IconoPrincipal3.jpg">
-          </div>
-        </div>
-        <!--              LOGIN             -->
-        <div class="col s4">
-          <h3 class="grey-text text-lighten-5" align="center">Su cuenta</h3>
-          <h5 class="grey-text text-lighten-5" align="center">Inicia sesión para acceder a su perfil</h5>
-          <div class="card red darken-1">
-            <div class="row">
-              <div class="input-field col s12">
-                <i class="material-icons prefix">account_circle</i>
-                <input id="email" type="email" class="validate white-text text-lighten-4 right">
-                <label class="grey-text text-lighten-4 right" for="email">Usuario</label>
-              </div>
-              <div class="input-field col s12">
-                <i class="material-icons prefix"></i>
-                <input id="password" type="password" class="validate white-text text-lighten-4 right">
-                <label class="grey-text text-lighten-4 right" for="password">Contraseña</label>
-              </div>        
+<div class="container">
+  <div class="row">
+    <div class="col s6">
+      <h3 class="grey-text text-lighten-5" align="center">Registra la mesa al sistema</h3>
+      <div class="card red darken-4">
+        <div class="row">
+          <form method="POST" action="{{ route('auth.login') }}">
+            {!! csrf_field() !!}
+            <div class="input-field col s12">
+              <i class="material-icons prefix">account_circle</i>
+              <input type="email" name="email" value="{{ old('email') }}" class="validate white-text text-lighten-4 right">
+              <label class="grey-text text-lighten-4 right" for="email">Email</label>
             </div>
+
+            <div class="input-field col s12">
+              <i class="material-icons prefix">vpn_key</i>
+              <input type="password" name="password" id="password" class="validate white-text text-lighten-4 right">
+              <label class="grey-text text-lighten-4 right" for="password">Password</label>
+            </div>
+
+            <div class="input-field col s12">
+              <input type="checkbox" name ="remember" id="test5" />
+              <label for="test5">Recordar cuenta</label>
+            </div>
+
             <div class="col s12" align="center">
-              <a class="waves-effect waves-light btn-large red darken-2">Ingresar</a>
+              <button class="waves-effect waves-light btn-large red darken-2" type="submit">Login</button>
             </div>
-            <div class="col s12">
-              <ul>
-                <li><a class="grey-text text-lighten-3" href="#!">Olvide mi contraseña</a><a class="grey-text text-lighten-3" href="https://www.facebook.com/TouchFood_ARG"></a></li>
-                <li><a class="grey-text text-lighten-3" href="#!">Crear cuenta</a><a class="grey-text text-lighten-3" href="https://www.facebook.com/TouchFood_ARG"></a></li>
-              </ul>
-            </div>
-            <div class="card-action" align="center">
-              <a href="#" class="grey-text text-lighten-3">Olvide mi contraseña</a>
-            </div>
-          </div>
-          <div class="col s12" align="center">
-            <ul>
-              <li><a href="#" class="grey-text text-lighten-3">Crear cuenta</a></li>
-              <li><font FACE="arial" SIZE=2 COLOR="white" center>TouchFood te ayuda a tener un mejor servicio y comodidad para tus clientes.</font></li>
-            </ul>
-          </div>
+          </form>
+                <div class="col s12" align="center">
+        <ul>
+          <li><a href="#" class="grey-text text-lighten-3">Registrar mesa</a></li>
+          <li><font FACE="arial" SIZE=2 COLOR="white" center>TouchFood te ayuda a tener un mejor servicio y comodidad para tus clientes.</font></li>
+        </ul>
+      </div>
+    
         </div>
-        <!--              FIN   DEL   LOGIN             -->
       </div>
     </div>
+    <div class="col s6">
+          <br>
+          <img class="responsive-img" src="{{asset('images/touchfoodlogo2.png')}}">
+    </div>
+  </div>
+</div>
+
+
+        <!--              FIN   DEL   LOGIN             -->
+
 
 
     <!--      FOOTER        -->

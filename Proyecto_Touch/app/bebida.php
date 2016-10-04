@@ -13,6 +13,6 @@ class bebida extends Model
 
     public function pedidosBebida(){
 
-    	return this->belongsTo('App\pedido-bebida');
+    	return $this->belongsTo('App\pedido-bebida');
     }
 }

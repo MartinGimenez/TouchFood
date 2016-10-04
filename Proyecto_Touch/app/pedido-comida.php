@@ -11,9 +11,9 @@ class pedido-comida extends Model
     protected $fillable = ['hora'];
 
 public function comida(){
-    	return this->hasMany('App\comida');
+    	return $this->hasMany('App\comida');
     }
 public function pedidos(){
-    	return this->hasMany('App\pedido');
+    	return $this->hasMany('App\pedido');
     }
 }

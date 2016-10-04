@@ -13,6 +13,6 @@ class postre extends Model
 
     public function pedidosPostres(){
 
-    	return this->belongsTo('App\pedido-postre');
+    	return $this->belongsTo('App\pedido-postre');
     }
 }

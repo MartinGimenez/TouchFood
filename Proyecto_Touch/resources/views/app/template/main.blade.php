@@ -19,14 +19,16 @@
     <!--      ENCABEZADO      -->
     <nav>
       <div class="nav-wrapper red darken-2 z-depth-3">
-        <a href="#!" class="brand-logo center">Touchfood</a>
+        <a href="{{ route('menu.categorias') }}" class="brand-logo center">Touchfood</a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="left hide-on-med-and-down">
+          <li><a href="">{{ Auth::user()->name }}</a></li>
           <li><a href="{{ route('menu.categorias') }}" <button type="button" class="waves-effect waves-light btn-large red darken-2">Menú</button></a></li>
           <li><a href="#!" <button type="button" class="waves-effect waves-light btn-large red darken-2">Pedido</button></a></li>
           <li><a href="#!" <button type="button" class="waves-effect waves-light btn-large red darken-2">Pago</button></a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
+          <li><a href="">{{ Auth::user()->name }}</a></li>
           <li><a href="{{ route('menu.categorias') }}" <button type="button" class="waves-effect waves-light btn-large red darken-2">Menú</button></a></li>
           <li><a href="#!" <button type="button" class="waves-effect waves-light btn-large red darken-2">Pedido</button></a></li>
           <li><a href="#!" <button type="button" class="waves-effect waves-light btn-large red darken-2">Pago</button></a></li>

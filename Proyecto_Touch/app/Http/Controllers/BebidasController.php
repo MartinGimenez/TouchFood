@@ -88,7 +88,7 @@ class BebidasController extends Controller
 
     public function bebidas_por_categoria($categoria)
     {
-        $comidas = DB::table('bebidas')->where('categoria',$categoria)->get();
+        $comidas = DB::table('bebidas')->where('categoria',$categoria)->paginate(10);
         return view('app.menu.comidas.index')->with('comidas',$comidas);        
     }
 }

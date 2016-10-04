@@ -12,19 +12,19 @@ class pedido extends Model
     protected $fillable = ['numero_mesa', 'id_plato', 'id_postre','id_bebida','hora'];
 
     public function mesa(){
-    	return this->belongsTo('App\mesa');
+    	return $this->belongsTo('App\mesa');
     }
 
     public function pedidosComidas(){
-        return this->belongsTo('App\pedido-comida');
+        return $this->belongsTo('App\pedido-comida');
     }
 
     public function pedidosBebidas(){
-        return this->belongsTo('App\pedido-bebida');
+        return $this->belongsTo('App\pedido-bebida');
     }
 
     public function pedidosPostres(){
-        return this->belongsTo('App\pedido-postre');
+        return $this->belongsTo('App\pedido-postre');
     }
 
 

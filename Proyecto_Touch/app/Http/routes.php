@@ -15,17 +15,25 @@ Route::get('bienvenida', 'BienvenidaController@index');
 
 Route::get('auth/login', [
 	'uses'	=>	'Auth\AuthController@getLogin',
-	'as'	=>	'app.auth.login'
+	'as'	=>	'auth.login'
 ]);
 Route::post('auth/login', [
 	'uses'	=>	'Auth\AuthController@postLogin',
-	'as'	=>	'app.auth.login'
+	'as'	=>	'auth.login'
 ]);
 Route::get('auth/logout', [
 	'uses'	=>	'Auth\AuthController@getLogout',
-	'as'	=>	'app.auth.logout'
+	'as'	=>	'auth.logout'
 ]);
 
+Route::get('auth/register', [
+	'uses'	=>	'Auth\AuthController@getRegister',
+	'as'	=>	'auth.register'
+]);
+Route::post('auth/register', [
+	'uses'	=>	'Auth\AuthController@postRegister',
+	'as'	=>	'auth.register'
+]);
 Route::get('menu/comidas/{categoria}','ComidasController@comidas_por_categoria');
 Route::get('menu/bebidas/{categoria}','BebidasController@bebidas_por_categoria');
 Route::get('menu/postres/{categoria}','PostresController@postres_por_categoria');

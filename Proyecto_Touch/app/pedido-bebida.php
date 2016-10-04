@@ -11,10 +11,10 @@ class pedido-bebida extends Model
     protected $fillable = ['hora'];
 
 public function bebida(){
-    	return this->hasMany('App\bebida');
+    	return $this->hasMany('App\bebida');
     }
 public function pedidos(){
-    	return this->hasMany('App\pedido');
+    	return $this->hasMany('App\pedido');
     }
 }
 

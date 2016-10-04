@@ -88,7 +88,7 @@ class PostresController extends Controller
 
     public function postres_por_categoria($categoria)
     {
-        $comidas = DB::table('postres')->where('categoria',$categoria)->get();
+        $comidas = DB::table('postres')->where('categoria',$categoria)->paginate(10);
         return view('app.menu.comidas.index')->with('comidas',$comidas); 
     }
 }

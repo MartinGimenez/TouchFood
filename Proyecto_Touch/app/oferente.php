@@ -12,6 +12,6 @@ class oferente extends Model
     protected $fillable = ['razon_social', 'contraseña', 'rol'];
 
     public function mesas(){
-    	return this->hasMany('App\mesa');
+    	return $this->hasMany('App\mesa');
     }
 }

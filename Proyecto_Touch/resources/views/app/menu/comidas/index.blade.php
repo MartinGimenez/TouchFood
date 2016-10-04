@@ -24,42 +24,29 @@
                     </div>
                 </div>
                 <table class="highlight">
-	    			<!--thead>
-
+	    			<thead>
 	        			<tr>
 			             	<th>Comida</th>
 			              	<th>Precio</th>
-	              	
+			              	<th>Ingredientes</th>
 	          			</tr>
-	       			</thead-->
+	       			</thead>
 	        		<tbody>
 	        		@foreach($comidas as $comida)
 	        		<tr>
-		            	<!--td>{{ ucwords($comida->nombre) }}</td>
-		            	<td>{{ ucwords($comida->precio) }}</td-->
-		            	<div class="col s4">
-					    	<h2 class="header">{{ ucwords($comida->nombre) }}</h2>
-					    	<div class="card vertical">
-						      		<div class="card-image">
-						        		<img src="http://cdn.kiwilimon.com/pages/temporadas/dia-del-padre/header_diapadre2016.jpg">
-						        		<a href="#">{{ ucwords($comida->precio) }}</a>
-						      		</div>
-						      	<div class="card-stacked">
-							        <div class="card-content">
-							        	<p>I am a very simple card. I am good at containing small bits of information.</p>
-							        </div>
-							        <div class="card-action">
-							        	<a href="#">{{ ucwords($comida->precio) }}</a>
-							        </div>
-						      	</div>
-					    	</div>
-					  	</div>
+		            	<td>{{ ucwords($comida->nombre) }}</td>
+		            	<td>{{ ucwords($comida->precio) }}</td>
+		            	<td>{{ ucwords($comida->ingredientes) }}</td>
 	          		</tr>
 	        		@endforeach
 	        		</tbody>
 	    		</table>
+	    		{!! $comidas->render() !!}
             </ul>
         </div>
     </div>
+
 </div>
+
+
 @endsection

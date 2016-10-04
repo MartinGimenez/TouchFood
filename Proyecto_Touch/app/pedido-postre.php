@@ -11,9 +11,9 @@ class pedido-postre extends Model
     protected $fillable = ['hora'];
 
 public function postre(){
-    	return this->hasMany('App\postre');
+    	return $this->hasMany('App\postre');
     }
 public function pedidos(){
-    	return this->hasMany('App\pedido');
+    	return $this->hasMany('App\pedido');
     }    
 }
