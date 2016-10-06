@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use DB;
+use App\bebida;
 
 class BebidasController extends Controller
 {
@@ -88,7 +88,7 @@ class BebidasController extends Controller
 
     public function bebidas_por_categoria($categoria)
     {
-        $comidas = DB::table('bebidas')->where('categoria',$categoria)->paginate(10);
+        $comidas = bebida::where('categoria',$categoria)->paginate(10);
         return view('app.menu.comidas.index')->with('comidas',$comidas);        
     }
 }

@@ -75,30 +75,34 @@
     <footer class="page-footer red darken-2 z-depth-3">
       <div class="container">
         <div class="row">
-          <div class="col l6 s12">
-            <h5 class="white-text">Contáctanos</h5>
-            <p class="grey-text text-lighten-4">Nos encantaría recibir sus opiniones, queremos mejorar para que usted disfrute.</p>
-          </div>
-          <div class="col l4 offset-l2 s12">
-            <h5 class="white-text">Síguenos</h5>
-              <ul>
-                <li><a class="grey-text text-lighten-3" href="#!">Facebook     </a><img src="images/Iconos/facebook_icono.png" class="circle"><a class="grey-text text-lighten-3" href="https://www.facebook.com/TouchFood_ARG"> TouchFood_ARG</a></li>
-                <li><a class="grey-text text-lighten-3" href="#!">Twitter     </a><img src="images/Iconos/twitter_icono.jpg" class="circle"><a class="grey-text text-lighten-3" href="https://www.twitter.com.com/TouchFood_ARG"> TouchFood_ARG</a></li>
-                <li><a class="grey-text text-lighten-3" href="#!">Instagram     </a><img src="images/Iconos/instagram_icono.png" class="circle"><a class="grey-text text-lighten-3" href="https://www.instagram.com/TouchFood_ARG"> TouchFood_ARG</a></li>
-              </ul>
-          </div>
-          <div class="col l6 s12">
+
+        <div class="col l4 s12">
             <h5 class="white-text">Tu comida a un toque</h5>
             <font FACE="Mistral" SIZE=10 COLOR="white" center><b>Touch</b></font>
             <font FACE="Mistral" SIZE=10 COLOR="white" center>Food</font>
             <p class="grey-text text-lighten-4"></p>
           </div>
+          <div class="col l4 s12">
+            <h5 class="white-text">Contáctanos</h5>
+            <p class="grey-text text-lighten-4">Nos encantaría recibir sus opiniones, queremos mejorar para que usted disfrute.</p>
+          </div>
+
+          <div class="col l4 s12">
+            <h5 class="white-text">Síguenos</h5>
+              <ul>
+                <li><a class="grey-text text-lighten-3" href="#!">Facebook     </a><img src="http://latingsm.com/forum/images/misc/facebook-share.png" class="circle"><a class="grey-text text-lighten-3" href="http://www.facebook.com/touchfood.ar"> Touch Food</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Twitter     </a><img src="http://www.sportlife.es/img/header/twitter-mini.png" class="circle"><a class="grey-text text-lighten-3" href="http://www.twitter.com/touchfood_ar"> Touch Food</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Instagram     </a><img src="https://www.panasonic.com/content/panasonic/es/es/_jcr_content/footer/sociallinks.image3.png" class="circle"><a class="grey-text text-lighten-3" href="http://www.instagram.com/TouchFood_ARG"> Touch Food</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Gmail     </a><img src="https://davidcastellanos.files.wordpress.com/2009/05/gmail-logo.gif?w=460" class="circle"><a class="grey-text text-lighten-3"> TouchFood.ar@gmail.com</a></li>
+              </ul>
+          </div>
+
         </div>
       </div>
       <div class="footer-copyright">
         <div class="container">
-          © 2016 Copyright 
-          <a class="grey-text text-lighten-4 right" href="#!">Argentina <img src="images/Iconos/argentina.jpg"></a>
+        © 2016 Copyright 
+        <a class="grey-text text-lighten-4 right" href="#!">Argentina <img src="http://www.abc.es/includes_comun/especiales/mundial-baloncesto/img/banderas/8178.jpg"></a>
         </div>
       </div>
     </footer>

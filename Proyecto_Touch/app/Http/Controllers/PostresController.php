@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use DB;
+use App\postre;
 
 class PostresController extends Controller
 {
@@ -88,7 +88,7 @@ class PostresController extends Controller
 
     public function postres_por_categoria($categoria)
     {
-        $comidas = DB::table('postres')->where('categoria',$categoria)->paginate(10);
+        $comidas = postre::where('categoria',$categoria)->paginate(10);
         return view('app.menu.comidas.index')->with('comidas',$comidas); 
     }
 }

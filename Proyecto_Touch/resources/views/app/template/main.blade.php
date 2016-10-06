@@ -19,7 +19,7 @@
     <!--      ENCABEZADO      -->
     <nav>
       <div class="nav-wrapper red darken-2 z-depth-3">
-        <a href="{{ route('menu.categorias') }}" class="brand-logo center">Touchfood</a>
+        <a href="{{ route('bienvenida') }}" class="brand-logo center">Touchfood</a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="left hide-on-med-and-down">
           <li><a href="">{{ Auth::user()->name }}</a></li>
@@ -44,12 +44,19 @@
     <footer class="page-footer red darken-2 z-depth-3">
       <div class="container">
         <div class="row">
-          <div class="col l6 s12">
+
+        <div class="col l4 s12">
+            <h5 class="white-text">Tu comida a un toque</h5>
+            <font FACE="Mistral" SIZE=10 COLOR="white" center><b>Touch</b></font>
+            <font FACE="Mistral" SIZE=10 COLOR="white" center>Food</font>
+            <p class="grey-text text-lighten-4"></p>
+          </div>
+          <div class="col l4 s12">
             <h5 class="white-text">Contáctanos</h5>
             <p class="grey-text text-lighten-4">Nos encantaría recibir sus opiniones, queremos mejorar para que usted disfrute.</p>
           </div>
 
-          <div class="col l4 offset-l2 s12">
+          <div class="col l4 s12">
             <h5 class="white-text">Síguenos</h5>
               <ul>
                 <li><a class="grey-text text-lighten-3" href="#!">Facebook     </a><img src="http://latingsm.com/forum/images/misc/facebook-share.png" class="circle"><a class="grey-text text-lighten-3" href="http://www.facebook.com/touchfood.ar"> Touch Food</a></li>
@@ -58,12 +65,7 @@
                 <li><a class="grey-text text-lighten-3" href="#!">Gmail     </a><img src="https://davidcastellanos.files.wordpress.com/2009/05/gmail-logo.gif?w=460" class="circle"><a class="grey-text text-lighten-3"> TouchFood.ar@gmail.com</a></li>
               </ul>
           </div>
-          <div class="col l6 s12">
-            <h5 class="white-text">Tu comida a un toque</h5>
-            <font FACE="Mistral" SIZE=10 COLOR="white" center><b>Touch</b></font>
-            <font FACE="Mistral" SIZE=10 COLOR="white" center>Food</font>
-            <p class="grey-text text-lighten-4"></p>
-          </div>
+
         </div>
       </div>
       <div class="footer-copyright">

@@ -11,7 +11,11 @@
 |
 */
 Route::get ('pruebascroll', 'ComidasController@index');
-Route::get('bienvenida', 'BienvenidaController@index');
+
+Route::get('bienvenida', [
+	'uses' 	=>	'BienvenidaController@index',
+	'as'	=>	'bienvenida'
+]);
 
 Route::get('auth/login', [
 	'uses'	=>	'Auth\AuthController@getLogin',
