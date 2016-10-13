@@ -83,13 +83,13 @@ class ComidasController extends Controller
 
     public function store($request)
     {
-        //
+        
     }
 
     public function comidas_por_categoria($categoria)
     {
-        $comidas = comida::where('categoria',$categoria)->paginate(10);
-        return view('app.menu.comidas.index')->with('comidas',$comidas);        
+        $comidas = comida::where('categoria',$categoria)->paginate(5);
+        return view('app.menu.comidas.index')->with('comidas',$comidas)->with('categoria',$categoria);        
     }
 
 

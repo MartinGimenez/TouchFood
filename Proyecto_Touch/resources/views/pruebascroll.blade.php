@@ -34,18 +34,40 @@
         </ul>
       </div>
     </nav>
+<div class="row">
+  <div class="col s12">
+        <div class="card-panel red darken-2 z-depth-3"> 
+            <ul class="collection with-header grey-text text-lighten-4">
+                <div class="card">
+                    <div class="card-image">
+                        <!--img class="responsive-img" src="http://cdn.kiwilimon.com/pages/temporadas/dia-del-padre/header_diapadre2016.jpg"-->
+                        <h1 class="card-title stroke">Comidas</h1>
+                        <style type="text/css"> 
+                            .stroke {
+                            text-align: center;
+                            color: white;
+                            font-family: Georgia, serif;
+                            font-size: 40px;
+                            letter-spacing: 10;
+                            text-shadow: -1px -1px 1px #333, 1px -1px 1px #333, -1px 1px 1px #333, 1px 1px 1px #333;
+                            }
+                        </style>
 
+                    </div>
+                </div>
 
     <div class="contenedor">
         <ul id="comidas" class="collection red darken-2">
           @foreach($comidas as $comida)
             <li class="collection-item avatar red darken-2">
-              <img src="images/pollo.png" alt="" class="circle">
+              <img src="{{asset('images/Iconos/pizza.jpg')}}" alt="" class="circle">
               <span class="title">{{ ucwords($comida->nombre) }}</span>
               <p>${{ ucwords($comida->precio) }}<br>
               {{ ucwords($comida->ingredientes) }}
               </p>
-              <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+              <a href="#!" class="secondary-content"><button class="btn waves-effect waves-light red darken-2" type="submit" name="action">Pedir
+    <i class="material-icons right">send</i>
+  </button></a>
             </li>
           @endforeach
         </ul>
@@ -57,8 +79,10 @@
 
       <div class="loading"></div>
     </div>
-
-
+</ul>
+</div>
+</div>
+</div>
   <!--      FOOTER        -->
     <footer class="page-footer red darken-2 z-depth-3">
       <div class="container">

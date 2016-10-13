@@ -10,7 +10,12 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-Route::get ('pruebascroll', 'ComidasController@index');
+Route::post ('prueba', [
+	'uses' 	=>	'TestController@store',
+	'as'	=>	'prueba'
+]);
+
+Route::get ('pruebascroll/p', 'ComidasController@index');
 
 Route::get('bienvenida', [
 	'uses' 	=>	'BienvenidaController@index',
