@@ -32,7 +32,7 @@ class AuthController extends Controller
         $this->middleware('guest', ['except' => 'getLogout']);
     }
 
-    protected $redirectPath = 'bienvenida';
+    protected $redirectPath = 'comenzar';
     protected $loginPath = '/auth/login';
     /**
      * Get a validator for an incoming registration request.
@@ -60,6 +60,9 @@ class AuthController extends Controller
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'numero_mesa' => $data['numero_mesa'],
+            'capacidad' => $data['capacidad'],
+            'estado' => $data['estado'],
             'password' => bcrypt($data['password']),
         ]);
     }    

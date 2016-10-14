@@ -10,6 +10,16 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+Route::get('comenzar', function () {
+    return view('comenzar');
+});
+
+
+Route::get ('pedido', [
+	'uses' 	=>	'PedidosController@agregar_pedido',
+	'as'	=>	'pedido.agregar'
+]);
+
 Route::post ('prueba', [
 	'uses' 	=>	'TestController@store',
 	'as'	=>	'prueba'

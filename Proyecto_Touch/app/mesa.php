@@ -17,6 +17,6 @@ class mesa extends Model
     }
 
     public function oferente(){
-    	return $this->belognsTo('App\oferente');
+    	return $this->belongsTo('App\oferente');
     }
 }
