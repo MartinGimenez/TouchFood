@@ -7,6 +7,7 @@ use Auth;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\pedidopostre;
+use App\pedido;
 
 class PedidosPostresController extends Controller
 {
@@ -40,10 +41,14 @@ class PedidosPostresController extends Controller
     {
         $pedidopostre = new pedidopostre;
         $pedidopostre->id_postre= $request->id_postre;
-        $mesalog =Auth::user()->numero_mesa;
-        $idpedido=pedido::select('id_pedido')->where('numero_mesa',$mesalog)->where('estado','impago')->get();
-        $pedidopostre->id_pedidop=$idpedido;
-        $pedidopostre->horap=getdate();
+      /*  $mesalog =Auth::user()->numero_mesa;
+        $idpedido=pedido::select('id_pedido')->where('numero_mesa',$mesalog)->where('estado','impago')->get();*/
+        $pedidopostre->id_pedidop=10;
+        /*$pedidopostre->horap=getdate();*/
+        if($pedidopostre->save()){
+            return redirect('menu/categorias');
+        }
+       
     }
 
     /**

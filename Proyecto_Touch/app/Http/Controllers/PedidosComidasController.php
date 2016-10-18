@@ -41,11 +41,13 @@ class PedidosComidasController extends Controller
     {
         $pedidocomida = new pedidocomida;
         $pedidocomida->id_plato= $request->id_plato;
-        $mesalog =Auth::user()->numero_mesa;
-        $idpedido=pedido::select('id_pedido')->where('numero_mesa',$mesalog)->where('estado','impago')->get();
-        $pedidocomida->id_pedidoc=$idpedido;
+        /*$mesalog =Auth::user()->numero_mesa;
+        $idpedido=pedido::select('id_pedido')->where('numero_mesa',$mesalog)->where('estado','impago')->get();*/
+        $pedidocomida->id_pedidoc=10;
         /*$pedidocomida->horac=date();*/
-        $pedidocomida->save();
+         if($pedidocomida->save()){
+            return redirect('menu/categorias');
+        }
     }
 
     /**

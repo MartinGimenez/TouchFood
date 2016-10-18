@@ -20,9 +20,19 @@ Route::get ('pedido', [
 	'as'	=>	'pedido.agregar'
 ]);
 
-Route::post ('pedidocomida', [
-	'uses' 	=>	'@store',
-	'as'	=>	'prueba'
+Route::post ('pedidoscomidas', [
+	'uses' 	=>	'PedidosComidasController@store',
+	'as'	=>	'pedidoscomidas'
+]);
+
+Route::post ('pedidosbebidas', [
+	'uses' 	=>	'PedidosBebidasController@store',
+	'as'	=>	'pedidosbebidas'
+]);
+
+Route::post ('pedidospostres', [
+	'uses' 	=>	'PedidosPostresController@store',
+	'as'	=>	'pedidospostres'
 ]);
 
 Route::get ('pruebascroll/p', 'ComidasController@index');
