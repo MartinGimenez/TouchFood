@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Auth;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\bebida;
+use App\pedidocomida;
+use App\pedido;
 
-class BebidasController extends Controller
+class PedidosComidasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -38,7 +39,13 @@ class BebidasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $pedidocomida = new pedidocomida;
+        $pedidocomida->id_plato= $request->id_plato;
+        $mesalog =Auth::user()->numero_mesa;
+        $idpedido=pedido::select('id_pedido')->where('numero_mesa',$mesalog)->where('estado','impago')->get();
+        $pedidocomida->id_pedidoc=$idpedido;
+        /*$pedidocomida->horac=date();*/
+        $pedidocomida->save();
     }
 
     /**
@@ -84,12 +91,5 @@ class BebidasController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function bebidas_por_categoria($categoria)
-    {
-        $comidas = bebida::where('categoria',$categoria)->get();
-        $tipo="bebidas";
-        return view('app.menu.comidas.index')->with('comidas',$comidas)->with('categoria',$categoria)->with('tipo',$tipo);     
     }
 }

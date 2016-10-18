@@ -89,6 +89,7 @@ class PostresController extends Controller
     public function postres_por_categoria($categoria)
     {
         $comidas = postre::where('categoria',$categoria)->get();
-        return view('app.menu.comidas.index')->with('comidas',$comidas)->with('categoria',$categoria);
+        $tipo= "postres";
+        return view('app.menu.comidas.index')->with('comidas',$comidas)->with('categoria',$categoria)->with('tipo',$tipo);
     }
 }

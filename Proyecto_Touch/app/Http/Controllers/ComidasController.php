@@ -89,7 +89,8 @@ class ComidasController extends Controller
     public function comidas_por_categoria($categoria)
     {
         $comidas = comida::where('categoria',$categoria)->get();
-        return view('app.menu.comidas.index')->with('comidas',$comidas)->with('categoria',$categoria);        
+        $tipo= "comidas";
+        return view('app.menu.comidas.index')->with('comidas',$comidas)->with('categoria',$categoria)->with('tipo',$tipo);        
     }
 
 

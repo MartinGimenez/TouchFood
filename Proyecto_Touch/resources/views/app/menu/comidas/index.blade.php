@@ -55,9 +55,18 @@
               @endif
 
               <span class="title">{{ ucwords($comida->nombre) }}</span>
-              <p>${{ ucwords($comida->precio) }}<br>
-              {{ ucwords($comida->ingredientes) }}
+              <p>${{ ucwords($omcomida->precio) }}<br>
+              {{ ucwords($cida->ingredientes) }}
               </p>
+              @if ($tipo== "comidas")
+              <form method="POST" action="{{ route('') }}">
+              {!! csrf_field() !!}
+              <input type="hidden" name="id_plato" value="{{$comida->id_plato}}">
+              <div class="secondary-content"><button class="btn waves-effect waves-light red darken-2" type="submit" name="action"> Pedir <i class="material-icons right">send</i></button>
+              </form>
+              @endif
+
+               @if ($tipo== "postres")
               <form method="POST" action="{{ route('prueba') }}">
               {!! csrf_field() !!}
               <input type="hidden" name="id_plato" value="{{$comida->id_plato}}">
@@ -74,6 +83,19 @@
               </div>
 
               </form>
+              @endif
+
+                @if ($tipo== "bebidas")
+              <form method="POST" action="{{ route('prueba') }}">
+              {!! csrf_field() !!}
+              <input type="hidden" name="id_plato" value="{{$comida->id_plato}}">
+              <div class="secondary-content"><button class="btn waves-effect waves-light red darken-2" type="submit" name="action"> Pedir <i class="material-icons right">send</i></button>
+              </form>
+              @endif
+
+
+              
+              
             </li>
           @endforeach
           </ul>

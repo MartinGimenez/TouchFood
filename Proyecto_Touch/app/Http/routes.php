@@ -20,8 +20,8 @@ Route::get ('pedido', [
 	'as'	=>	'pedido.agregar'
 ]);
 
-Route::post ('prueba', [
-	'uses' 	=>	'TestController@store',
+Route::post ('pedidocomida', [
+	'uses' 	=>	'@store',
 	'as'	=>	'prueba'
 ]);
 
