@@ -14,6 +14,10 @@ Route::get('comenzar', function () {
     return view('comenzar');
 });
 
+Route::post ('prueba', [
+	'uses' 	=>	'TestController@store',
+	'as'	=>	'prueba.datos'
+]);
 
 Route::get ('pedido', [
 	'uses' 	=>	'PedidosController@agregar_pedido',

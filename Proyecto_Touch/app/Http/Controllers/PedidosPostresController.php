@@ -41,9 +41,9 @@ class PedidosPostresController extends Controller
     {
         $pedidopostre = new pedidopostre;
         $pedidopostre->id_postre= $request->id_postre;
-      /*  $mesalog =Auth::user()->numero_mesa;
-        $idpedido=pedido::select('id_pedido')->where('numero_mesa',$mesalog)->where('estado','impago')->get();*/
-        $pedidopostre->id_pedidop=10;
+        $numero_mesa =Auth::user()->numero_mesa;
+        $pedido=pedido::where('numero_mesa',$numero_mesa)->where('estado','impago')->first();
+        $pedidopostre->id_pedidop = $pedido->id_pedido;
         /*$pedidopostre->horap=getdate();*/
         if($pedidopostre->save()){
             return redirect('menu/categorias');
