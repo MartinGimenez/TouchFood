@@ -30,8 +30,8 @@
             {!! csrf_field() !!}
             <div class="input-field col s12">
               <i class="material-icons prefix">account_circle</i>
-              <input type="email" name="email" value="{{ old('email') }}" class="validate white-text text-lighten-4 right">
-              <label class="grey-text text-lighten-4 right" for="email">Email</label>
+              <input type="text" name="name" value="{{ old('name') }}" class="validate white-text text-lighten-4 right">
+              <label class="grey-text text-lighten-4 right" for="name">Username</label>
             </div>
 
             <div class="input-field col s12">

@@ -4,17 +4,16 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class pedidobebida extends Model
+class pedido-postre extends Model
 {
-    protected $table = 'pedidosbebidas';
+    protected $table = 'pedidos-postres';
 
     protected $fillable = ['hora'];
 
-public function bebida(){
-    	return $this->hasMany('App\bebida');
+public function postre(){
+    	return $this->hasMany('App\postre');
     }
 public function pedidos(){
     	return $this->hasMany('App\pedido');
-    }
+    }    
 }
-

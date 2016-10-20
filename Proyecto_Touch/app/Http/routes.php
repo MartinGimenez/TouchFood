@@ -10,14 +10,8 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-Route::get('comenzar', function () {
-    return view('comenzar');
-});
 
-Route::post ('prueba', [
-	'uses' 	=>	'TestController@store',
-	'as'	=>	'prueba.datos'
-]);
+
 
 Route::get ('pedido', [
 	'uses' 	=>	'PedidosController@agregar_pedido',
@@ -41,10 +35,7 @@ Route::post ('pedidospostres', [
 
 Route::get ('pruebascroll/p', 'ComidasController@index');
 
-Route::get('bienvenida', [
-	'uses' 	=>	'BienvenidaController@index',
-	'as'	=>	'bienvenida'
-]);
+
 
 Route::get('auth/login', [
 	'uses'	=>	'Auth\AuthController@getLogin',
@@ -71,7 +62,7 @@ Route::get('menu/comidas/{categoria}','ComidasController@comidas_por_categoria')
 Route::get('menu/bebidas/{categoria}','BebidasController@bebidas_por_categoria');
 Route::get('menu/postres/{categoria}','PostresController@postres_por_categoria');
 
-Route::group(['prefix' => 'menu' ], function(){
+Route::group(['prefix' => 'menu', 'middleware' => 'auth' ], function(){
 
 	Route::get('categorias',[
 		'uses' 	=>	'CategoriasController@index',
@@ -80,7 +71,15 @@ Route::group(['prefix' => 'menu' ], function(){
 	Route::resource('comidas','ComidasController');
 });
 
-
+Route::group(['middleware' => 'auth'], function () {
+	Route::get('bienvenida', [
+	'uses' 	=>	'BienvenidaController@index',
+	'as'	=>	'bienvenida'
+]);
+	Route::get('comenzar', function () {
+    return view('comenzar');
+});
+});
 
 Route::group(['prefix' => 'admin' ], function(){
 

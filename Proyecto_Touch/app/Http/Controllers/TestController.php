@@ -7,8 +7,6 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\comida;
-use App\pedido;
-use Auth;
 
 class TestController extends Controller
 {
@@ -46,9 +44,7 @@ class TestController extends Controller
      */
     public function store(Request $request)
     {
-        $mesalog =Auth::user()->numero_mesa;
-        $pedido=pedido::where('numero_mesa',$mesalog)->where('estado','impago')->first();
-        dd ($pedido->id_pedido);
+        dd($request->all());
     }
 
     /**
