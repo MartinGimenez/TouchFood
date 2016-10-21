@@ -44,7 +44,9 @@ class PedidosBebidasController extends Controller
         /*$mesalog =Auth::user()->numero_mesa;
         $idpedido=pedido::select('id_pedido')->where('numero_mesa',$mesalog)->where('estado','impago')->get();*/
         $pedidobebida->id_pedidob=10;
-        /*$pedidobebida->horab=getdate();*/
+        $hora_segundos = time() - 10800;
+        $hora = date("H:i:s",$hora_segundos);
+        $pedidobebida->horab = $hora;
          if($pedidobebida->save()){
             return redirect('menu/categorias');
         }

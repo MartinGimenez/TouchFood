@@ -44,7 +44,9 @@ class PedidosPostresController extends Controller
       /*  $mesalog =Auth::user()->numero_mesa;
         $idpedido=pedido::select('id_pedido')->where('numero_mesa',$mesalog)->where('estado','impago')->get();*/
         $pedidopostre->id_pedidop=10;
-        /*$pedidopostre->horap=getdate();*/
+        $hora_segundos = time() - 10800;
+        $hora = date("H:i:s",$hora_segundos);
+        $pedidopostre->horap = $hora;
         if($pedidopostre->save()){
             return redirect('menu/categorias');
         }

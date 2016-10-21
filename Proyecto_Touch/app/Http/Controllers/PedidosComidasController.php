@@ -44,7 +44,11 @@ class PedidosComidasController extends Controller
         /*$mesalog =Auth::user()->numero_mesa;
         $idpedido=pedido::select('id_pedido')->where('numero_mesa',$mesalog)->where('estado','impago')->get();*/
         $pedidocomida->id_pedidoc=10;
-        /*$pedidocomida->horac=date();*/
+        $hora_segundos = time() - 10800;
+
+        $hora = date("H:i:s",$hora_segundos);
+        $pedidocomida->horac = $hora;
+
          if($pedidocomida->save()){
             return redirect('menu/categorias');
         }
