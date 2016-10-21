@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class pedidobebida extends Model
 {
+	public $timestamps = false;
+	
     protected $table = 'pedidosbebidas';
 
     protected $fillable = ['hora'];

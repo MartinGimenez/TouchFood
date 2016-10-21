@@ -90,6 +90,6 @@ class BebidasController extends Controller
     {
         $comidas = bebida::where('categoria',$categoria)->get();
         $tipo= "bebidas";
-        return view('app.menu.comidas.index')->with('comidas',$comidas)->with('tipo',$tipo);     
+        return view('app.menu.comidas.index')->with('comidas',$comidas)->with('categoria',$categoria)->with('tipo',$tipo);     
     }
 }

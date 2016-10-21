@@ -57,12 +57,35 @@
               <?php echo e(ucwords($comida->ingredientes)); ?>
 
               </p>
-              <form method="POST" action="<?php echo e(route('prueba')); ?>">
+              <?php if($tipo=="comidas"): ?>
+              <form method="POST" action="<?php echo e(route('pedidoscomidas')); ?>">
               <?php echo csrf_field(); ?>
 
               <input type="hidden" name="id_plato" value="<?php echo e($comida->id_plato); ?>">
               <div class="secondary-content"><a class="waves-effect waves-light btn modal-trigger" href="#<?php echo e($comida->id_plato); ?>">Pedir</a>
+              </form>
+              <?php endif; ?>
 
+               <?php if($tipo=="bebidas"): ?>
+              <form method="POST" action="<?php echo e(route('pedidosbebidas')); ?>">
+              <?php echo csrf_field(); ?>
+
+              <input type="hidden" name="id_bebida" value="<?php echo e($comida->id_bebida); ?>">
+              <div class="secondary-content"><a class="waves-effect waves-light btn modal-trigger" href="#<?php echo e($comida->id_bebida); ?>">Pedir</a>
+              </form>
+              <?php endif; ?>
+
+               <?php if($tipo=="postres"): ?>
+              <form method="POST" action="<?php echo e(route('pedidospostres')); ?>">
+              <?php echo csrf_field(); ?>
+
+              <input type="hidden" name="id_postre" value="<?php echo e($comida->id_postre); ?>">
+              <div class="secondary-content"><a class="waves-effect waves-light btn modal-trigger" href="#<?php echo e($comida->id_postre); ?>">Pedir</a>
+              </form>
+              <?php endif; ?>
+              
+
+              <?php if($tipo=="comidas"): ?>
               <div id="<?php echo e($comida->id_plato); ?>" class="modal">
                 <div class="modal-content">
                   <h4>Confirmación</h4>
@@ -72,6 +95,30 @@
                   <button class="btn waves-effect waves-light red darken-2" type="submit" name="action"> Pedir <i class="material-icons right">send</i></button>
                 </div>
               </div>
+              <?php endif; ?>
+              <?php if($tipo=="bebidas"): ?>
+              <div id="<?php echo e($comida->id_bebida); ?>" class="modal">
+                <div class="modal-content">
+                  <h4>Confirmación</h4>
+                  <p>¿Desea pedir <?php echo e(ucwords($comida->nombre)); ?>? </p>
+                </div>
+                <div class="modal-footer">
+                  <button class="btn waves-effect waves-light red darken-2" type="submit" name="action"> Pedir <i class="material-icons right">send</i></button>
+                </div>
+              </div>
+              <?php endif; ?>
+              <?php if($tipo=="postres"): ?>
+              <div id="<?php echo e($comida->id_postre); ?>" class="modal">
+                <div class="modal-content">
+                  <h4>Confirmación</h4>
+                  <p>¿Desea pedir <?php echo e(ucwords($comida->nombre)); ?>? </p>
+                </div>
+                <div class="modal-footer">
+                  <button class="btn waves-effect waves-light red darken-2" type="submit" name="action"> Pedir <i class="material-icons right">send</i></button>
+                </div>
+              </div>
+              <?php endif; ?>
+
 
               </form>
             </li>
@@ -91,7 +138,5 @@
 
 
 <?php $__env->stopSection(); ?>
-
-  
 
 <?php echo $__env->make('app.template.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

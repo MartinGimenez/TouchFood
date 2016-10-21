@@ -7,7 +7,7 @@ use Auth;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\pedidobebida;
-use App\pedido
+use App\pedido;
 
 class PedidosBebidasController extends Controller
 {
@@ -41,9 +41,9 @@ class PedidosBebidasController extends Controller
     {
         $pedidobebida = new pedidobebida;
         $pedidobebida->id_bebida= $request->id_bebida;
-        /*$mesalog =Auth::user()->numero_mesa;
-        $idpedido=pedido::select('id_pedido')->where('numero_mesa',$mesalog)->where('estado','impago')->get();*/
-        $pedidobebida->id_pedidob=10;
+        $numero_mesa =Auth::user()->numero_mesa;
+        $pedido=pedido::where('numero_mesa',$numero_mesa)->where('estado','impago')->first();
+        $pedidobebida->id_pedidob=$pedido->id_pedido;
         $hora_segundos = time() - 10800;
         $hora = date("H:i:s",$hora_segundos);
         $pedidobebida->horab = $hora;
