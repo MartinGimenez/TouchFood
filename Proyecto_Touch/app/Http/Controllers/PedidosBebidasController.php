@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\pedidobebida;
 use App\pedido;
+use DB;
 
 class PedidosBebidasController extends Controller
 {
@@ -97,4 +98,6 @@ class PedidosBebidasController extends Controller
     {
         //
     }
+
+
 }

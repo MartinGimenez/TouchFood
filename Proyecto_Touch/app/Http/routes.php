@@ -11,7 +11,10 @@
 |
 */
 
-
+Route::get ('pedido-listado', [
+	'uses' 	=>	'PedidosListadoController@index',
+	'as'	=>	'pedido.index'
+]);
 
 Route::get ('pedido', [
 	'uses' 	=>	'PedidosController@agregar_pedido',
