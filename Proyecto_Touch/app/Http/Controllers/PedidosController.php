@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use App\pedido;
+use App\mesa;
 use Auth;
 
 
@@ -90,6 +91,12 @@ class PedidosController extends Controller
     }
 
     public function agregar_pedido(){
+        
+        $numero_mesa =Auth::user()->numero_mesa;
+
+        mesa::where('numero_mesa', $numero_mesa)
+          ->update(['estado' => 'ocupada']);
+
         $pedido = new pedido;
         $pedido->numero_mesa = Auth::user()->numero_mesa;
         $pedido->estado = 'impago';

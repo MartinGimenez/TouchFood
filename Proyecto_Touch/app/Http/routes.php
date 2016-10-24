@@ -11,6 +11,19 @@
 |
 */
 
+Route::get ('pagos', [
+	'uses' 	=>	'PagoController@index',
+	'as'	=>	'pagos.index'
+]);
+
+
+Route::get ('pagado', [
+	'uses' 	=>	'PagoController@actualizarpedido',
+	'as'	=>	'pagado.index'
+]);
+
+
+
 Route::get ('pedido-listado', [
 	'uses' 	=>	'PedidosListadoController@index',
 	'as'	=>	'pedido.index'

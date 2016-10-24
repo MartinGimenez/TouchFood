@@ -14,6 +14,7 @@
 	        	<tr>
 	            	<td>{{ $mesa->numero_mesa }}</td>
 	            	<td>{{ $mesa->capacidad }}</td>
+	            	<td>{{ $mesa->estado}}</td>
 	          	</tr>
 	        	@endforeach
 	        </tbody>
