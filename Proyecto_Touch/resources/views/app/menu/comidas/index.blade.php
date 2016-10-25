@@ -62,7 +62,7 @@
               <form method="POST" action="{{ route('pedidoscomidas') }}">
               {!! csrf_field() !!}
               <input type="hidden" name="id_plato" value="{{$comida->id_plato}}">
-              <div class="secondary-content"><a class="waves-effect waves-light btn modal-trigger" href="#{{$comida->id_plato}}">Pedir</a>
+              <div class="secondary-content"><a class="btn tooltipped btn-floating btn-large waves-effect waves-light red darken-3 z-depth-3 waves-effect waves-light btn modal-trigger" href="#{{$comida->id_plato}}" data-position="bottom" data-delay="50" data-tooltip="Agregar a mi pedido"><i class="material-icons">done</i></a>
               </form>
               @endif
 
@@ -70,7 +70,8 @@
               <form method="POST" action="{{ route('pedidosbebidas') }}">
               {!! csrf_field() !!}
               <input type="hidden" name="id_bebida" value="{{$comida->id_bebida}}">
-              <div class="secondary-content"><a class="waves-effect waves-light btn modal-trigger" href="#{{$comida->id_bebida}}">Pedir</a>
+              <div class="secondary-content"><a class="btn tooltipped btn-floating btn-large waves-effect waves-light red darken-3 z-depth-3 waves-effect waves-light btn modal-trigger" href="#{{$comida->id_bebida}}" data-position="bottom" data-delay="50" data-tooltip="Agregar a mi pedido"><i class="material-icons">done</i></a>
+              <!--div class="secondary-content"><a class="waves-effect waves-light btn modal-trigger" href="#{{$comida->id_bebida}}">Pedir</a-->
               </form>
               @endif
 
@@ -78,7 +79,8 @@
               <form method="POST" action="{{ route('pedidospostres') }}">
               {!! csrf_field() !!}
               <input type="hidden" name="id_postre" value="{{$comida->id_postre}}">
-              <div class="secondary-content"><a class="waves-effect waves-light btn modal-trigger" href="#{{$comida->id_postre}}">Pedir</a>
+              <div class="secondary-content"><a class="btn tooltipped btn-floating btn-large waves-effect waves-light red darken-3 z-depth-3 waves-effect waves-light btn modal-trigger" href="#{{$comida->id_postre}}" data-position="bottom" data-delay="50" data-tooltip="Agregar a mi pedido"><i class="material-icons">done</i></a>
+              <!--div class="secondary-content"><a class="waves-effect waves-light btn modal-trigger" href="#{{$comida->id_postre}}">Pedir</a-->
               </form>
               @endif
               
@@ -86,33 +88,37 @@
               @if ($tipo=="comidas")
               <div id="{{$comida->id_plato}}" class="modal">
                 <div class="modal-content">
-                  <h4>Confirmación</h4>
-                  <p>¿Desea pedir {{ ucwords($comida->nombre) }}? </p>
+                  <h4 class="red-text">Confirmación</h4>
+                  <p class="red-text text-darken-2">¿Desea pedir {{ ucwords($comida->nombre) }}? </p>
                 </div>
                 <div class="modal-footer">
-                  <button class="btn waves-effect waves-light red darken-2" type="submit" name="action"> Pedir <i class="material-icons right">send</i></button>
+                  <button style="float:center;" class="btn waves-effect waves-light red darken-2" type="submit" name="action"> Pedir <i class="material-icons right">done</i></button>
+                  <a href="{{ route('menu.categorias') }}" <button style="float:left;" class="btn waves-effect waves-light red darken-2" type="submit" name="action"> Cancelar <i class="material-icons right">error</i></button></a>
                 </div>
               </div>
               @endif
               @if ($tipo=="bebidas")
               <div id="{{$comida->id_bebida}}" class="modal">
                 <div class="modal-content">
-                  <h4>Confirmación</h4>
-                  <p>¿Desea pedir {{ ucwords($comida->nombre) }}? </p>
+                  <h4 class="red-text">Confirmación</h4>
+                  <p class="red-text text-darken-2">¿Desea pedir {{ ucwords($comida->nombre) }}? </p>
                 </div>
                 <div class="modal-footer">
-                  <button class="btn waves-effect waves-light red darken-2" type="submit" name="action"> Pedir <i class="material-icons right">send</i></button>
+                  <button style="float:center;" class="btn waves-effect waves-light red darken-2" type="submit" name="action"> Pedir <i class="material-icons right">done</i></button>
+                  <a href="{{ route('menu.categorias') }}" <button style="float:left;" class="btn waves-effect waves-light red darken-2" type="submit" name="action"> Cancelar <i class="material-icons right">error</i></button></a>
                 </div>
+
               </div>
               @endif
               @if ($tipo=="postres")
               <div id="{{$comida->id_postre}}" class="modal">
                 <div class="modal-content">
-                  <h4>Confirmación</h4>
-                  <p>¿Desea pedir {{ ucwords($comida->nombre) }}? </p>
+                  <h4 class="red-text">Confirmación</h4>
+                  <p class="red-text text-darken-2">¿Desea pedir {{ ucwords($comida->nombre) }}? </p>
                 </div>
                 <div class="modal-footer">
-                  <button class="btn waves-effect waves-light red darken-2" type="submit" name="action"> Pedir <i class="material-icons right">send</i></button>
+                  <button style="float:center;" class="btn waves-effect waves-light red darken-2" type="submit" name="action"> Pedir <i class="material-icons right">done</i></button>
+                  <a href="{{ route('menu.categorias') }}" <button style="float:left;" class="btn waves-effect waves-light red darken-2" type="submit" name="action"> Cancelar <i class="material-icons right">error</i></button></a>
                 </div>
               </div>
               @endif

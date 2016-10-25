@@ -14,8 +14,10 @@
   <body class="grey darken-3">
 
     <nav>
-      <div class="nav-wrapper red darken-2 z-depth-3">
-        <a href="#!" class="brand-logo center">Touchfood</a>
+      <div class="nav-wrapper red darken-2 z-depth-3 center">
+        <font FACE="Calibri" SIZE=10 COLOR="white" center>touch</font>
+        <font FACE="Calibri" SIZE=10 COLOR="white" center><b>food</b></font>
+        <p class="grey-text text-lighten-4"></p>
       </div>
     </nav>
 
@@ -78,8 +80,8 @@
 
         <div class="col l4 s12">
             <h5 class="white-text">Tu comida a un toque</h5>
-            <font FACE="Mistral" SIZE=10 COLOR="white" center><b>Touch</b></font>
-            <font FACE="Mistral" SIZE=10 COLOR="white" center>Food</font>
+            <font FACE="Calibri" SIZE=10 COLOR="white" center>touch</font>
+            <font FACE="Calibri" SIZE=10 COLOR="white" center><b>food</b></font>
             <p class="grey-text text-lighten-4"></p>
           </div>
           <div class="col l4 s12">

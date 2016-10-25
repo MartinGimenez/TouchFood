@@ -19,10 +19,11 @@
     <!--      ENCABEZADO      -->
     <nav>
       <div class="nav-wrapper red darken-2 z-depth-3">
-        <a href="{{ route('bienvenida') }}" class="brand-logo center">Touchfood</a>
+        <a href="{{ route('bienvenida') }}" class="brand-logo center"><font FACE="Calibri" SIZE=10 COLOR="white" center>touch<b>food</b></font></a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
         <li><a href="{{ route('auth.logout') }}" <button type="button" class="waves-effect waves-light btn-large red darken-2">Salir</button></a></li>
+        <!--li><a href="{{ route('auth.login') }}" <button type="button" class="waves-effect waves-light btn-large red darken-2">Salir</button></a></li-->
         </ul>
         <ul class="left hide-on-med-and-down">
           <!--a class="btn-floating btn-large waves-effect waves-light red darken-3 z-depth-3"><i class="material-icons">replay</i></a-->
@@ -53,8 +54,8 @@
 
         <div class="col l4 s12">
             <h5 class="white-text">Tu comida a un toque</h5>
-            <font FACE="Mistral" SIZE=10 COLOR="white" center><b>Touch</b></font>
-            <font FACE="Mistral" SIZE=10 COLOR="white" center>Food</font>
+            <font FACE="Calibri" SIZE=10 COLOR="white" center>touch</font>
+            <font FACE="Calibri" SIZE=10 COLOR="white" center><b>food</b></font>
             <p class="grey-text text-lighten-4"></p>
           </div>
           <div class="col l4 s12">
