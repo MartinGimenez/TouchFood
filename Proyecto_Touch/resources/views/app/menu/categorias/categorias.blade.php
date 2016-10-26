@@ -17,7 +17,7 @@
                             .stroke {
                             text-align: center;
                             color: white;
-                            font-family: Georgia, serif;
+                            font-family: Calibri;
                             font-size: 40px;
                             letter-spacing: 10;
                             text-shadow: -1px -1px 1px #333, 1px -1px 1px #333, -1px 1px 1px #333, 1px 1px 1px #333;
@@ -27,8 +27,16 @@
                     </div>
                 </div>
                 <li class="collection-header red darken-2"></li>
+                <style type="text/css"> 
+                            .strok1 {
+                            text-align: left;
+                            color: white;
+                            font-family: Calibri;
+                            font-size: 20px;
+                            }
+                        </style>
                    @foreach($categorias_comidas as $categoria_comidas)
-                   <li class="collection-item red darken-1"><div> {{ ucwords($categoria_comidas->categoria) }}<a href="comidas/{{$categoria_comidas->categoria }}" class="grey-text text-lighten-4 right"><i class="material-icons">view_headline</i></a></div></li>             
+                   <li class="collection-item red darken-1 strok1"><div> {{ ucwords($categoria_comidas->categoria) }}<a href="comidas/{{$categoria_comidas->categoria }}" class="grey-text text-lighten-4 right"><i class="material-icons">view_headline</i></a></div></li>             
                 @endforeach
             </ul>
         </div>
@@ -45,7 +53,7 @@
     			</div>
     			<li class="collection-header red darken-2"></li>
 	    		@foreach($categorias_bebidas as $categoria_bebidas)
-	   			<li class="collection-item red darken-1"><div>{{ ucwords($categoria_bebidas->categoria) }}<a href="bebidas/{{$categoria_bebidas->categoria }}" class="grey-text text-lighten-4 right"><i class="material-icons">view_headline</i></a></div></li>	          	
+	   			<li class="collection-item red darken-1 strok1"><div>{{ ucwords($categoria_bebidas->categoria) }}<a href="bebidas/{{$categoria_bebidas->categoria }}" class="grey-text text-lighten-4 right"><i class="material-icons">view_headline</i></a></div></li>	          	
 	    		@endforeach
 			</ul>
         </div>
@@ -62,7 +70,7 @@
                 </div>
                 <li class="collection-header red darken-2"></li>
                 @foreach($categorias_postres as $categoria_postres)
-                <li class="collection-item red darken-1"><div>{{ ucwords($categoria_postres->categoria) }}<a href="postres/{{$categoria_postres->categoria }}" class="grey-text text-lighten-4 right"><i class="material-icons">view_headline</i></a></div></li>             
+                <li class="collection-item red darken-1 strok1"><div>{{ ucwords($categoria_postres->categoria) }}<a href="postres/{{$categoria_postres->categoria }}" class="grey-text text-lighten-4 right"><i class="material-icons">view_headline</i></a></div></li>             
                 @endforeach
             </ul>
             </ul>

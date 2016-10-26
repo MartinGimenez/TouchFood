@@ -29,7 +29,7 @@
                             text-align: center;
                             color: white;
                             font-family: Calibri;
-                            font-size: 50px;
+                            font-size: 35px;
                             }
                         </style>
 			        </tr>
@@ -46,7 +46,7 @@
                             text-align: center;
                             color: white;
                             font-family: Calibri;
-                            font-size: 25px;
+                            font-size: 20px;
                             }
                         </style>
 			        	

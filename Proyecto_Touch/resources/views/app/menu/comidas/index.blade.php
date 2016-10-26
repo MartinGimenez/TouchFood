@@ -54,8 +54,17 @@
               <img src="{{asset('images/Iconos/verduras.jpg')}}" alt="" class="circle">
               @endif
 
-              <span class="title">{{ ucwords($comida->nombre) }}</span>
-              <p>${{ ucwords($comida->precio) }}<br>
+              <style type="text/css"> 
+                            .strok1 {
+                            text-align: left;
+                            color: white;
+                            font-family: Calibri;
+                            font-size: 20px;
+                            }
+                        </style>
+
+              <span class="strok1">{{ ucwords($comida->nombre) }}</span>
+              <p class= "strok1">${{ ucwords($comida->precio) }}<br>
               {{ ucwords($comida->ingredientes) }}
               </p>
               @if($tipo=="comidas")
