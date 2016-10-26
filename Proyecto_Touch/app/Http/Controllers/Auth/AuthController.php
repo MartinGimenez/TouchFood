@@ -36,7 +36,7 @@ class AuthController extends Controller
     }
 
     protected $redirectPath = 'comenzar';
-    protected $loginPath = '/auth/login';
+    protected $loginPath = '/user/login';
     /**
      * Get a validator for an incoming registration request.
      *

@@ -11,11 +11,11 @@ class AdminController extends Controller {
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->user = "admin";
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->user = "admin";
+    //     $this->middleware('admin');
+    // }
 
 
 	public function index()

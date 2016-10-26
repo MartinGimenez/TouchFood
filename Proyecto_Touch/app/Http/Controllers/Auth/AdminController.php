@@ -24,8 +24,10 @@ class AdminController extends Controller
 
     use AuthenticatesAndRegistersUsers;
 
-    protected $redirectAfterLogout = "admin/login";
+    /*protected $redirectAfterLogout = "admin/login";
+    protected $redirectPath = 'admin/home';*/
     protected $redirectPath = 'admin/home';
+    protected $loginPath = '/admin/login';
 
     /**
      * Create a new authentication controller instance.

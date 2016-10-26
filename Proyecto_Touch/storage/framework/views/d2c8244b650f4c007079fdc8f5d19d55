@@ -55,7 +55,7 @@
 <body>
 <fieldset>
 <center>
-    <?php echo Form::open(['route' => 'app.auth.login', 'method' => 'POST']); ?>
+    <?php echo Form::open(['route' => 'app.user.login', 'method' => 'POST']); ?>
 
         <?php echo Form::label('mesa','Mesa'); ?>
 
