@@ -10,7 +10,6 @@
                 padding: 0;
                 width: 100%;
                 height: 100%;
-                color: #B0BEC5;
                 display: table;
                 font-weight: 100;
                 font-family: 'Lato';
@@ -35,38 +34,21 @@
             .quote {
                 font-size: 24px;
             }
+
+            a {
+                color: #222;
+                text-decoration: none;
+                font-size: 20px;
+                font-weight: bold;
+            }
         </style>
     </head>
     <body>
-       <html lang="es">
-<head>
-<title>Formulario</title>
-<meta charset="utf-8">
-<script src="form.js"></script>
-<script src="http://code.jquery.com/jquery-3.0.0.min.js"></script>
-<script >
-    $(document).on("ready", function(){
-        $("h1").text("cambieeee");
-    });
-
-</script>
-</head>
-
-<body>
-<fieldset>
-<center>
-    {!! Form::open(['route' => 'app.auth.login', 'method' => 'POST']) !!}
-        {!! Form::label('mesa','Mesa') !!}
-    {!! Form::close() !!}
-<h1>Formulario</h1>
-    <form name="formulario" id="formulario_id" method="GET">
-        Usuario:  <input type="text" id="nombre"> <br/><br/>
-        Contraseña:  <input type="text" id="apellido"><br/><br/>
-    </form>
-</center>
-</fieldset>
-<body>
-
-</html>
+        <div class="container">
+            <div class="content">
+                <div class="title">Bienvenidos</div>
+                <a target="_blank" href="{{ action('Auth\AuthController@getLogin') }}">User Login</a> | <a target="_blank" href="{{ action('Auth\AdminController@getLogin') }}">Admin Login</a>
+            </div>
+        </div>
     </body>
 </html>

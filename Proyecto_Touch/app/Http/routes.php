@@ -11,6 +11,10 @@
 |
 */
 
+Route::get('/', function () {
+    return view('welcome');
+});
+
 Route::get ('pagos', [
 	'uses' 	=>	'PagoController@index',
 	'as'	=>	'pagos.index'
@@ -52,28 +56,54 @@ Route::post ('pedidospostres', [
 Route::get ('pruebascroll/p', 'ComidasController@index');
 
 
-
-Route::get('auth/login', [
+//Creando rutas para LOGIN y REGISTER de mesas
+Route::get('user/login', [
 	'uses'	=>	'Auth\AuthController@getLogin',
-	'as'	=>	'auth.login'
+	'as'	=>	'user.login'
 ]);
-Route::post('auth/login', [
+Route::post('user/login', [
 	'uses'	=>	'Auth\AuthController@postLogin',
-	'as'	=>	'auth.login'
+	'as'	=>	'user.login'
 ]);
-Route::get('auth/logout', [
+Route::get('user/logout', [
 	'uses'	=>	'Auth\AuthController@getLogout',
-	'as'	=>	'auth.logout'
+	'as'	=>	'user.logout'
 ]);
 
-Route::get('auth/register', [
+Route::get('user/register', [
 	'uses'	=>	'Auth\AuthController@getRegister',
-	'as'	=>	'auth.register'
+	'as'	=>	'user.register'
 ]);
-Route::post('auth/register', [
+Route::post('user/register', [
 	'uses'	=>	'Auth\AuthController@postRegister',
-	'as'	=>	'auth.register'
+	'as'	=>	'user.register'
 ]);
+
+//Creando rutas para LOGIN y REGISTER de ADMIN
+Route::get('admin/login', [
+	'uses'	=>	'Auth\AdminController@getLogin',
+	'as'	=>	'admin.login'
+]);
+Route::post('admin/login', [
+	'uses'	=>	'Auth\AdminController@postLogin',
+	'as'	=>	'admin.login'
+]);
+Route::get('admin/logout', [
+	'uses'	=>	'Auth\AdminController@getLogout',
+	'as'	=>	'admin.logout'
+]);
+
+Route::get('admin/register', [
+	'uses'	=>	'Auth\AdminController@getRegister',
+	'as'	=>	'admin.register'
+]);
+Route::post('admin/register', [
+	'uses'	=>	'Auth\AdminController@postRegister',
+	'as'	=>	'admin.register'
+]);
+
+Route::get('/admin/home', ['uses' => 'AdminController@index']);
+
 Route::get('menu/comidas/{categoria}','ComidasController@comidas_por_categoria');
 Route::get('menu/bebidas/{categoria}','BebidasController@bebidas_por_categoria');
 Route::get('menu/postres/{categoria}','PostresController@postres_por_categoria');
@@ -96,6 +126,7 @@ Route::group(['middleware' => 'auth'], function () {
     return view('comenzar');
 });
 });
+
 
 Route::group(['prefix' => 'admin' ], function(){
 

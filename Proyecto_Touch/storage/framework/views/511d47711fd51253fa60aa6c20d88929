@@ -1,0 +1,56 @@
+
+
+<?php $__env->startSection('content'); ?>
+
+<div class="row">
+    <div class="col s12">
+      	<div class="card-panel red darken-2 z-depth-3">
+			<table class="bordered responsive-table centered">
+			    <thead>
+			        <tr>
+			            <th data-field="name">Comida</th>
+			            <th data-field="precio">Precio</th>
+			        </tr>
+			    </thead>
+
+			    <tbody>
+			    	<?php foreach($pedidoscomidas as $pedidocomida): ?>
+			      	<tr>
+			        	<td><?php echo e($pedidocomida->nombre); ?></td>
+			        	<td><?php echo e($pedidocomida->precio); ?></td>
+			        	
+			        	
+			      	</tr>
+			    <?php endforeach; ?>
+			    
+			    <?php foreach($pedidosbebidas as $pedidobebida): ?>
+			      	<tr>
+			        	<td><?php echo e($pedidobebida->nombre); ?></td>
+			        	<td><?php echo e($pedidobebida->precio); ?></td>
+			        	
+			      	</tr>
+			    <?php endforeach; ?>
+			   
+				<?php foreach($pedidospostres as $pedidopostre): ?>
+			  		<tr>
+			   	 		<td><?php echo e($pedidopostre->nombre); ?></td>
+			   			<td><?php echo e($pedidopostre->precio); ?></td>
+			   			
+			   		
+			 	 	</tr>
+				<?php endforeach; ?>
+
+				</tbody>
+			</table>  
+		</div>
+	</div>
+</div>  
+
+El total a pagar es :<?php echo e($suma); ?>   
+
+<a href="<?php echo e(route('pagado.index')); ?>" class="waves-effect waves-light btn-large red darken-4">Pagar</a>
+
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('app.template.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

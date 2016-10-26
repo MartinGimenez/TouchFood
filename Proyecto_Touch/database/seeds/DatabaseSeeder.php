@@ -12,10 +12,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Model::unguard();
-
-        // $this->call('UserTableSeeder');
-
-        Model::reguard();
+        \DB::table('oferente') -> insert(array(
+            'name' => 'Jhon Doe',
+            'email' => 'mail@mail.com',
+            'password' => bcrypt('123456')
+            //'remember_token' => rememberToken()
+            
+        ));
     }
 }

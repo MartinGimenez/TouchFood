@@ -22,7 +22,7 @@
         <a href="{{ route('bienvenida') }}" class="brand-logo center"><font FACE="Calibri" SIZE=10 COLOR="white" center>touch<b>food</b></font></a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
-        <li><a href="{{ route('auth.logout') }}" <button type="button" class="waves-effect waves-light btn-large red darken-2">Salir</button></a></li>
+        <li><a href="{{ route('user.logout') }}" <button type="button" class="waves-effect waves-light btn-large red darken-2">Salir</button></a></li>
         <!--li><a href="{{ route('auth.login') }}" <button type="button" class="waves-effect waves-light btn-large red darken-2">Salir</button></a></li-->
         </ul>
         <ul class="left hide-on-med-and-down">
@@ -38,7 +38,7 @@
           <li><a href="{{ route('menu.categorias') }}" <button type="button" class="waves-effect waves-light btn-large red darken-2">Menú</button></a></li>
           <li><a href="#!" <button type="button" class="waves-effect waves-light btn-large red darken-2">Pedido</button></a></li>
           <li><a href="#!" <button type="button" class="waves-effect waves-light btn-large red darken-2">Pago</button></a></li>
-          <li><a href="{{ route('auth.logout') }}" <button type="button" class="waves-effect waves-light btn-large red darken-2">Salir</button></a></li>
+          <li><a href="{{ route('user.logout') }}" <button type="button" class="waves-effect waves-light btn-large red darken-2">Salir</button></a></li>
         </ul>
       </div>
     </nav>
