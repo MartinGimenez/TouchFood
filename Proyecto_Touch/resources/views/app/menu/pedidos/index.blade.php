@@ -57,8 +57,8 @@
 					@foreach($pedidospostres as $pedidopostre)
 			  		<tr>
 			  			<td class="agrandarletra">{{ ucwords($pedidopostre->nombre) }}</td>
-			  			<td class="agrandarletra">$ {{ ucwords($pedidobebida->tiempo_preparacion) }}</td>
-			  			<td class="agrandarletra">$ {{ ucwords($pedidobebida->precio) }}</td>
+			  			<td class="agrandarletra">$ {{ ucwords($pedidopostre->tiempo_preparacion) }}</td>
+			  			<td class="agrandarletra">$ {{ ucwords($pedidopostre->precio) }}</td>
 			  			
 			   		 	<td><a href="{{ route('menu.categorias') }}" class="btn tooltipped btn-floating btn-large waves-effect waves-light red darken-3 z-depth-3" data-position="bottom" data-delay="50" data-tooltip="Eliminar"><i class="material-icons">delete</i></a></td>	
 			 	 	</tr>
