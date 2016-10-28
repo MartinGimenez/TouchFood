@@ -11,6 +11,23 @@
 |
 */
 
+
+Route::post ('pedido-listado-cancelacionp', [
+	'uses' 	=>	'PedidosListadoController@deletep',
+	'as'	=>	'pedidoscancelacionp'
+]);
+
+
+Route::post ('pedido-listado-cancelacionb', [
+	'uses' 	=>	'PedidosListadoController@deleteb',
+	'as'	=>	'pedidoscancelacionb'
+]);
+
+Route::post ('pedido-listado-cancelacionc', [
+	'uses' 	=>	'PedidosListadoController@deletec',
+	'as'	=>	'pedidoscancelacionc'
+]);
+
 Route::get('/', function () {
     return view('welcome');
 });

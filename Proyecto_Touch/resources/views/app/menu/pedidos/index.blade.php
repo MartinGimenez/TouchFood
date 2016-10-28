@@ -12,7 +12,7 @@
 			    <thead >
 			        <tr class="center">
 			            <th data-field="name" class="tituloscyp">Comida</th>
-			            <th data-field="precio" class="tituloscyp">Tiempo de cocción</th>
+			            <th data-field="precio" class="tituloscyp">Demora</th>
 			            <th data-field="precio" class="tituloscyp">Precio</th>
 			            <style type="text/css"> 
                             .tituloscyp {
@@ -29,10 +29,16 @@
 			    	@foreach($pedidoscomidas as $pedidocomida)
 			      	<tr>
 			        	<td class="agrandarletra">{{ ucwords($pedidocomida->nombre) }}</td>
-			        	<td class="agrandarletra">$ {{ ucwords($pedidocomida->tiempo_coccion) }}</td>
+			        	<td class="agrandarletra"> {{ ucwords($pedidocomida->tiempo_coccion) }}</td>
 			        	<td class="agrandarletra">$ {{ ucwords($pedidocomida->precio) }}</td>
 
-			      	 	<td><a href="{{ route('menu.categorias') }}" class="btn tooltipped btn-floating btn-large waves-effect waves-light red darken-3 z-depth-3" data-position="bottom" data-delay="50" data-tooltip="Eliminar"><i class="material-icons">delete</i></a></td>	
+			        	<form method="POST" action="{{ route('pedidoscancelacionc') }}">
+              			{!! csrf_field() !!}
+              			<input type="hidden" name="id_plato" value="{{$pedidocomida->id_plato}}">	
+			        	<td><button style="float:center;" class="btn waves-effect waves-light red darken-2" type="submit" name="action"><i class="material-icons right">delete</i></button> </td>
+			        	</form>
+
+			      	 	
 			      		<style type="text/css"> 
                             .agrandarletra {
                             text-align: center;
@@ -47,20 +53,52 @@
 			    	@foreach($pedidosbebidas as $pedidobebida)
 			      	<tr>
 			        	<td class="agrandarletra">{{ ucwords($pedidobebida->nombre) }}</td>
-			        	<td class="agrandarletra">$ {{ ucwords($pedidobebida->tiempo_servicio) }}</td>
-			        	<td class="agrandarletra">$ {{ ucwords($pedidobebida->precio) }}</td>		        	
-			        	
-			        	<td><a href="{{ route('menu.categorias') }}" class="btn tooltipped btn-floating btn-large waves-effect waves-light red darken-3 z-depth-3" data-position="bottom" data-delay="50" data-tooltip="Eliminar"><i class="material-icons">delete</i></a></td>
+			        	<td class="agrandarletra"> {{ ucwords($pedidobebida->tiempo_servicio) }}</td>
+			        	<td class="agrandarletra">$ {{ ucwords($pedidobebida->precio) }}</td>	
+
+			        	<form method="POST" action="{{ route('pedidoscancelacionb') }}">
+              			{!! csrf_field() !!}
+              			<input type="hidden" name="id_bebida" value="{{$pedidobebida->id_bebida}}">	
+			        	<td><button style="float:center;" class="btn waves-effect waves-light red darken-2" type="submit" name="action"><i class="material-icons right">delete</i></button> </td>
+			        	</form>
+
+
+
+			        	<style type="text/css"> 
+                            .agrandarletra {
+                            text-align: center;
+                            color: white;
+                            font-family: Calibri;
+                            font-size: 20px;
+                            }
+                        </style>
+
 			      	</tr>
 			    	@endforeach
 			   
 					@foreach($pedidospostres as $pedidopostre)
 			  		<tr>
 			  			<td class="agrandarletra">{{ ucwords($pedidopostre->nombre) }}</td>
-			  			<td class="agrandarletra">$ {{ ucwords($pedidopostre->tiempo_preparacion) }}</td>
+			  			<td class="agrandarletra"> {{ ucwords($pedidopostre->tiempo_preparacion) }}</td>
 			  			<td class="agrandarletra">$ {{ ucwords($pedidopostre->precio) }}</td>
 			  			
-			   		 	<td><a href="{{ route('menu.categorias') }}" class="btn tooltipped btn-floating btn-large waves-effect waves-light red darken-3 z-depth-3" data-position="bottom" data-delay="50" data-tooltip="Eliminar"><i class="material-icons">delete</i></a></td>	
+			   		 	<form method="POST" action="{{ route('pedidoscancelacionp') }}">
+              			{!! csrf_field() !!}
+              			<input type="hidden" name="id_postre" value="{{$pedidopostre->id_postre}}">	
+			        	<td><button style="float:center;" class="btn waves-effect waves-light red darken-2" type="submit" name="action"><i class="material-icons right">delete</i></button> </td>
+			        	</form>
+
+
+
+			        	<style type="text/css"> 
+                            .agrandarletra {
+                            text-align: center;
+                            color: white;
+                            font-family: Calibri;
+                            font-size: 20px;
+                            }
+                        </style>
+
 			 	 	</tr>
 					@endforeach
 				</tbody>
