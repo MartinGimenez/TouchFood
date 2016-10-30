@@ -27,14 +27,14 @@
         </ul>
         <ul class="left hide-on-med-and-down">
           <!--a class="btn-floating btn-large waves-effect waves-light red darken-3 z-depth-3"><i class="material-icons">replay</i></a-->
-          <li><a href="">{{ Auth::user()->name }}</a></li>
+          <!--li><a href="">{{ Auth::user()->name }}</a></li-->
           <li><a href="{{ route('menu.categorias') }}" <button type="button" class="waves-effect waves-light btn-large red darken-2">Menú</button></a></li>
           <li><a href="{{ route('pedido.index') }}" <button type="button" class="waves-effect waves-light btn-large red darken-2">Pedido</button></a></li>
           <li><a href="{{ route('pagos.index') }}" <button type="button" class="waves-effect waves-light btn-large red darken-2">Pago</button></a></li>
           
         </ul>
         <ul class="side-nav" id="mobile-demo">
-          <li><a href="">{{ Auth::user()->name }}</a></li>
+          <!--li><a href="">{{ Auth::user()->name }}</a></li-->
           <li><a href="{{ route('menu.categorias') }}" <button type="button" class="waves-effect waves-light btn-large red darken-2">Menú</button></a></li>
           <li><a href="#!" <button type="button" class="waves-effect waves-light btn-large red darken-2">Pedido</button></a></li>
           <li><a href="#!" <button type="button" class="waves-effect waves-light btn-large red darken-2">Pago</button></a></li>
@@ -42,6 +42,24 @@
         </ul>
       </div>
     </nav>
+
+
+    <ul id="slide-out" class="side-nav">
+      <li><div class="userView">
+        <img class="background" src="{{ asset('images/M/Fondo.jpeg')}}">
+        <a href="#!user"><img class="circle" src="{{ asset('images/M/M3.jpg')}}"></a>
+        <!--a href="#!name"><span class="white-text name">Usted es</span></a-->
+        <a class= "white-text" href="">{{ Auth::user()->name }}<!--span class="white-text email">Bienvenido</span--></a>
+      </div></li>
+      <li><a href="{{ route('bienvenida') }}" class="red-text"><i class="material-icons red-text">view_carousel</i>Ir a la pantalla principal</a></li>
+      <font FACE="Calibri" SIZE=10 COLOR="red" center>touch</font>
+      <font FACE="Calibri" SIZE=10 COLOR="red" center><b>food</b></font>
+      <li><div class="divider"></div></li>
+      <li><a class="subheader">Configuracion</a></li>
+      <li><a class="waves-effect red-text" href="#!">Acerca de nosotros</a></li>
+      <li><a class="waves-effect red-text" href="#!">Ayuda</a></li>
+    </ul>
+    <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons white-text">trending_flat</i></a>
 
   <section>
     @yield('content')

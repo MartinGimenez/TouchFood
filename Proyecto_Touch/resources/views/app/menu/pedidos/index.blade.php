@@ -35,7 +35,7 @@
 			        	<form method="POST" action="{{ route('pedidoscancelacionc') }}">
               			{!! csrf_field() !!}
               			<input type="hidden" name="id_plato" value="{{$pedidocomida->id_plato}}">	
-			        	<td><button style="float:center;" class="btn waves-effect waves-light red darken-2" type="submit" name="action"><i class="material-icons right">delete</i></button> </td>
+			        	<td><button style="float:center;" class="btn-floating btn-large waves-effect waves-light red darken-3 z-depth-3" type="submit" name="action"><i class="material-icons right">delete</i></button> </td>
 			        	</form>
 
 			      	 	
@@ -59,7 +59,7 @@
 			        	<form method="POST" action="{{ route('pedidoscancelacionb') }}">
               			{!! csrf_field() !!}
               			<input type="hidden" name="id_bebida" value="{{$pedidobebida->id_bebida}}">	
-			        	<td><button style="float:center;" class="btn waves-effect waves-light red darken-2" type="submit" name="action"><i class="material-icons right">delete</i></button> </td>
+			        	<td><button style="float:center;" class="btn-floating btn-large waves-effect waves-light red darken-3 z-depth-3" type="submit" name="action"><i class="material-icons right">delete</i></button> </td>
 			        	</form>
 
 
@@ -85,7 +85,7 @@
 			   		 	<form method="POST" action="{{ route('pedidoscancelacionp') }}">
               			{!! csrf_field() !!}
               			<input type="hidden" name="id_postre" value="{{$pedidopostre->id_postre}}">	
-			        	<td><button style="float:center;" class="btn waves-effect waves-light red darken-2" type="submit" name="action"><i class="material-icons right">delete</i></button> </td>
+			        	<td><button style="float:center;" class="btn-floating btn-large waves-effect waves-light red darken-3 z-depth-3" type="submit" name="action"><i class="material-icons right">delete</i></button> </td>
 			        	</form>
 
 

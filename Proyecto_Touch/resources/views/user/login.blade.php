@@ -48,7 +48,7 @@
             </div>
 
             <div class="col s12" align="center">
-              <button class="waves-effect waves-light btn-large red darken-2" type="submit">Login</button>
+              <button class="waves-effect waves-light btn-large red darken-2" type="submit">Ingresar</button>
             </div>
           </form>
                 <div class="col s12" align="center">

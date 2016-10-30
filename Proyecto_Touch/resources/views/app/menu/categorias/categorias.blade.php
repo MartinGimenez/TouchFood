@@ -9,7 +9,7 @@
     <div class="col s5">
         <div class="card-panel red darken-2 z-depth-3"> 
             <ul class="collection with-header grey-text text-lighten-4">
-                <div class="card">
+                <div class="card ">
                     <div class="card-image">
                         <img class="responsive-img" src="http://cdn.kiwilimon.com/pages/temporadas/dia-del-padre/header_diapadre2016.jpg">
                         <h1 class="card-title stroke">Comidas</h1>
