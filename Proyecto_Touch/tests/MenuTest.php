@@ -114,5 +114,15 @@ class MenuTest extends TestCase
              ->see('Ginebra');
     }
 
+    public function testPedidosListado()
+    {
+        $this->visit('/pedido-listado')
+             ->see('Demora');
+    }
 
+    public function testPagos()
+    {
+        $this->visit('/pagos')
+             ->see('Su cuenta final:');
+    }
 }
