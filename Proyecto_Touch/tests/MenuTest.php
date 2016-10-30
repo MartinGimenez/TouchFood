@@ -101,4 +101,18 @@ class MenuTest extends TestCase
         $this->visit('/menu/postres/postres')
              ->see('flan');
     }
+
+    public function testBebidasSAlcohol()
+    {
+        $this->visit('/menu/bebidas/bebida-s-alcohol')
+             ->see('Coca-Cola ');
+    }
+    
+    public function testBebidasCAlcohol()
+    {
+        $this->visit('/menu/bebidas/bebida-c-alcohol')
+             ->see('Ginebra');
+    }
+
+
 }
