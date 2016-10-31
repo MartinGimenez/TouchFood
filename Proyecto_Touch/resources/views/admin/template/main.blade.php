@@ -28,20 +28,43 @@
         <li class="no-padding">
         <ul class="collapsible collapsible-accordion">
           <li>
-            <a class="collapsible-header">Dropdown<i class="material-icons">arrow_drop_down</i></a>
+            <a class="collapsible-header">Mesas<i class="material-icons">arrow_drop_down</i></a>
             <div class="collapsible-body">
               <ul>
-                <li><a href="#!">First</a></li>
-                <li><a href="#!">Second</a></li>
-                <li><a href="#!">Third</a></li>
-                <li><a href="#!">Fourth</a></li>
+                <li><a href="{{ route('admin.mesas.index') }}">Listado</a></li>
+                <li><a href="#!">Agregar mesas</a></li>
+                <li><a href="#!">Combinar mesas</a></li>
               </ul>
             </div>
           </li>
         </ul>
       </li>
-        <li><a href="#!">Comidas</a></li>
-        <li><a class="waves-effect" href="#!">Mesas</a></li>
+      <li class="no-padding">
+        <ul class="collapsible collapsible-accordion">
+          <li>
+            <a class="collapsible-header">Comidas<i class="material-icons">arrow_drop_down</i></a>
+            <div class="collapsible-body">
+              <ul>
+                <li><a href="#!">Listado</a></li>
+                <li><a href="#!">Agregar Comidas</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </li>
+        <li class="no-padding">
+        <ul class="collapsible collapsible-accordion">
+          <li>
+            <a class="collapsible-header">Pedidos<i class="material-icons">arrow_drop_down</i></a>
+            <div class="collapsible-body">
+              <ul>
+                <li><a href="#!">Listado</a></li>
+                <li><a href="#!">Agregar pedidos</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </li>
       </ul>
     </header>
 

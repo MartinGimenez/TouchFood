@@ -3,7 +3,7 @@
 @section('content')
 
 		<div class="card-panel black-text">
-			<table class="bordered responsive-table centered black-text">
+			<table class="striped centered black-text">
 			    <thead >
 			        <tr class="center">
 			            <th data-field="name" class="tituloscyp black-text">Número</th>
