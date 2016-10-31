@@ -7,7 +7,7 @@
     <div class="col s5">
         <div class="card-panel red darken-2 z-depth-3"> 
             <ul class="collection with-header grey-text text-lighten-4">
-                <div class="card">
+                <div class="card ">
                     <div class="card-image">
                         <img class="responsive-img" src="http://cdn.kiwilimon.com/pages/temporadas/dia-del-padre/header_diapadre2016.jpg">
                         <h1 class="card-title stroke">Comidas</h1>
@@ -15,7 +15,7 @@
                             .stroke {
                             text-align: center;
                             color: white;
-                            font-family: Georgia, serif;
+                            font-family: Calibri;
                             font-size: 40px;
                             letter-spacing: 10;
                             text-shadow: -1px -1px 1px #333, 1px -1px 1px #333, -1px 1px 1px #333, 1px 1px 1px #333;
@@ -25,8 +25,16 @@
                     </div>
                 </div>
                 <li class="collection-header red darken-2"></li>
+                <style type="text/css"> 
+                            .strok1 {
+                            text-align: left;
+                            color: white;
+                            font-family: Calibri;
+                            font-size: 20px;
+                            }
+                        </style>
                    <?php foreach($categorias_comidas as $categoria_comidas): ?>
-                   <li class="collection-item red darken-1"><div> <?php echo e(ucwords($categoria_comidas->categoria)); ?><a href="comidas/<?php echo e($categoria_comidas->categoria); ?>" class="grey-text text-lighten-4 right"><i class="material-icons">view_headline</i></a></div></li>             
+                   <li class="collection-item red darken-1 strok1"><div> <?php echo e(ucwords($categoria_comidas->categoria)); ?><a href="comidas/<?php echo e($categoria_comidas->categoria); ?>" class="grey-text text-lighten-4 right"><i class="material-icons">view_headline</i></a></div></li>             
                 <?php endforeach; ?>
             </ul>
         </div>
@@ -43,7 +51,7 @@
     			</div>
     			<li class="collection-header red darken-2"></li>
 	    		<?php foreach($categorias_bebidas as $categoria_bebidas): ?>
-	   			<li class="collection-item red darken-1"><div><?php echo e(ucwords($categoria_bebidas->categoria)); ?><a href="bebidas/<?php echo e($categoria_bebidas->categoria); ?>" class="grey-text text-lighten-4 right"><i class="material-icons">view_headline</i></a></div></li>	          	
+	   			<li class="collection-item red darken-1 strok1"><div><?php echo e(ucwords($categoria_bebidas->categoria)); ?><a href="bebidas/<?php echo e($categoria_bebidas->categoria); ?>" class="grey-text text-lighten-4 right"><i class="material-icons">view_headline</i></a></div></li>	          	
 	    		<?php endforeach; ?>
 			</ul>
         </div>
@@ -60,7 +68,7 @@
                 </div>
                 <li class="collection-header red darken-2"></li>
                 <?php foreach($categorias_postres as $categoria_postres): ?>
-                <li class="collection-item red darken-1"><div><?php echo e(ucwords($categoria_postres->categoria)); ?><a href="postres/<?php echo e($categoria_postres->categoria); ?>" class="grey-text text-lighten-4 right"><i class="material-icons">view_headline</i></a></div></li>             
+                <li class="collection-item red darken-1 strok1"><div><?php echo e(ucwords($categoria_postres->categoria)); ?><a href="postres/<?php echo e($categoria_postres->categoria); ?>" class="grey-text text-lighten-4 right"><i class="material-icons">view_headline</i></a></div></li>             
                 <?php endforeach; ?>
             </ul>
             </ul>
