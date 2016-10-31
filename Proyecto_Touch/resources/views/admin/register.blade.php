@@ -1,6 +1,4 @@
-@extends('app.template.main')
 
-@section('content')
 
 <form method="POST" action="{{ route('admin.register') }}">
     {!! csrf_field() !!}
@@ -31,4 +29,3 @@
 
 </form>
 
-@endsection

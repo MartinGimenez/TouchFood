@@ -64,7 +64,7 @@ class AdminController extends Controller
     }*/
     protected function create(array $data)
     {
-        return User::create([
+        return Admin::create([
             'name' => $data['name'],
             'email' => $data['email'],
             //'numero_mesa' => $data['numero_mesa'],
