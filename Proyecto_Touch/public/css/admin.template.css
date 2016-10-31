@@ -1,0 +1,33 @@
+@media (max-width: 1800px) and (min-width: 993px){
+  header,main,footer {
+    padding-left:300px;
+  }
+}                        
+
+a.button-collapse.top-nav{
+  position: absolute;
+  top : 0;
+}
+
+a.button-collapse.top-nav {
+  text-align: center;
+  color: #fff;
+  font-size: 36px;
+}
+
+a.button-collapse.top-nav i{
+  font-size: 26px;
+}
+
+nav .nav-wrapper a.page-title{
+  font-size: 36px;
+}
+
+@media (max-width: 993px) and (min-width: 200px){
+  nav .nav-wrapper{
+    text-align: center;
+  }
+  nav .nav-wrapper a.page-title{
+    font-size: 36px;
+  }
+    

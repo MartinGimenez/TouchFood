@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use DB;
+use App\mesa;
 
 class MesasController extends Controller
 {
@@ -17,8 +17,9 @@ class MesasController extends Controller
      */
     public function index()
     {
-        $mesas = DB::table('mesa')->get();
-        return view('app.mesas.mesas')->with('mesas',$mesas);
+        $titulo = 'Mesas-Listado';
+        $mesas = mesa::all();
+        return view('admin.mesas.index')->with('mesas',$mesas)->with('titulo',$titulo);
     }
 
     /**
