@@ -10,7 +10,7 @@
 
     <div>
         Numero de mesa
-        <input type="text" name="numero_mesa" value="<?php echo e(old('numero_mesa')); ?>">
+        <input type="text" name="name" value="<?php echo e(old('name')); ?>">
     </div>
 
     <div>

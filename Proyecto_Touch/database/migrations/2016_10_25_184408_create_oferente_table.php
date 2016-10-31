@@ -30,6 +30,6 @@ class CreateOferenteTable extends Migration
      */
     public function down()
     {
-        Schema::drop('password_resets');
+        Schema::drop('oferente');
     }
 }

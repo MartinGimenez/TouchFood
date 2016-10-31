@@ -1,0 +1,126 @@
+<?php $__env->startSection('content'); ?>
+
+<div class="row">
+    <div class="col s12">
+    	<div class="col s12">
+			<div class="card-panel red darken-2 z-depth-3">
+				<thead>
+					<tr>
+						<ul class="center">
+
+						    <li><a class="tiempoyprecio_total">Su cuenta final:</a></li>
+
+						</ul>
+					</tr>
+				</thead>
+			</div>
+		</div>
+
+      	<div class="card-panel red darken-2 z-depth-3">
+			<table class="bordered responsive-table centered">
+			    <thead>
+			        <tr>
+			            <th data-field="name" class="tituloscyp">Comida</th>
+			            <th data-field="precio" class="tituloscyp">Precio</th>
+			            <style type="text/css"> 
+                            .tituloscyp {
+                            text-align: center;
+                            color: white;
+                            font-family: Calibri;
+                            font-size: 35px;
+                            }
+                        </style>
+			        </tr>
+			    </thead>
+
+			    <tbody>
+			    	<?php foreach($pedidoscomidas as $pedidocomida): ?>
+			      	<tr>
+			        	<td class="agrandarletra"><?php echo e(ucwords($pedidocomida->nombre)); ?></td>
+			        	<td class="agrandarletra">$ <?php echo e(ucwords($pedidocomida->precio)); ?></td>
+
+			        	<style type="text/css"> 
+                            .agrandarletra {
+                            text-align: center;
+                            color: white;
+                            font-family: Calibri;
+                            font-size: 20px;
+                            }
+                        </style>
+			        	
+			      	</tr>
+			    <?php endforeach; ?>
+			    
+			    <?php foreach($pedidosbebidas as $pedidobebida): ?>
+			      	<tr>
+			        	<td class="agrandarletra"><?php echo e(ucwords($pedidobebida->nombre)); ?></td>
+			        	<td class="agrandarletra">$ <?php echo e(ucwords($pedidobebida->precio)); ?></td>
+			        	
+			      	</tr>
+			    <?php endforeach; ?>
+			   
+				<?php foreach($pedidospostres as $pedidopostre): ?>
+			  		<tr>
+			   	 		<td class="agrandarletra"><?php echo e(ucwords($pedidopostre->nombre)); ?></td>
+			   			<td class="agrandarletra">$ <?php echo e(ucwords($pedidopostre->precio)); ?></td>
+			   			
+			   		
+			 	 	</tr>
+				<?php endforeach; ?>
+
+				</tbody>
+			</table>  
+		</div>
+	</div>
+
+	<div class="col s12">
+      	<div class="card-panel red darken-2 z-depth-3">
+			<thead>
+			    <tr>
+			       	<ul>
+
+			            <li><a class="tiempoyprecio_total">El total a pagar es: $ <?php echo e($suma); ?> </a></li>
+
+			        </ul>
+			        <style type="text/css"> 
+                        .tiempoyprecio_total {
+                            text-align: center;
+                            color: white;
+                            font-family: Calibri;
+                            font-size: 40px;
+                        }
+                    </style>
+			    </tr>
+			</thead>
+		</div>
+	</div>
+
+	<div class="col s12">
+      	<div class="card-panel red darken-2 z-depth-3">
+			<thead>
+			    <tr>
+			       	<ul  class="center">
+
+			       		<!-- 							REALIZAR PAGOS									  -->
+
+			            <a href="<?php echo e(route('pagado.index')); ?>" <button class="tiempoyprecio_total1" type="submit">¡Realizar pago!</button></a>
+			            
+			        </ul>
+			        <style type="text/css"> 
+                        .tiempoyprecio_total1 {
+                            text-align: center;
+                            color: white;
+                            font-family: Calibri;
+                            font-size:60px;
+                        }
+                    </style>
+			    </tr>
+			</thead>
+		</div>
+	</div>
+
+</div>  
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('app.template.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

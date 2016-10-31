@@ -1,0 +1,157 @@
+<?php $__env->startSection('content'); ?>
+
+    
+
+
+
+  <div class="row">
+    <div class="col s12">
+      <div class="card-panel red darken-2 z-depth-3"> 
+        <div class="contenedor">
+          <ul id="comidas" class="collection red darken-2 white-text">
+            <?php foreach($comidas as $comida): ?>
+            <li class="collection-item avatar red darken-2">
+      
+              <?php if($categoria == "pollos"): ?>
+              <img src="<?php echo e(asset('images/Iconos/pollos.jpg')); ?>" alt="" class="circle">
+              <?php endif; ?>
+              <?php if($categoria == "carnes"): ?>
+              <img src="<?php echo e(asset('images/Iconos/carnes.jpg')); ?>" alt="" class="circle">
+              <?php endif; ?>
+              <?php if($categoria == "cerdos"): ?>
+              <img src="<?php echo e(asset('images/Iconos/cerdos.jpg')); ?>" alt="" class="circle">
+              <?php endif; ?>
+              <?php if($categoria == "vegetales"): ?>
+              <img src="<?php echo e(asset('images/Iconos/vegetales.jpg')); ?>" alt="" class="circle">
+              <?php endif; ?>
+              <?php if($categoria == "pescados"): ?>
+              <img src="<?php echo e(asset('images/Iconos/pescados.jpg')); ?>" alt="" class="circle">
+              <?php endif; ?>
+              <?php if($categoria == "pastas"): ?>
+              <img src="<?php echo e(asset('images/Iconos/pastas.jpg')); ?>" alt="" class="circle">
+              <?php endif; ?>
+              <?php if($categoria == "pizzas"): ?>
+              <img src="<?php echo e(asset('images/Iconos/pizzas.jpg')); ?>" alt="" class="circle">
+              <?php endif; ?>
+              <?php if($categoria == "picadas"): ?>
+              <img src="<?php echo e(asset('images/Iconos/picadas.jpg')); ?>" alt="" class="circle">
+              <?php endif; ?>
+              <?php if($categoria == "minutas"): ?>
+              <img src="<?php echo e(asset('images/Iconos/minutas.jpg')); ?>" alt="" class="circle">
+              <?php endif; ?>
+              <?php if($categoria == "sopas"): ?>
+              <img src="<?php echo e(asset('images/Iconos/sopas.jpg')); ?>" alt="" class="circle">
+              <?php endif; ?>
+              <?php if($categoria == "ensaladas"): ?>
+              <img src="<?php echo e(asset('images/Iconos/ensaladas.jpg')); ?>" alt="" class="circle">
+              <?php endif; ?>
+              <?php if($categoria == "especiales"): ?>
+              <img src="<?php echo e(asset('images/Iconos/especiales.jpg')); ?>" alt="" class="circle">
+              <?php endif; ?>
+              <?php if($categoria == "verduras"): ?>
+              <img src="<?php echo e(asset('images/Iconos/verduras.jpg')); ?>" alt="" class="circle">
+              <?php endif; ?>
+
+              <style type="text/css"> 
+                            .strok1 {
+                            text-align: left;
+                            color: white;
+                            font-family: Calibri;
+                            font-size: 20px;
+                            }
+                        </style>
+
+              <span class="strok1"><?php echo e(ucwords($comida->nombre)); ?></span>
+              <p class= "strok1">$<?php echo e(ucwords($comida->precio)); ?><br>
+              <?php echo e(ucwords($comida->ingredientes)); ?>
+
+              </p>
+              <?php if($tipo=="comidas"): ?>
+              <form method="POST" action="<?php echo e(route('pedidoscomidas')); ?>">
+              <?php echo csrf_field(); ?>
+
+              <input type="hidden" name="id_plato" value="<?php echo e($comida->id_plato); ?>">
+              <div class="secondary-content"><a class="btn tooltipped btn-floating btn-large waves-effect waves-light red darken-3 z-depth-3 waves-effect waves-light btn modal-trigger" href="#<?php echo e($comida->id_plato); ?>" data-position="bottom" data-delay="50" data-tooltip="Agregar a mi pedido"><i class="material-icons">done</i></a>
+              </form>
+              <?php endif; ?>
+
+               <?php if($tipo=="bebidas"): ?>
+              <form method="POST" action="<?php echo e(route('pedidosbebidas')); ?>">
+              <?php echo csrf_field(); ?>
+
+              <input type="hidden" name="id_bebida" value="<?php echo e($comida->id_bebida); ?>">
+              <div class="secondary-content"><a class="btn tooltipped btn-floating btn-large waves-effect waves-light red darken-3 z-depth-3 waves-effect waves-light btn modal-trigger" href="#<?php echo e($comida->id_bebida); ?>" data-position="bottom" data-delay="50" data-tooltip="Agregar a mi pedido"><i class="material-icons">done</i></a>
+              <!--div class="secondary-content"><a class="waves-effect waves-light btn modal-trigger" href="#<?php echo e($comida->id_bebida); ?>">Pedir</a-->
+              </form>
+              <?php endif; ?>
+
+               <?php if($tipo=="postres"): ?>
+              <form method="POST" action="<?php echo e(route('pedidospostres')); ?>">
+              <?php echo csrf_field(); ?>
+
+              <input type="hidden" name="id_postre" value="<?php echo e($comida->id_postre); ?>">
+              <div class="secondary-content"><a class="btn tooltipped btn-floating btn-large waves-effect waves-light red darken-3 z-depth-3 waves-effect waves-light btn modal-trigger" href="#<?php echo e($comida->id_postre); ?>" data-position="bottom" data-delay="50" data-tooltip="Agregar a mi pedido"><i class="material-icons">done</i></a>
+              <!--div class="secondary-content"><a class="waves-effect waves-light btn modal-trigger" href="#<?php echo e($comida->id_postre); ?>">Pedir</a-->
+              </form>
+              <?php endif; ?>
+              
+
+              <?php if($tipo=="comidas"): ?>
+              <div id="<?php echo e($comida->id_plato); ?>" class="modal">
+                <div class="modal-content">
+                  <h4 class="red-text">Confirmación</h4>
+                  <p class="red-text text-darken-2">¿Desea pedir <?php echo e(ucwords($comida->nombre)); ?>? </p>
+                </div>
+                <div class="modal-footer">
+                  <button style="float:center;" class="btn waves-effect waves-light red darken-2" type="submit" name="action"> Pedir <i class="material-icons right">done</i></button>
+                  <a href="<?php echo e(route('menu.categorias')); ?>" <button style="float:left;" class="btn waves-effect waves-light red darken-2" type="submit" name="action"> Cancelar <i class="material-icons right">error</i></button></a>
+                </div>
+              </div>
+              <?php endif; ?>
+              <?php if($tipo=="bebidas"): ?>
+              <div id="<?php echo e($comida->id_bebida); ?>" class="modal">
+                <div class="modal-content">
+                  <h4 class="red-text">Confirmación</h4>
+                  <p class="red-text text-darken-2">¿Desea pedir <?php echo e(ucwords($comida->nombre)); ?>? </p>
+                </div>
+                <div class="modal-footer">
+                  <button style="float:center;" class="btn waves-effect waves-light red darken-2" type="submit" name="action"> Pedir <i class="material-icons right">done</i></button>
+                  <a href="<?php echo e(route('menu.categorias')); ?>" <button style="float:left;" class="btn waves-effect waves-light red darken-2" type="submit" name="action"> Cancelar <i class="material-icons right">error</i></button></a>
+                </div>
+
+              </div>
+              <?php endif; ?>
+              <?php if($tipo=="postres"): ?>
+              <div id="<?php echo e($comida->id_postre); ?>" class="modal">
+                <div class="modal-content">
+                  <h4 class="red-text">Confirmación</h4>
+                  <p class="red-text text-darken-2">¿Desea pedir <?php echo e(ucwords($comida->nombre)); ?>? </p>
+                </div>
+                <div class="modal-footer">
+                  <button style="float:center;" class="btn waves-effect waves-light red darken-2" type="submit" name="action"> Pedir <i class="material-icons right">done</i></button>
+                  <a href="<?php echo e(route('menu.categorias')); ?>" <button style="float:left;" class="btn waves-effect waves-light red darken-2" type="submit" name="action"> Cancelar <i class="material-icons right">error</i></button></a>
+                </div>
+              </div>
+              <?php endif; ?>
+
+
+              </form>
+            </li>
+          <?php endforeach; ?>
+          </ul>
+      
+        <!--  <span style="visibility: hidden;">
+            {//!! $comidas->render() !!}    
+          </span>
+
+          <div class="loading"></div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('app.template.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -41,8 +41,8 @@ class PedidosComidasController extends Controller
     {
         $pedidocomida = new pedidocomida;
         $pedidocomida->id_plato= $request->id_plato;
-        $numero_mesa =Auth::user()->numero_mesa;
-        $pedido=pedido::where('numero_mesa',$numero_mesa)->where('estado','impago')->first();
+        $name =Auth::user()->name;
+        $pedido=pedido::where('numero_mesa',$name)->where('estado','impago')->first();
         $pedidocomida->id_pedidoc=$pedido->id_pedido;
         $hora_segundos = time() - 10800;
 

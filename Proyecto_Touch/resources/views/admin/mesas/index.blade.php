@@ -23,7 +23,7 @@
 			    <tbody>
 			    	@foreach($mesas as $mesa)
 			      	<tr>
-			        	<td class="agrandarletra">{{ ucwords($mesa->numero_mesa) }}</td>
+			        	<td class="agrandarletra">{{ ucwords($mesa->name) }}</td>
 			        	<td class="agrandarletra">{{ ucwords($mesa->capacidad) }}</td>
 			        	<td class="agrandarletra">{{ ucwords($mesa->estado) }}</td>
 

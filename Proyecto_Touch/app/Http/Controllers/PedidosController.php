@@ -92,13 +92,13 @@ class PedidosController extends Controller
 
     public function agregar_pedido(){
         
-        $numero_mesa =Auth::user()->numero_mesa;
+        $name =Auth::user()->name;
 
-        mesa::where('numero_mesa', $numero_mesa)
+        mesa::where('name', $name)
           ->update(['estado' => 'ocupada']);
 
         $pedido = new pedido;
-        $pedido->numero_mesa = Auth::user()->numero_mesa;
+        $pedido->numero_mesa = Auth::user()->name;
         $pedido->estado = 'impago';
         if($pedido->save()){
             return redirect ('bienvenida');

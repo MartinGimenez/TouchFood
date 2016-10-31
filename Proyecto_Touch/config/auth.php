@@ -6,7 +6,7 @@ return [
     'user' => [
         'driver' => 'eloquent',
         'model'  => App\User::class,
-        'table'  => 'users'
+        'table'  => 'mesas'
     ],
     'admin' => [
         'driver' => 'eloquent',

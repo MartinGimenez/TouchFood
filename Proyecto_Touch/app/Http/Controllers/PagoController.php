@@ -20,8 +20,8 @@ class PagoController extends Controller
      */
     public function index()
     {   
-        $numero_mesa =Auth::user()->numero_mesa;
-        $pedido = pedido::where('numero_mesa',$numero_mesa)->where('estado','impago')->first();
+        $name =Auth::user()->name;
+        $pedido = pedido::where('numero_mesa',$name)->where('estado','impago')->first();
         $id_pedido = $pedido->id_pedido;
         $suma=0;
 
@@ -140,13 +140,13 @@ class PagoController extends Controller
 
     public function actualizarpedido(){
 
-        $numero_mesa =Auth::user()->numero_mesa;
+        $name =Auth::user()->name;
 
-        pedido::where('numero_mesa', $numero_mesa)
+        pedido::where('numero_mesa', $name)
           ->where('estado', 'impago')
           ->update(['estado' => 'pago']);
 
-        mesa::where('numero_mesa', $numero_mesa)
+        mesa::where('name', $name)
           ->update(['estado' => 'vacante']);
 
 

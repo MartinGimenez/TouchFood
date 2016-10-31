@@ -8,8 +8,8 @@
     </div>
 
     <div>
-        Numero de mesa
-        <input type="text" name="numero_mesa" value="{{ old('numero_mesa') }}">
+        Email
+        <input type="email" name="email" value="{{ old('email') }}">
     </div>
 
     <div>
@@ -20,11 +20,6 @@
     <div>
         Estado
         <input type="text" name="estado" value="{{ old('estado') }}">
-    </div>
-
-    <div>
-        Email
-        <input type="email" name="email" value="{{ old('email') }}">
     </div>
 
     <div>

@@ -67,7 +67,7 @@ class AdminController extends Controller
         return Admin::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            //'numero_mesa' => $data['numero_mesa'],
+            //'name' => $data['name'],
             //'capacidad' => $data['capacidad'],
             //'estado' => $data['estado'],
             'password' => bcrypt($data['password']),

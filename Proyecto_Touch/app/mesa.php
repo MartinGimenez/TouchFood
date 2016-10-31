@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class mesa extends Model
 {
     public $timestamps = false;
-    protected $table = 'mesa';
+    protected $table = 'mesas';
 
     protected $fillable = ['capacidad','estado'];
 

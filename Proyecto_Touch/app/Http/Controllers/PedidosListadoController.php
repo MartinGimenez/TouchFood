@@ -25,8 +25,8 @@ class PedidosListadoController extends Controller
     public function index()
     {
 
-        $numero_mesa =Auth::user()->numero_mesa;
-        $pedido = pedido::where('numero_mesa',$numero_mesa)->where('estado','impago')->first();
+        $name =Auth::user()->name;
+        $pedido = pedido::where('numero_mesa',$name)->where('estado','impago')->first();
         $id_pedido = $pedido->id_pedido;
 
 

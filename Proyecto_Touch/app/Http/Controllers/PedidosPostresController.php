@@ -41,8 +41,8 @@ class PedidosPostresController extends Controller
     {
         $pedidopostre = new pedidopostre;
         $pedidopostre->id_postre= $request->id_postre;
-        $numero_mesa =Auth::user()->numero_mesa;
-        $pedido=pedido::where('numero_mesa',$numero_mesa)->where('estado','impago')->first();
+        $name =Auth::user()->name;
+        $pedido=pedido::where('numero_mesa',$name)->where('estado','impago')->first();
         $pedidopostre->id_pedidop=$pedido->id_pedido;
         $hora_segundos = time() - 10800;
         $hora = date("H:i:s",$hora_segundos);
