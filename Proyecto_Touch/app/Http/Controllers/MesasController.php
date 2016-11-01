@@ -62,7 +62,8 @@ class MesasController extends Controller
      */
     public function edit($id)
     {
-        //
+        $mesa = Mesa::find($id);
+        return view('admin.mesas.edit')->with('mesa', $mesa);
     }
 
     /**
@@ -74,7 +75,14 @@ class MesasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+    
+        $mesa = Mesa::find($id);
+        $mesa->name = $request->name;
+        $mesa->capacidad = $request->capacidad;
+        $mesa->estado = $request->estado;
+        $mesa->save();
+
+        return redirect()->route('admin.mesas.index');
     }
 
     /**
