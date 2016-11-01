@@ -87,9 +87,9 @@ Route::get('user/logout', [
 	'as'	=>	'user.logout'
 ]);
 
-Route::get('user/register', [
+Route::get('mesas/register', [
 	'uses'	=>	'Auth\AuthController@getRegister',
-	'as'	=>	'user.register'
+	'as'	=>	'mesas.register'
 ]);
 Route::post('user/register', [
 	'uses'	=>	'Auth\AuthController@postRegister',
@@ -155,6 +155,10 @@ Route::group(['prefix' => 'admin' ], function(){
 
 	Route::resource('comidas','ComidasController');
 	Route::resource('mesas','MesasController');
+	Route::get('mesas/{id}/destroy', [
+		'uses'	=>	'MesasController@destroy',
+		'as'	=>	'admin.mesas.destroy' 
+		]);
 
 
 });

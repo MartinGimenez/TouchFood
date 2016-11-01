@@ -28,7 +28,8 @@
 			        	<td class="agrandarletra">{{ ucwords($mesa->estado) }}</td>
 
 
-			        	<td><button style="float:center;" class="btn-floating btn-large waves-effect waves-light red darken-3 z-depth-3" type="submit" name="action"><i class="material-icons right">delete</i></button> </td>
+			        	<td><a href="{{ route('admin.mesas.destroy', $mesa->id) }}" class="btn-floating btn-large waves-effect waves-light red darken-3 z-depth-3"><i class="material-icons right">delete</i></a>
+			        	</td>
 			        	
 
 			      		<style type="text/css"> 

@@ -29,7 +29,7 @@ class MesasController extends Controller
      */
     public function create()
     {
-        //
+        return view ('admin.mesas.create');
     }
 
     /**
@@ -85,6 +85,9 @@ class MesasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $mesa = Mesa::where('id', '=', $id);
+        $mesa->delete();
+        
+        return redirect()->route('admin.mesas.index');
     }
 }

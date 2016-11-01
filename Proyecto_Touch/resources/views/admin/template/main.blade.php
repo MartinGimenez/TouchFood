@@ -32,7 +32,7 @@
             <div class="collapsible-body">
               <ul>
                 <li><a href="{{ route('admin.mesas.index') }}">Listado</a></li>
-                <li><a href="#!">Agregar mesas</a></li>
+                <li><a href="{{ route('mesas.register') }}">Agregar mesas</a></li>
                 <li><a href="#!">Combinar mesas</a></li>
               </ul>
             </div>
