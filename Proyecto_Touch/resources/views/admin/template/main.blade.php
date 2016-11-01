@@ -45,8 +45,37 @@
             <a class="collapsible-header">Comidas<i class="material-icons">arrow_drop_down</i></a>
             <div class="collapsible-body">
               <ul>
-                <li><a href="#!">Listado</a></li>
+                <li><a href="{{ route('admin.comidas.index') }}">Listado</a></li>
                 <li><a href="#!">Agregar Comidas</a></li>
+                 <li><a href="#!">Modificar Comidas</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </li>
+       <li class="no-padding">
+        <ul class="collapsible collapsible-accordion">
+          <li>
+            <a class="collapsible-header">Bebidas<i class="material-icons">arrow_drop_down</i></a>
+            <div class="collapsible-body">
+              <ul>
+                <li><a href="#!">Listado</a></li>
+                <li><a href="#!">Agregar Bebidas</a></li>
+                <li><a href="#!">Modificar Bebidas</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </li>
+      <li class="no-padding">
+        <ul class="collapsible collapsible-accordion">
+          <li>
+            <a class="collapsible-header">Postres<i class="material-icons">arrow_drop_down</i></a>
+            <div class="collapsible-body">
+              <ul>
+                <li><a href="#!">Listado</a></li>
+                <li><a href="#!">Agregar Postres</a></li>
+                <li><a href="#!">Modificar Postres</a></li>
               </ul>
             </div>
           </li>

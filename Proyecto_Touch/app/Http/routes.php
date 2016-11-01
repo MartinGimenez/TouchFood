@@ -145,10 +145,18 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 
+
+
+Route::post ('admin/comidaslistado', [
+	'uses' 	=>	'ComidasController@comidas_por_categoria_admin',
+	'as'	=>	'comidas.listado'
+]);
 Route::group(['prefix' => 'admin' ], function(){
 
-	
+	Route::resource('comidas','ComidasController');
 	Route::resource('mesas','MesasController');
+
+
 });
 
 

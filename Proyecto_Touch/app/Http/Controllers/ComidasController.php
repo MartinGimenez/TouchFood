@@ -18,8 +18,9 @@ class ComidasController extends Controller
      */
     public function index()
     {
-       $comidas = DB::table('comidas')->paginate(10);
-        return view('pruebascroll')->with('comidas',$comidas);
+       
+       $categorias_comidas = DB::table('comidas')->select('categoria')->distinct()->get();
+        return view('admin.comidas.index')->with('categorias_comidas',$categorias_comidas);
     }
 
     /**
@@ -91,6 +92,13 @@ class ComidasController extends Controller
         $comidas = comida::where('categoria',$categoria)->get();
         $tipo="comidas";
         return view('app.menu.comidas.index')->with('comidas',$comidas)->with('categoria',$categoria)->with('tipo',$tipo);        
+    }
+
+
+    public function comidas_por_categoria_admin(Request $request)
+    {
+        $comidas = comida::where('categoria',$request->categoria)->get();
+        return view('admin.comidas.listadoc')->with('comidas',$comidas);       
     }
 
 
