@@ -105,7 +105,7 @@
 
 			       		<!-- 							REALIZAR PAGOS									  -->
 
-			            <a href="{{ route('pagado.index') }}" <button class="tiempoyprecio_total1" type="submit">¡Realizar pago!</button></a>
+			            <a href="{{ route('pagado.index') }}" <button class="tiempoyprecio_total1 red darken-2 z-depth-3" type="submit">¡Realizar pago!</button></a>
 			            
 			        </ul>
 			        <style type="text/css"> 

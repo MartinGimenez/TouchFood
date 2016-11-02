@@ -6,7 +6,7 @@
     {!! csrf_field() !!}
 
     <div>
-        Name
+        Nombre
         <input type="text" name="name" value="{{ old('name') }}">
     </div>
 
@@ -16,17 +16,17 @@
     </div>
 
     <div>
-        Capacidad
+        Capacidadsss
         <input type="text" name="capacidad" value="{{ old('capacidad') }}">
     </div>
 
     <div>
-        Estado
+        Estadoddddddddddddddddd
         <input type="text" name="estado" value="{{ old('estado') }}">
     </div>
 
     <div>
-        Password
+        Passworddddddddddddddddddd
         <input type="password" name="password">
     </div>
 
@@ -36,7 +36,8 @@
     </div>
 
     <div>
-        <button type="submit">Register</button>
+        <button type="submit">Registrar</button>
+        <!--li><a href="#!" <button type="button" class="waves-effect waves-light btn-large red darken-2">Pago</button></a></li-->
     </div>
 
 </form>

@@ -16,9 +16,19 @@
   <body>
     <header>
       <nav class="top-nav red darken-2">
-        <div class="container">
-          <div class="nav-wrapper"><a class="page-title">{{ $titulo or 'Panel de Administración' }}</a></div>
+        <div class="container stroke nav-wrapper">
+          <a>{{ $titulo or 'Panel de Administración' }}</a>
         </div>
+
+        <style type="text/css"> 
+          .stroke {
+          text-align: center;
+          color: white;
+          font-family: Calibri;
+          font-size: 50px;
+          }
+        </style>
+
       </nav>
       <div class="container"><a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only"><i class="material-icons">menu</i></a></div>
       <ul id="nav-mobile" class="side-nav fixed">  
@@ -93,6 +103,36 @@
             </div>
           </li>
         </ul>
+
+      
+          <li class="contenedor-div">
+            <li text-white><a href="{{ route('user.logout') }}" <button type="button" class="white-text waves-effect waves-light btn-large red darken-2 salir">Salir</button></a></li>
+          </li>
+
+          <!--         POP UPS          -->
+          <!--div id="modal1" class="modal">
+          <div class="modal-content">
+            <h4 class="red-text">¿Desea salir?</h4>
+            <p>Si continua podrá cerrar su sesión.</p>
+          </div>
+          <div class="modal-footer">
+            <button href="{{ route('user.logout') }}" style="float:center;" class="btn waves-effect waves-light red darken-2" type="submit" name="action"> Aceptar <i class="material-icons right">done</i></button>
+            <a href="#!" <button style="float:left;" class="btn waves-effect waves-light red darken-2" type="submit" name="action"> Cancelar <i class="material-icons right">error</i></button></a>
+          </div>
+        </div-->
+
+        <style type="text/css">
+          .contenedor-div{
+          position:relative;
+          }
+          .salir{
+          position:absolute;
+          bottom:100px;
+          right:100px;
+
+          }
+        </style>
+
       </li>
       </ul>
     </header>
