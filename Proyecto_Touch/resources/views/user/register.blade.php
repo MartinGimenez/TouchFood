@@ -21,38 +21,58 @@
             
                 {!! csrf_field() !!}
 
+                <style type="text/css"> 
+                    .titulos {
+                    text-align: left;
+                    color: red;
+                    font-family: Calibri;
+                    font-size: 30px;
+                    }
+                </style>
+
+                <style type="text/css"> 
+                    .datos {
+                    text-align: left;
+                    color: black;
+                    font-family: Calibri;
+                    font-size: 40px;
+                    }
+                </style>
+
                 <div class="input-field col s6">
-                      <input name="name" type="text" value="{{ old('name') }}" class="validate">
-                      <label for="name">Username</label>
+                  <h4 class="titulos" for="name">Username</h4>
+                  <input class="center datos" name="name" type="text" value="{{ old('name') }}" class="validate">
                 </div>
                 
                 <div class="input-field col s6">
-                      <input name="email" type="email" value="{{ old('email') }}" class="validate">
-                      <label for="email">Email</label>
+                  <h4 class="titulos" for="email">Email</h4>
+                  <input class="center datos" name="email" type="email" value="{{ old('email') }}" class="validate">
                 </div>
 
                 <div class="input-field col s12">
-                      <input name="capacidad" type="text" value="{{ old('capacidad') }}" class="validate">
-                      <label for="capacidad">Capacidad</label>
+                  <h4 class="titulos" for="capacidad">Capacidad</h4>
+                  <input class="center datos" name="capacidad" type="text" value="{{ old('capacidad') }}" class="validate">
                 </div>
 
                 <div class="input-field col s12">
-                    <select name="estado" type="text">
-                        <option value="" disabled selected>Elige una opción</option>
-                        <option value="Ocupada">Ocupada</option>
-                        <option value="Desocupada">Desocupada</option>
-                    </select>
-                    <label>Estado</label>
+                  <h4 class="titulos">Estado</h4>
+                  <div class="center datos">
+                      <select name="estado" type="text">
+                          <option value="" disabled selected>Elige una opción</option>
+                          <option value="Ocupada">Ocupada</option>
+                          <option value="Desocupada">Desocupada</option>
+                      </select>
+                  </div>
                 </div>
 
                 <div class="input-field col s12">
-                      <input name="password" type="password">
-                      <label for="password">Password</label>
+                  <h4 class="titulos" for="password">Password</h4>
+                  <input name="password" type="password">
                 </div>
 
                 <div class="input-field col s12">
-                      <input name="password_confirmation" type="password">
-                      <label for="password_confirmation">Confirmar Password</label>
+                  <h4 class="titulos" for="password_confirmation">Confirmar Password</h4>
+                  <input name="password_confirmation" type="password">
                 </div>
 
                 <div class="col s12 center">

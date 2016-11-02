@@ -41,6 +41,7 @@
                     font-size: 40px;
                     }
                 </style>
+                
                 <div class="input-field col s12">
                     <h4 class="titulos">Nombre</h4>
                     <input class="center datos" name="name" type="text" value="{{ $mesa->name }}">
