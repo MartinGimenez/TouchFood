@@ -8,7 +8,15 @@
 <div class="row">
     <div class="card">
         <div class="row">
-            <h4>Alta de mesas en el sistema</h4>
+            <h4 class="tituloscyp">Alta de mesas en el sistema</h4>
+            <style type="text/css"> 
+                            .tituloscyp {
+                            text-align: center;
+                            color: black;
+                            font-family: Calibri;
+                            font-size: 40px;
+                            }
+                        </style>
             <form class="col s12" method="POST" action="{{ route('user.register') }}">
             
                 {!! csrf_field() !!}
@@ -48,7 +56,7 @@
                 </div>
 
                 <div class="col s12 center">
-                <button class="white-text waves-effect waves-light btn-large red darken-2 center" type="submit" >Agregar mesa<i class="material-icons right">send</i></button>
+                <button class="white-text waves-effect waves-light btn-large red darken-2 z-depth-5 center" type="submit" >Agregar mesa<i class="material-icons right">send</i></button>
                 </div>
             </form>
         </div>

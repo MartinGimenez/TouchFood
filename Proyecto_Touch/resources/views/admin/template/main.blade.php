@@ -106,7 +106,7 @@
 
       
           <li class="contenedor-div">
-            <li text-white><a href="{{ route('user.logout') }}" <button type="button" class="white-text waves-effect waves-light btn-large red darken-2 salir">Salir</button></a></li>
+            <li text-white><a href="{{ route('user.logout') }}" <button type="button" class="white-text waves-effect waves-light btn-large red darken-2 z-depth-3">Cerrar sesión</button></a></li>
           </li>
 
           <!--         POP UPS          -->

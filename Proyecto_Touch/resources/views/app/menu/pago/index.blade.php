@@ -75,8 +75,8 @@
 		</div>
 	</div>
 
-	<div class="col s12">
-      	<div class="card-panel red darken-2 z-depth-3">
+	<div class="col s12 center">
+   
 			<thead>
 			    <tr>
 			       	<ul>
@@ -94,18 +94,17 @@
                     </style>
 			    </tr>
 			</thead>
-		</div>
+	
 	</div>
 
 	<div class="col s12">
-      	<div class="card-panel red darken-2 z-depth-3">
-			<thead>
-			    <tr>
+      	<div class="card-panel red darken-2 z-depth-5">
+			   
 			       	<ul  class="center">
 
 			       		<!-- 							REALIZAR PAGOS									  -->
 
-			            <a href="{{ route('pagado.index') }}" <button class="tiempoyprecio_total1 red darken-2 z-depth-3" type="submit">¡Realizar pago!</button></a>
+			            <a href="{{ route('pagado.index') }}" <button class="tiempoyprecio_total1 red darken-2" type="submit">¡Realizar pago!</button></a>
 			            
 			        </ul>
 			        <style type="text/css"> 
@@ -116,8 +115,8 @@
                             font-size:60px;
                         }
                     </style>
-			    </tr>
-			</thead>
+			    
+			
 		</div>
 	</div>
 
