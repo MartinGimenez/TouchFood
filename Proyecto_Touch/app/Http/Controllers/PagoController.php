@@ -147,7 +147,7 @@ class PagoController extends Controller
           ->update(['estado' => 'pago']);
 
         mesa::where('name', $name)
-          ->update(['estado' => 'vacante']);
+          ->update(['estado' => 'desocupada']);
 
 
         return redirect('comenzar');

@@ -17,7 +17,7 @@
     <header>
       <nav class="top-nav red darken-2">
         <div class="container stroke nav-wrapper">
-          <a>{{ $titulo or 'Panel de Administración' }}</a>
+          <a>{{ $titulo or "Panel de Adm." }}</a>
         </div>
 
         <style type="text/css"> 

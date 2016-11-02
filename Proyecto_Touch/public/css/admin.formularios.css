@@ -1,0 +1,58 @@
+h4 {
+    text-align: center;
+    font-family: Calibri;
+}
+.input-field label {
+    color: #bdbdbd;
+}
+.input-field input[type=text]:focus + label {
+    color: #b71c1c;
+}
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid #b71c1c;
+    box-shadow: 0 1px 0 0 #b71c1c;
+}
+.input-field input[type=text].valid {
+    border-bottom: 1px solid #b71c1c;
+    box-shadow: 0 1px 0 0 #b71c1c;
+}
+.input-field input[type=text].invalid {
+    border-bottom: 1px solid #b71c1c;
+    box-shadow: 0 1px 0 0 #b71c1c;
+}
+.input-field input[type=email]:focus + label {
+    color: #b71c1c;
+}
+.input-field input[type=email]:focus {
+    border-bottom: 1px solid #b71c1c;
+    box-shadow: 0 1px 0 0 #b71c1c;
+}
+.input-field input[type=email].valid {
+    border-bottom: 1px solid #b71c1c;
+    box-shadow: 0 1px 0 0 #b71c1c;
+}
+.input-field input[type=email].invalid {
+    border-bottom: 1px solid #b71c1c;
+    box-shadow: 0 1px 0 0 #b71c1c;
+}
+.input-field input[type=password]:focus + label {
+    color: #b71c1c;
+}
+.input-field input[type=password]:focus {
+    border-bottom: 1px solid #b71c1c;
+    box-shadow: 0 1px 0 0 #b71c1c;
+}
+.input-field input[type=password].valid {
+    border-bottom: 1px solid #b71c1c;
+    box-shadow: 0 1px 0 0 #b71c1c;
+}
+.input-field input[type=password].invalid {
+    border-bottom: 1px solid #b71c1c;
+    box-shadow: 0 1px 0 0 #b71c1c;
+}
+.input-field .prefix.active {
+    color: #b71c1c;
+}
+.dropdown-content li > a, .dropdown-content li > span{
+    color: #b71c1c;
+}
