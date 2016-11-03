@@ -21,7 +21,9 @@ class PedidosController extends Controller
      */
     public function index()
     {
-        
+        $titulo = 'Pedidos-Listado';
+        $pedidos = pedido::all();
+        return view('admin.pedidos.index')->with('pedidos',$pedidos)->with('titulo',$titulo);
     }
 
     /**
@@ -51,9 +53,34 @@ class PedidosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id_pedido, $name)
     {
-        //
+        $pedido = pedido::where('numero_mesa',$name)->first();
+        //$id_pedido = $pedido->id_pedido;
+
+
+        $pedidoscomidas = DB::table('pedidoscomidas')
+            ->join('comidas', 'pedidoscomidas.id_plato', '=', 'comidas.id_plato')
+            ->join('pedidos', 'pedidoscomidas.id_pedidoc', '=', 'pedidos.id_pedido')
+            ->where('pedidos.id_pedido' , '=', $id_pedido )
+            ->select('comidas.nombre','comidas.precio','comidas.tiempo_coccion','comidas.id_plato')
+            ->get();
+
+        $pedidosbebidas = DB::table('pedidosbebidas')
+            ->join('bebidas', 'pedidosbebidas.id_bebida', '=', 'bebidas.id_bebida')
+            ->join('pedidos', 'pedidosbebidas.id_pedidob', '=', 'pedidos.id_pedido')
+            ->where('pedidos.id_pedido' , '=', $id_pedido )
+            ->select('bebidas.nombre','bebidas.precio','bebidas.tiempo_servicio','bebidas.id_bebida')
+            ->get();   
+
+        $pedidospostres = DB::table('pedidospostres')
+            ->join('postres', 'pedidospostres.id_postre', '=', 'postres.id_postre')
+            ->join('pedidos', 'pedidospostres.id_pedidop', '=', 'pedidos.id_pedido')
+            ->where('pedidos.id_pedido' , '=', $id_pedido )
+            ->select('postres.nombre','postres.precio','postres.tiempo_preparacion','postres.id_postre')
+            ->get();    
+
+        return view('admin.pedidos.index')->with('pedidoscomidas',$pedidoscomidas)->with('pedidosbebidas',$pedidosbebidas)->with('pedidospostres',$pedidospostres);
     }
 
     /**
@@ -64,8 +91,8 @@ class PedidosController extends Controller
      */
     public function edit($id)
     {
-        //
-    }
+        $pedido = pedido::find($id_pedido);
+        return view('admin.pedidos.edit')->with('pedido', $pedido);    }
 
     /**
      * Update the specified resource in storage.
@@ -85,10 +112,14 @@ class PedidosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id_pedido)
     {
-        //
+        $pedido = pedido::where('id_pedido', '=', $id_pedido);
+        $pedido->delete();
+        
+        return redirect()->route('admin.pedidos.index');
     }
+
 
     public function agregar_pedido(){
         

@@ -160,6 +160,17 @@ Route::group(['prefix' => 'admin' ], function(){
 		'as'	=>	'admin.mesas.destroy' 
 		]);
 
+	Route::resource('pedidos','PedidosController');
+
+	Route::get('pedidos/{id_pedido}/destroy', [
+		'uses'	=>	'PedidosController@destroy',
+		'as'	=>	'admin.pedidos.destroy' 
+		]);
+	Route::get('pedidos/{id_pedido, numero_mesa}/show', [
+		'uses'	=>	'PedidosController@show',
+		'as'	=>	'admin.pedidos.show' 
+		]);
+
 
 });
 
