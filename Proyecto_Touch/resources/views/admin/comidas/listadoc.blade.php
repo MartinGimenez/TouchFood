@@ -29,7 +29,7 @@
 			        	<td class="agrandarletra">${{ ucwords($comida->precio) }}</td>
 			        	<td class="agrandarletra">{{ ucwords($comida->tiempo_coccion) }}</td>
 
-			        	<td><a href="{{ route('admin.comidas.edit', $comida->id) }}" class="btn-floating btn-large waves-effect waves-light red darken-3 z-depth-3"><i class="material-icons right">assignment</i></a>
+			        	<td><a href="{{ route('admin.comidas.edit', $comida->id_plato) }}" class="btn-floating btn-large waves-effect waves-light red darken-3 z-depth-3"><i class="material-icons right">assignment</i></a>
 			        	</td>
 
 			        	<td><a href="{{ route('admin.comidas.destroy', $comida->id_plato) }}" class="btn-floating btn-large waves-effect waves-light red darken-3 z-depth-3"><i class="material-icons right">delete</i></a>

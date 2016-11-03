@@ -77,7 +77,7 @@
 
                 <div class="col s12 center">
                     <button class="white-text waves-effect waves-light btn-large red darken-2 z-depth-5 center" style="float:left;" type="submit" >Atrás</button>
-                    <button class="white-text waves-effect waves-light btn-large red darken-2 z-depth-5 center" style="float:right;" type="submit" >Modificar mesa</button>
+                    <button class="white-text waves-effect waves-light btn-large red darken-2 z-depth-5 center" style="float:right;" type="submit" >Modificar bebida</button>
                 </div>
             </form>
         </div>
