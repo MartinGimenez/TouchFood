@@ -147,29 +147,41 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 
-Route::post ('admin/comidaslistado', [
+
+Route::group(['prefix' => 'admin'], function(){
+
+	Route::resource('comidas','ComidasController');
+	Route::get('comidas/{id}/destroy', [
+		'uses'	=>	'ComidasController@destroy',
+		'as'	=>	'admin.comidas.destroy' 
+		]);
+	Route::post ('comidaslistado', [
 	'uses' 	=>	'ComidasController@comidas_por_categoria_admin',
 	'as'	=>	'comidas.listado'
 ]);
-Route::group(['prefix' => 'admin' ], function(){
-
-	Route::resource('comidas','ComidasController');
 	Route::resource('mesas','MesasController');
 	Route::get('mesas/{id}/destroy', [
 		'uses'	=>	'MesasController@destroy',
 		'as'	=>	'admin.mesas.destroy' 
 		]);
-
-	Route::resource('pedidos','PedidosController');
-
-	Route::get('pedidos/{id_pedido}/destroy', [
-		'uses'	=>	'PedidosController@destroy',
-		'as'	=>	'admin.pedidos.destroy' 
+	Route::resource('bebidas','BebidasController');
+	Route::get('bebidas/{id}/destroy', [
+		'uses'	=>	'BebidasController@destroy',
+		'as'	=>	'admin.bebidas.destroy' 
 		]);
-	Route::get('pedidos/{id_pedido, numero_mesa}/show', [
-		'uses'	=>	'PedidosController@show',
-		'as'	=>	'admin.pedidos.show' 
+	Route::post ('bebidalistado', [
+	'uses' 	=>	'BebidasController@bebidas_por_categoria_admin',
+	'as'	=>	'bebidas.listado'
+]);
+	Route::resource('postres','PostresController');
+	Route::get('postres/{id}/destroy', [
+		'uses'	=>	'PostresController@destroy',
+		'as'	=>	'admin.postres.destroy' 
 		]);
+	Route::post ('postreslistado', [
+	'uses' 	=>	'PostresController@postres_por_categoria_admin',
+	'as'	=>	'postres.listado'
+]);
 
 
 });

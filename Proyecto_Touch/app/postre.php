@@ -8,6 +8,8 @@ class postre extends Model
 {
     //
     protected $table = 'postres';
+    public $timestamps= false;
+    protected $primaryKey = 'id_postre';
 
     protected $fillable = ['nombre', 'ingrediente', 'categoria','precio','celiaco','tiempo_preparacion'];
 

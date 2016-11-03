@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\postre;
+use DB;
+use Laracasts\Flash\Flash;
 
 class PostresController extends Controller
 {
@@ -15,9 +17,11 @@ class PostresController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+   public function index()
     {
-        //
+       
+       $categorias_postres = DB::table('postres')->select('categoria')->distinct()->get();
+        return view('admin.postres.index')->with('categorias_postres',$categorias_postres);
     }
 
     /**
@@ -25,9 +29,9 @@ class PostresController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+     public function create()
     {
-        //
+        return view ('admin.postres.create');
     }
 
     /**
@@ -35,14 +39,7 @@ class PostresController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
+     *epecified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -60,7 +57,8 @@ class PostresController extends Controller
      */
     public function edit($id)
     {
-        //
+        $postre = Postre::find($id);
+        return view('admin.postres.edit')->with('postre', $postre);
     }
 
     /**
@@ -72,7 +70,15 @@ class PostresController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $postre = Postre::find($id);
+        $postre->nombre = $request->nombre;
+        $postre->ingredientes = $request->ingredientes;
+        $postre->categoria = $request->categoria;
+        $postre->precio = $request->precio;
+        $postre->celiaco = $request->celiaco;
+        $postre->tiempo_preparacion = $request->tiempo_preparacion;
+        $postre->save();
+        return redirect()->route('admin.postres.index');
     }
 
     /**
@@ -83,13 +89,32 @@ class PostresController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $postre = Postre::find($id);
+        $postre->delete();
+        return redirect()->route('admin.postres.index');
     }
 
+    public function store(Request $request)
+    {
+        $postre = new Postre($request->all());
+        $postre->nombre = $request->nombre;
+        $postre->ingredientes = $request->ingredientes;
+        $postre->categoria = $request->categoria;
+        $postre->precio = $request->precio;
+        $postre->celiaco = $request->celiaco;
+        $postre->tiempo_preparacion = $request->tiempo_preparacion;
+        $postre->save();
+        return redirect()->route('admin.postres.index');
+    }
     public function postres_por_categoria($categoria)
     {
         $comidas = postre::where('categoria',$categoria)->get();
         $tipo="postres";
         return view('app.menu.comidas.index')->with('comidas',$comidas)->with('categoria',$categoria)->with('tipo',$tipo);
+    }
+    public function postres_por_categoria_admin(Request $request)
+    {
+        $postres = postre::where('categoria',$request->categoria)->get();
+        return view('admin.postres.listadop')->with('postres',$postres);       
     }
 }

@@ -16,7 +16,7 @@ trait RegistersUsers
      */
     public function getRegister()
     {
-        return view('admin.mesas.register');
+        return view('auth.register');
     }
 
     /**

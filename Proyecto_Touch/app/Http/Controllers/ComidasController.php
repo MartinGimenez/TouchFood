@@ -8,7 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\comida;
 use DB;
-
+use Laracasts\Flash\Flash;
 class ComidasController extends Controller
 {
     /**
@@ -28,9 +28,9 @@ class ComidasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+     public function create()
     {
-        //
+        return view ('admin.comidas.create');
     }
 
     /**
@@ -56,7 +56,8 @@ class ComidasController extends Controller
      */
     public function edit($id)
     {
-        //
+        $comida = Comida::find($id);
+        return view('admin.comidas.edit')->with('comida', $comida);
     }
 
     /**
@@ -68,7 +69,15 @@ class ComidasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+        $comida = Comida::find($id);
+        $comida->nombre = $request->nombre;
+        $comida->ingredientes = $request->ingredientes;
+        $comida->categoria = $request->categoria;
+        $comida->precio = $request->precio;
+        $comida->celiaco = $request->celiaco;
+        $comida->tiempo_coccion = $request->tiempo_coccion;
+        $comida->save();
+        return redirect()->route('admin.comidas.index');
     }
 
     /**
@@ -79,12 +88,23 @@ class ComidasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $comida = Comida::find($id);
+        $comida->delete();
+        return redirect()->route('admin.comidas.index');
     }
 
-    public function store($request)
+    public function store(Request $request)
     {
-        
+        $comida = new Comida($request->all());
+        $comida->nombre = $request->nombre;
+        $comida->ingredientes = $request->ingredientes;
+        $comida->categoria = $request->categoria;
+        $comida->precio = $request->precio;
+        $comida->celiaco = $request->celiaco;
+        $comida->tiempo_coccion = $request->tiempo_coccion;
+        $comida->save();
+        return redirect()->route('admin.comidas.index');
+
     }
 
     public function comidas_por_categoria($categoria)

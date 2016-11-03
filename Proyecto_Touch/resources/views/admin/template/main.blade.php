@@ -30,7 +30,9 @@
         </style>
 
       </nav>
-      <div class="container"><a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only"><i class="material-icons">menu</i></a></div>
+
+      <div class="container"><a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only"><i class="material-icons">menu</i></a>
+      </div>
       <ul id="nav-mobile" class="side-nav fixed">  
         <div align="center">
         <li> <img class="responsive-img" src="{{asset('images/logo200x200.png')}}"></li>
@@ -56,8 +58,7 @@
             <div class="collapsible-body">
               <ul>
                 <li><a href="{{ route('admin.comidas.index') }}">Listado</a></li>
-                <li><a href="#!">Agregar Comidas</a></li>
-                 <li><a href="#!">Modificar Comidas</a></li>
+                <li><a href="{{ route('admin.comidas.create') }}">Agregar Comidas</a></li>
               </ul>
             </div>
           </li>
@@ -69,9 +70,8 @@
             <a class="collapsible-header">Bebidas<i class="material-icons">arrow_drop_down</i></a>
             <div class="collapsible-body">
               <ul>
-                <li><a href="#!">Listado</a></li>
-                <li><a href="#!">Agregar Bebidas</a></li>
-                <li><a href="#!">Modificar Bebidas</a></li>
+                <li><a href="{{ route('admin.bebidas.index') }}">Listado</a></li>
+                <li><a href="{{ route('admin.bebidas.create') }}">Agregar Bebidas</a></li>
               </ul>
             </div>
           </li>
@@ -83,9 +83,8 @@
             <a class="collapsible-header">Postres<i class="material-icons">arrow_drop_down</i></a>
             <div class="collapsible-body">
               <ul>
-                <li><a href="#!">Listado</a></li>
-                <li><a href="#!">Agregar Postres</a></li>
-                <li><a href="#!">Modificar Postres</a></li>
+                <li><a href="{{ route('admin.postres.index') }}">Listado</a></li>
+                <li><a href="{{ route('admin.postres.create') }}">Agregar Postres</a></li>
               </ul>
             </div>
           </li>
@@ -97,7 +96,7 @@
             <a class="collapsible-header">Pedidos<i class="material-icons">arrow_drop_down</i></a>
             <div class="collapsible-body">
               <ul>
-                <li><a href="{{ route('admin.pedidos.index') }}">Listado</a></li>
+                <li><a href="#!">Listado</a></li>
                 <li><a href="#!">Agregar pedidos</a></li>
               </ul>
             </div>
@@ -106,7 +105,7 @@
 
       
           <li class="contenedor-div">
-            <li text-white><a href="{{ route('user.logout') }}" <button type="button" class="white-text waves-effect waves-light btn-large red darken-2 z-depth-3">Cerrar sesión</button></a></li>
+            <li text-white><a href="{{ route('admin.logout') }}" <button type="button" class="white-text waves-effect waves-light btn-large red darken-2 z-depth-3">Cerrar sesión</button></a></li>
           </li>
 
           <!--         POP UPS          -->
@@ -142,6 +141,7 @@
       <div class="col s12">
         <section>
           @yield('content')
+          @include('flash::message')
         </section>
       </div>
     </main>

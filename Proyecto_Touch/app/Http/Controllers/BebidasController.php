@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\bebida;
+use DB;
+use Laracasts\Flash\Flash;
 
 class BebidasController extends Controller
 {
@@ -15,9 +17,11 @@ class BebidasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+   public function index()
     {
-        //
+       
+       $categorias_bebidas = DB::table('bebidas')->select('categoria')->distinct()->get();
+        return view('admin.bebidas.index')->with('categorias_bebidas',$categorias_bebidas);
     }
 
     /**
@@ -25,9 +29,9 @@ class BebidasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+     public function create()
     {
-        //
+        return view ('admin.bebidas.create');
     }
 
     /**
@@ -35,14 +39,7 @@ class BebidasController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
+     *epecified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -60,7 +57,8 @@ class BebidasController extends Controller
      */
     public function edit($id)
     {
-        //
+        $bebida = Bebida::find($id);
+        return view('admin.bebidas.edit')->with('bebida', $bebida);
     }
 
     /**
@@ -72,7 +70,16 @@ class BebidasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $bebida = Bebida::find($id);
+        $bebida->nombre = $request->nombre;
+        $bebida->ingredientes = $request->ingredientes;
+        $bebida->categoria = $request->categoria;
+        $bebida->precio = $request->precio;
+        $bebida->celiaco = $request->celiaco;
+        $bebida->tiempo_servicio = $request->tiempo_servicio;
+        $bebida->save();
+        //Flash::success("Se ha realizado la modificación de forma exitosa");
+        return redirect()->route('admin.bebidas.index');
     }
 
     /**
@@ -83,7 +90,27 @@ class BebidasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $bebida = Bebida::find($id);
+        $bebida->delete();
+
+        //Flash::success("Se ha eliminado bebida de forma exitosa");
+        return redirect()->route('admin.bebidas.index');
+    }
+
+    public function store(Request $request)
+    {
+        $bebida = new Bebida($request->all());
+        $bebida->nombre = $request->nombre;
+        $bebida->ingredientes = $request->ingredientes;
+        $bebida->categoria = $request->categoria;
+        $bebida->precio = $request->precio;
+        $bebida->celiaco = $request->celiaco;
+        $bebida->tiempo_servicio = $request->tiempo_servicio;
+        $bebida->save();
+        //Flash::success("Se agrego bebida de forma exitosa");
+
+        return redirect()->route('admin.bebidas.index');
+
     }
 
     public function bebidas_por_categoria($categoria)
@@ -91,5 +118,10 @@ class BebidasController extends Controller
         $comidas = bebida::where('categoria',$categoria)->get();
         $tipo= "bebidas";
         return view('app.menu.comidas.index')->with('comidas',$comidas)->with('categoria',$categoria)->with('tipo',$tipo);     
+    }
+    public function bebidas_por_categoria_admin(Request $request)
+    {
+        $bebidas = bebida::where('categoria',$request->categoria)->get();
+        return view('admin.bebidas.listadob')->with('bebidas',$bebidas);       
     }
 }
