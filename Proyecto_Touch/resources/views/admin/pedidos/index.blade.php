@@ -22,33 +22,22 @@
 			    </thead>
 
 			    <tbody>
-			    	@foreach($pedidos as $pedido)
+			    	@foreach($pedido as $pedido)
 			      	<tr>
 			        	<td class="agrandarletra">{{ ucwords($pedido->id_pedido) }}</td>
 			        	<td class="agrandarletra">{{ ucwords($pedido->numero_mesa) }}</td>
 			        	<td class="agrandarletra">{{ ucwords($pedido->estado) }}</td>
 
-			        	<td>
-							<!-- Modal Trigger -->
-							<a class="modal-trigger waves-effect waves-light red darken-3 btn" href="#modal1">Detalle</a>
-
-							<!-- Modal Structure -->
-							<div id="modal1" class="modal modal-fixed-footer">
-							<div class="modal-content">
-							  <h4>Detalle del pedido</h4>
-							  <p>Acá va la tablacon el detalle</p>
-							</div>
-							<div class="modal-footer">
-							  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
-							</div>
-							</div>
-						</td>
-
-
-			        	<td><a href="{{ route('admin.pedidos.edit', $pedido->id_pedido) }}" class="btn-floating btn-large waves-effect waves-light red darken-3 z-depth-3"><i class="material-icons right">assignment</i></a>
-			        	</td>
 			        	
-			        	<td><a href="{{ route('admin.pedidos.destroy', $pedido->id_pedido) }}" class="btn-floating btn-large waves-effect waves-light red darken-3 z-depth-3"><i class="material-icons right">delete</i></a>
+
+			        	
+			        	<form method="POST" action="{{ route('pedidoslistadodetalle') }}">
+              			{!! csrf_field() !!}
+              			<input type="hidden" name="id_pedido" value="{{$pedido->id_pedido}}">	
+			        	<td><button style="float:center;" class="btn-floating btn-large waves-effect waves-light red darken-3 z-depth-3" type="submit" name="action"><i class="material-icons right">view_headline</i></button> </td>
+			        	</form>
+			        
+			        	<td><a href="" class="btn-floating btn-large waves-effect waves-light red darken-3 z-depth-3"><i class="material-icons right">delete</i></a>
 			        	</td>
 			        	
 
@@ -73,17 +62,3 @@
 			    
 
 @endsection
-<script >
-$(document).ready(function(){
-    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-    $('.modal').modal();
-  });
-</script>
-
-<script>
-$(document).ready(function() {
-	$("myTable").tableSorter({
-		//sortColumn: 'pedido'	//Índice de la columna o nombre (en minúsculas) que hemos dado a la columna, para ordenar.
-	});
-});
-</script>

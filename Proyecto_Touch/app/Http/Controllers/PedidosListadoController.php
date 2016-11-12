@@ -83,4 +83,41 @@ class PedidosListadoController extends Controller
     }
 
 
+
+     public function show()
+    {   
+        $pedidos = pedido::all();
+        return view('admin.pedidos.index')->with('pedido',$pedidos);
+
+        
+    }
+
+     public function listadodetalle(Request $request)
+    {   
+         $pedidoscomidas = DB::table('pedidoscomidas')
+            ->join('comidas', 'pedidoscomidas.id_plato', '=', 'comidas.id_plato')
+            ->join('pedidos', 'pedidoscomidas.id_pedidoc', '=', 'pedidos.id_pedido')
+            ->where('pedidos.id_pedido' , '=', $request->id_pedido )
+            ->select('comidas.nombre','pedidoscomidas.horac')
+            ->get();
+
+        $pedidosbebidas = DB::table('pedidosbebidas')
+            ->join('bebidas', 'pedidosbebidas.id_bebida', '=', 'bebidas.id_bebida')
+            ->join('pedidos', 'pedidosbebidas.id_pedidob', '=', 'pedidos.id_pedido')
+            ->where('pedidos.id_pedido' , '=', $request->id_pedido )
+            ->select('bebidas.nombre','pedidosbebidas.horab')
+            ->get();   
+
+        $pedidospostres = DB::table('pedidospostres')
+            ->join('postres', 'pedidospostres.id_postre', '=', 'postres.id_postre')
+            ->join('pedidos', 'pedidospostres.id_pedidop', '=', 'pedidos.id_pedido')
+            ->where('pedidos.id_pedido' , '=', $request->id_pedido )
+            ->select('postres.nombre','pedidospostres.horap')
+            ->get();    
+        return view('admin.pedidos.pedidosdetalle')->with('pedidoscomidas',$pedidoscomidas)->with('pedidosbebidas',$pedidosbebidas)->with('pedidospostres',$pedidospostres);
+
+        
+    }
+
+
 }

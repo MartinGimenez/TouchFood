@@ -12,6 +12,13 @@
 */
 
 
+
+Route::get ('pedidos-listado', [
+	'uses' 	=>	'PedidosListadoController@show',
+	'as'	=>	'pedidoslistado'
+]);
+
+
 Route::post ('pedido-listado-cancelacionp', [
 	'uses' 	=>	'PedidosListadoController@deletep',
 	'as'	=>	'pedidoscancelacionp'
@@ -181,6 +188,17 @@ Route::group(['prefix' => 'admin'], function(){
 	Route::post ('postreslistado', [
 	'uses' 	=>	'PostresController@postres_por_categoria_admin',
 	'as'	=>	'postres.listado'
+]);
+
+
+Route::get ('pedidos-listado', [
+	'uses' 	=>	'PedidosListadoController@show',
+	'as'	=>	'pedidoslistado'
+]);
+
+Route::post ('pedidos-listado-detalle', [
+	'uses' 	=>	'PedidosListadoController@listadodetalle',
+	'as'	=>	'pedidoslistadodetalle'
 ]);
 
 

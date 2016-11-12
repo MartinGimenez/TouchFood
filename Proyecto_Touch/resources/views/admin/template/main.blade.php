@@ -96,7 +96,7 @@
             <a class="collapsible-header">Pedidos<i class="material-icons">arrow_drop_down</i></a>
             <div class="collapsible-body">
               <ul>
-                <li><a href="#!">Listado</a></li>
+                <li><a href="{{ route('pedidoslistado') }}">Listado</a></li>
                 <li><a href="#!">Agregar pedidos</a></li>
               </ul>
             </div>
