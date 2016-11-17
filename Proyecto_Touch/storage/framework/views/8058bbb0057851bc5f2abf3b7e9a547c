@@ -1,0 +1,63 @@
+<?php $__env->startSection('content'); ?>
+
+<div class="card-panel black-text">
+			<table class="striped centered black-text responsive-table">
+			    <thead >
+			        <tr class="center">
+			            <th data-field="name" class="tituloscyp black-text">Nombre</th>
+			            <th data-field="precio" class="tituloscyp black-text">Ingredientes</th>
+			            <th data-field="precio" class="tituloscyp black-text">Precio</th>
+			            <th data-field="precio" class="tituloscyp black-text">Demora</th>
+			            <style type="text/css"> 
+                            .tituloscyp {
+                            text-align: center;
+                            color: white;
+                            font-family: Calibri;
+                            font-size: 35px;
+                            }
+                        </style>
+			        </tr>
+			    </thead>
+
+			    <tbody>
+			    	<?php foreach($comidas as $comida): ?>
+			      	<tr>
+			        	<td class="agrandarletra"><?php echo e(ucwords($comida->nombre)); ?></td>
+			        	<td class="agrandarletra"><?php echo e(ucwords($comida->ingredientes)); ?></td>
+			        	<td class="agrandarletra">$<?php echo e(ucwords($comida->precio)); ?></td>
+			        	<td class="agrandarletra"><?php echo e(ucwords($comida->tiempo_coccion)); ?></td>
+
+			        	<td><a href="<?php echo e(route('admin.comidas.edit', $comida->id_plato)); ?>" class="btn-floating btn-large waves-effect waves-light red darken-3 z-depth-3"><i class="material-icons right">assignment</i></a>
+			        	</td>
+
+			        	<td><a href="<?php echo e(route('admin.comidas.destroy', $comida->id_plato)); ?>" class="btn-floating btn-large waves-effect waves-light red darken-3 z-depth-3"><i class="material-icons right">delete</i></a>
+			        	</td>
+			        	
+			        	
+
+			      		<style type="text/css"> 
+                            .agrandarletra {
+                            text-align: center;
+                            color: white;
+                            font-family: Calibri;
+                            font-size: 20px;
+                            color:rgba(0,0,0,0.71);
+                            }
+                        </style>
+                        
+			      	</tr>
+			    	<?php endforeach; ?>
+
+			    	</tbody>
+
+			    	</table>
+
+			    	</div>
+
+
+
+
+
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin.template.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

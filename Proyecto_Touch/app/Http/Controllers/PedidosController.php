@@ -85,11 +85,7 @@ class PedidosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
-    }
-
+    
     public function agregar_pedido(){
         
         $name =Auth::user()->name;

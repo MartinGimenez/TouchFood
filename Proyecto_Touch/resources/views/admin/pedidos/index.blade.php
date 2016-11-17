@@ -4,7 +4,7 @@
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script type="text/javascript" src="jquery.tablesorter.js"></script> 
 	<div class="card-panel black-text">
-			<table class="striped centered black-text" id="myTable">
+			<table class="striped centered black-text tablesorter" id="myTable">
 			    <thead >
 			        <tr class="center">
 			            <th data-field="id_pedido" class="tituloscyp black-text">Pedido</th>
@@ -37,7 +37,7 @@
 			        	<td><button style="float:center;" class="btn-floating btn-large waves-effect waves-light red darken-3 z-depth-3" type="submit" name="action"><i class="material-icons right">view_headline</i></button> </td>
 			        	</form>
 			        
-			        	<td><a href="" class="btn-floating btn-large waves-effect waves-light red darken-3 z-depth-3"><i class="material-icons right">delete</i></a>
+			        	<td><a href="{{ route('admin.pedidoslistado.destroy', $pedido->id_pedido) }}" class="btn-floating btn-large waves-effect waves-light red darken-3 z-depth-3"><i class="material-icons right">delete</i></a>
 			        	</td>
 			        	
 

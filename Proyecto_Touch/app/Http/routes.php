@@ -190,16 +190,24 @@ Route::group(['prefix' => 'admin'], function(){
 	'as'	=>	'postres.listado'
 ]);
 
+	
 
-Route::get ('pedidos-listado', [
-	'uses' 	=>	'PedidosListadoController@show',
-	'as'	=>	'pedidoslistado'
-]);
 
-Route::post ('pedidos-listado-detalle', [
-	'uses' 	=>	'PedidosListadoController@listadodetalle',
-	'as'	=>	'pedidoslistadodetalle'
-]);
+	Route::get ('pedidos-listado', [
+		'uses' 	=>	'PedidosListadoController@show',
+		'as'	=>	'pedidoslistado'
+	]);
+
+	Route::post ('pedidos-listado-detalle', [
+		'uses' 	=>	'PedidosListadoController@listadodetalle',
+		'as'	=>	'pedidoslistadodetalle'
+	]);
+
+	//Route::resource('pedidos-listado','PedidosListadoController');
+	Route::get('pedidos-listado/{id}/destroy', [
+		'uses'	=>	'PedidosListadoController@destroy',
+		'as'	=>	'admin.pedidoslistado.destroy' 
+	]);
 
 
 });

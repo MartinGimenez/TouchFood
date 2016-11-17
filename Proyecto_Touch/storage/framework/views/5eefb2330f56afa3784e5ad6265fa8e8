@@ -1,0 +1,109 @@
+<?php $__env->startSection('content'); ?>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script type="text/javascript" src="jquery.tablesorter.js"></script> 
+	<div class="card-panel black-text">
+			<table class="striped centered black-text" id="myTable">
+			    <thead >
+			        <tr class="center">
+			            <th data-field="" class="tituloscyp black-text">Orden</th>
+			            <th data-field="" class="tituloscyp black-text">Hora de Orden</th>
+			            
+			            <style type="text/css"> 
+                            .tituloscyp {
+                            text-align: center;
+                            color: white;
+                            font-family: Calibri;
+                            font-size: 35px;
+                            }
+                        </style>
+			        </tr>
+			    </thead>
+
+			    <tbody>
+			    	<?php foreach($pedidoscomidas as $pedidoc): ?>
+			      	<tr>
+			        	<td class="agrandarletra"><?php echo e(ucwords($pedidoc->nombre)); ?></td>
+			        	<td class="agrandarletra"><?php echo e(ucwords($pedidoc->horac)); ?></td>
+			        	
+
+			        	
+
+			        	
+
+			      		<style type="text/css"> 
+                            .agrandarletra {
+                            text-align: center;
+                            color: white;
+                            font-family: Calibri;
+                            font-size: 20px;
+                            color:rgba(0,0,0,0.71);
+                            }
+                        </style>
+                        
+			      	</tr>
+			    	<?php endforeach; ?>
+
+
+
+			    	<?php foreach($pedidosbebidas as $pedidob): ?>
+			      	<tr>
+			        	<td class="agrandarletra"><?php echo e(ucwords($pedidob->nombre)); ?></td>
+			        	<td class="agrandarletra"><?php echo e(ucwords($pedidob->horab)); ?></td>
+			        	
+
+			        	
+
+			        	
+
+			      		<style type="text/css"> 
+                            .agrandarletra {
+                            text-align: center;
+                            color: white;
+                            font-family: Calibri;
+                            font-size: 20px;
+                            color:rgba(0,0,0,0.71);
+                            }
+                        </style>
+                        
+			      	</tr>
+			    	<?php endforeach; ?>
+
+
+
+			    	<?php foreach($pedidospostres as $pedidop): ?>
+			      	<tr>
+			        	<td class="agrandarletra"><?php echo e(ucwords($pedidop->nombre)); ?></td>
+			        	<td class="agrandarletra"><?php echo e(ucwords($pedidop->horap)); ?></td>
+			        	
+
+			        	
+
+			        	
+
+			      		<style type="text/css"> 
+                            .agrandarletra {
+                            text-align: center;
+                            color: white;
+                            font-family: Calibri;
+                            font-size: 20px;
+                            color:rgba(0,0,0,0.71);
+                            }
+                        </style>
+                        
+			      	</tr>
+			    	<?php endforeach; ?>
+
+			    	</tbody>
+
+			    	</table>
+
+			    	</div>
+			    
+
+
+
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('admin.template.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

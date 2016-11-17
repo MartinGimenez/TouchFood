@@ -16,11 +16,23 @@
   <body>
     <header>
       <nav class="top-nav red darken-2">
-        <div class="container">
-          <div class="nav-wrapper"><a class="page-title"><?php echo e(isset($titulo) ? $titulo : 'Panel de Administración'); ?></a></div>
+        <div class="container stroke nav-wrapper">
+          <a><?php echo e(isset($titulo) ? $titulo : "Panel de Adm."); ?></a>
         </div>
+
+        <style type="text/css"> 
+          .stroke {
+          text-align: center;
+          color: white;
+          font-family: Calibri;
+          font-size: 50px;
+          }
+        </style>
+
       </nav>
-      <div class="container"><a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only"><i class="material-icons">menu</i></a></div>
+
+      <div class="container"><a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only"><i class="material-icons">menu</i></a>
+      </div>
       <ul id="nav-mobile" class="side-nav fixed">  
         <div align="center">
         <li> <img class="responsive-img" src="<?php echo e(asset('images/logo200x200.png')); ?>"></li>
@@ -32,7 +44,7 @@
             <div class="collapsible-body">
               <ul>
                 <li><a href="<?php echo e(route('admin.mesas.index')); ?>">Listado</a></li>
-                <li><a href="#!">Agregar mesas</a></li>
+                <li><a href="<?php echo e(route('mesas.register')); ?>">Agregar mesas</a></li>
                 <li><a href="#!">Combinar mesas</a></li>
               </ul>
             </div>
@@ -45,8 +57,34 @@
             <a class="collapsible-header">Comidas<i class="material-icons">arrow_drop_down</i></a>
             <div class="collapsible-body">
               <ul>
-                <li><a href="#!">Listado</a></li>
-                <li><a href="#!">Agregar Comidas</a></li>
+                <li><a href="<?php echo e(route('admin.comidas.index')); ?>">Listado</a></li>
+                <li><a href="<?php echo e(route('admin.comidas.create')); ?>">Agregar Comidas</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </li>
+       <li class="no-padding">
+        <ul class="collapsible collapsible-accordion">
+          <li>
+            <a class="collapsible-header">Bebidas<i class="material-icons">arrow_drop_down</i></a>
+            <div class="collapsible-body">
+              <ul>
+                <li><a href="<?php echo e(route('admin.bebidas.index')); ?>">Listado</a></li>
+                <li><a href="<?php echo e(route('admin.bebidas.create')); ?>">Agregar Bebidas</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </li>
+      <li class="no-padding">
+        <ul class="collapsible collapsible-accordion">
+          <li>
+            <a class="collapsible-header">Postres<i class="material-icons">arrow_drop_down</i></a>
+            <div class="collapsible-body">
+              <ul>
+                <li><a href="<?php echo e(route('admin.postres.index')); ?>">Listado</a></li>
+                <li><a href="<?php echo e(route('admin.postres.create')); ?>">Agregar Postres</a></li>
               </ul>
             </div>
           </li>
@@ -58,12 +96,42 @@
             <a class="collapsible-header">Pedidos<i class="material-icons">arrow_drop_down</i></a>
             <div class="collapsible-body">
               <ul>
-                <li><a href="#!">Listado</a></li>
+                <li><a href="<?php echo e(route('pedidoslistado')); ?>">Listado</a></li>
                 <li><a href="#!">Agregar pedidos</a></li>
               </ul>
             </div>
           </li>
         </ul>
+
+      
+          <li class="contenedor-div">
+            <li text-white><a href="<?php echo e(route('admin.logout')); ?>" <button type="button" class="white-text waves-effect waves-light btn-large red darken-2 z-depth-3">Cerrar sesión</button></a></li>
+          </li>
+
+          <!--         POP UPS          -->
+          <!--div id="modal1" class="modal">
+          <div class="modal-content">
+            <h4 class="red-text">¿Desea salir?</h4>
+            <p>Si continua podrá cerrar su sesión.</p>
+          </div>
+          <div class="modal-footer">
+            <button href="<?php echo e(route('user.logout')); ?>" style="float:center;" class="btn waves-effect waves-light red darken-2" type="submit" name="action"> Aceptar <i class="material-icons right">done</i></button>
+            <a href="#!" <button style="float:left;" class="btn waves-effect waves-light red darken-2" type="submit" name="action"> Cancelar <i class="material-icons right">error</i></button></a>
+          </div>
+        </div-->
+
+        <style type="text/css">
+          .contenedor-div{
+          position:relative;
+          }
+          .salir{
+          position:absolute;
+          bottom:100px;
+          right:100px;
+
+          }
+        </style>
+
       </li>
       </ul>
     </header>
@@ -73,6 +141,7 @@
       <div class="col s12">
         <section>
           <?php echo $__env->yieldContent('content'); ?>
+          <?php echo $__env->make('flash::message', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
         </section>
       </div>
     </main>
