@@ -86,7 +86,7 @@ class PedidosListadoController extends Controller
     public function destroy($id)
     {   
         pedido::where('id_pedido', '=', $id)->delete();
-        return view('admin.pedidos.index');
+        return redirect('pedidos-listado');
     }
 
 

@@ -1,6 +1,6 @@
 <html>
     <head class="red darken-3">
-        <title>Laravel</title>
+        <title>Touchfood</title>
 
         <link href='//fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>

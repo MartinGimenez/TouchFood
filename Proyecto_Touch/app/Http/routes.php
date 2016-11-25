@@ -209,6 +209,12 @@ Route::group(['prefix' => 'admin'], function(){
 		'as'	=>	'admin.pedidoslistado.destroy' 
 	]);
 
+	Route::get('reportes/{id}', [
+		'uses'	=>	'ReportesController@index',
+		'as'	=>	'admin.reportes' 
+	]);
+
+
 
 });
 
