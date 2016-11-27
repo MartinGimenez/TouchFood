@@ -11,7 +11,9 @@
 |
 */
 
-
+Route::get('sobre-nosotros', function() {
+	return view('sobre-nosotros');
+});
 
 Route::get ('pedidos-listado', [
 	'uses' 	=>	'PedidosListadoController@show',
