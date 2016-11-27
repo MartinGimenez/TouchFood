@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-	<html>
-	<head>
-    	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <html>
+  <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
       <!--Import Google Icon Font-->
         <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
         <link type="text/css" rel="stylesheet" href="{!! asset('css/materialize.min.css') !!}"  media="screen,projection"/>
+        <link type="text/css" rel="stylesheet" href="{!! asset('css/admin.formularios.css') !!}"  media="screen,projection"/>
 
       <!--Let browser know website is optimized for mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -14,7 +15,7 @@
 
     <body>
 
-  <body class="red darken-3">
+  <body class="grey lighten-5">
 
     <!--      ENCABEZADO      -->
     <nav>
@@ -26,14 +27,15 @@
         <!--li><a href="{{ route('user.login') }}" <button type="button" class="waves-effect waves-light btn-large red darken-2">Salir</button></a></li-->
         </ul>
         <ul class="left hide-on-med-and-down">
-          
+          <!--a class="btn-floating btn-large waves-effect waves-light red darken-3 z-depth-3"><i class="material-icons">replay</i></a-->
+          <!--li><a href="">{{ Auth::user()->name }}</a></li-->
           <li><a href="{{ route('menu.categorias') }}" <button type="button" class="waves-effect waves-light btn-large red darken-2">Menú</button></a></li>
           <li><a href="{{ route('pedido.index') }}" <button type="button" class="waves-effect waves-light btn-large red darken-2">Pedido</button></a></li>
           <li><a href="{{ route('pagos.index') }}" <button type="button" class="waves-effect waves-light btn-large red darken-2">Pago</button></a></li>
           
         </ul>
         <ul class="side-nav" id="mobile-demo">
-          
+          <!--li><a href="">{{ Auth::user()->name }}</a></li-->
           <li><a href="{{ route('menu.categorias') }}" <button type="button" class="waves-effect waves-light btn-large red darken-2">Menú</button></a></li>
           <li><a href="#!" <button type="button" class="waves-effect waves-light btn-large red darken-2">Pedido</button></a></li>
           <li><a href="#!" <button type="button" class="waves-effect waves-light btn-large red darken-2">Pago</button></a></li>
@@ -43,11 +45,87 @@
     </nav>
 
 
-    
+    <ul id="slide-out" class="side-nav">
+      <li><div class="userView">
+        <img class="background" src="{{ asset('images/M/Fondo.jpeg')}}">
+        <a href="#!user"><img class="circle" src="{{ asset('images/M/M3.jpg')}}"></a>
+        <!--a href="#!name"><span class="white-text name">Usted es</span></a-->
+        <a class= "white-text" href="">{{ Auth::user()->name }}<!--span class="white-text email">Bienvenido</span--></a>
+      </div></li>
+      <li><a href="{{ route('bienvenida') }}" class="red-text"><i class="material-icons red-text">view_carousel</i>Ir a la pantalla principal</a></li>
+      <font FACE="Calibri" SIZE=10 COLOR="red" center>touch</font>
+      <font FACE="Calibri" SIZE=10 COLOR="red" center><b>food</b></font>
+      <li><div class="divider"></div></li>
+      <li><a class="subheader">Configuración</a></li>
+      <li><a class="subheader">Acerca de nosotros</a></li>
+      <li><a class="waves-effect red-text" href="#!">Ayuda</a></li>
+    </ul>
+    <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons red-text">trending_flat</i></a>
+    <div class="row">
+      <div class="card">
+        <div class="row">
+          <div class="input-field col s12">
+            <h1 class="titulos">Objetivos</h1>
+            <h1 class="descripcion">Touchfood tiene como objetivo la autogestión del cliente enfocado en dos tipos de usuario, los cuales son:
+              ·El cliente: Que se manejara con un logueo de la propia mesa que ocupe, donde pueda realizar pedidos y pagar directamente desde la app.
+              ·El administrador: El cual tendrá el control de las mesas, platos (comidas,bebidas y postres), pedidos y llevar una cuenta de los reportes.</h1>
+            <style type="text/css"> 
+              .titulos {
+                text-align: left;
+                color: red;
+                font-family: Calibri;
+                font-size: 70px;
+                letter-spacing: 10;
+                }
+            </style>
+            <style type="text/css"> 
+              .descripcion {
+                text-align: left;
+                color: grey;
+                font-family: Calibri;
+                font-size: 25px;
+                letter-spacing: 10;
+                }
+            </style>
+          </div>
+          
+          <div class="input-field col s12">  
+            <h1 class="titulos">Alcance</h1>
+            <h1 class="descripcion">La aplicación estará destinada a ofrecer servicios que sirvan para la optimización del negocio de restaurantes,
+            reduciendo tiempos de espera para el cliente y otorgándoles mayor control de gestión a los administradores.</h1>
+          </div>
 
-  <section>
-    @yield('content')
-  </section>
+          <div class="input-field col s12">  
+            <h1 class="titulos">Integrantes</h1>
+            <h1 class="descripcion">
+              <ul>
+                <li>Armanno Matias Nahuel</li> 
+                <li>Navarro Gabriel</li>
+                <li>Garcia Leonardo</li>
+                <li>Martin Gimenez</li>
+                <li>Aguirre Iván Gabriel</li>
+                <li>Leguizamon Gonzalo</li> 
+                <li>Cabado Leonel</li>
+              </ul>
+            </h1>
+          </div>
+          <div class="input-field col s12">    
+            <h1 class="titulos">Tecnologias utilizadas</h1>
+            <h1 class="descripcion">
+              <ul>
+                <li><b>Servidor:</b> Apache brindado por XAMPP</li>
+                <li><b>Framework MVC:</b> Laravel.</li>
+                <li><b>Back End:</b> Lenguaje PHP.</li>
+                <li><b>Base de datos:</b> Mysql gestionadas desde el motor PHPmyadmin y el workspace.</li>
+                <li><b>Front End:</b> Framework Materialize, el cual utiliza las tecnologías (CSS3, HTML5, Javascript, Jquery).</li>
+                <li><b>Test:</b> PHP Unit, Selenium.</li>
+                <li><b>Documentación:</b> SRS IEE 830.</li>
+              </ul>
+            </h1>
+          </div>
+        </div>
+      </div>
+    </div>
 
   <!--      FOOTER        -->
     <footer class="page-footer red darken-2 z-depth-3">
