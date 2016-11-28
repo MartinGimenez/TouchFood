@@ -105,7 +105,7 @@
          <li class="no-padding">
         <ul>
          
-                <li><a href="{{ route('sobre-nosotros') }}">Acerca De Nosotros<i class="material-icons">assignment_ind</i></a></li>
+                <li><a href="{{ route('sobre-nosotros-admin') }}">Acerca De Nosotros<i class="material-icons">assignment_ind</i></a></li>
               </ul>
           </li>
 

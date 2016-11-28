@@ -11,9 +11,14 @@
 |
 */
 
-Route::get ('sobre-nosotros', [
-	'uses' 	=>	'NosotrosController@index',
-	'as'	=>	'sobre-nosotros'
+Route::get ('sobre-nosotros-admin', [
+	'uses' 	=>	'NosotrosController@admin',
+	'as'	=>	'sobre-nosotros-admin'
+]);
+
+Route::get ('sobre-nosotros-usuario', [
+	'uses' 	=>	'NosotrosController@usuario',
+	'as'	=>	'sobre-nosotros-usuario'
 ]);
 
 Route::get ('pedidos-listado', [

@@ -52,7 +52,7 @@
       <font FACE="Calibri" SIZE=10 COLOR="red" center><b>food</b></font>
       <li><div class="divider"></div></li>
       <li><a class="subheader">Configuración</a></li>
-      <li><a class="waves-effect red-text" href="{{ route('sobre-nosotros') }}">Acerca de nosotros</a></li>
+      <li><a class="waves-effect red-text" href="{{ route('sobre-nosotros-usuario') }}">Acerca de nosotros</a></li>
       <li><a class="waves-effect red-text" href="#!">Ayuda</a></li>
     </ul>
     <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons white-text">trending_flat</i></a>
