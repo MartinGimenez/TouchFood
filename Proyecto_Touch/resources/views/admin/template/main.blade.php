@@ -17,7 +17,7 @@
     <header>
       <nav class="top-nav red darken-2">
         <div class="container stroke nav-wrapper">
-          <a>{{ $titulo or "Panel de Adm." }}</a>
+          <a>{{ $titulo or "Panel de Administracion" }}</a>
         </div>
 
         <style type="text/css"> 
@@ -102,6 +102,13 @@
             </div>
           </li>
         </ul>
+         <li class="no-padding">
+        <ul>
+         
+                <li><a href="{{ route('sobre-nosotros') }}">Acerca De Nosotros<i class="material-icons">assignment_ind</i></a></li>
+              </ul>
+          </li>
+
 
       
           <li class="contenedor-div">

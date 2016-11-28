@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('sobre-nosotros', function() {
-	return view('sobre-nosotros');
-});
+Route::get ('sobre-nosotros', [
+	'uses' 	=>	'NosotrosController@index',
+	'as'	=>	'sobre-nosotros'
+]);
 
 Route::get ('pedidos-listado', [
 	'uses' 	=>	'PedidosListadoController@show',

@@ -60,6 +60,12 @@
 
                 <a class="white-text stroke1" target="_blank" href="{{ action('Auth\AuthController@getLogin') }}">Usuario</a> <a class="white-text stroke1">|</a> <a class="white-text stroke1" target="_blank" href="{{ action('Auth\AdminController@getLogin') }}">Administrador</a>
 
+
+
+                
+
+
+
                 <style type="text/css"> 
                     .stroke {
                     color: white;
