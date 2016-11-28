@@ -53,6 +53,21 @@
               @if($categoria == "verduras")
               <img src="{{asset('images/Iconos/verduras.jpg')}}" alt="" class="circle">
               @endif
+              @if($categoria == "vegetales")
+              <img src="{{asset('images/Iconos/vegetales.jpeg')}}" alt="" class="circle">
+              @endif
+              @if($categoria == "postres")
+              <img src="{{asset('images/Iconos/postres.jpeg')}}" alt="" class="circle">
+              @endif
+              @if($categoria == "cafeteria")
+              <img src="{{asset('images/Iconos/cafeteria.jpeg')}}" alt="" class="circle">
+              @endif
+              @if($categoria == "bebida-s-alcohol")
+              <img src="{{asset('images/Iconos/sinalcohol.jpeg')}}" alt="" class="circle">
+              @endif
+              @if($categoria == "bebida-c-alcohol")
+              <img src="{{asset('images/Iconos/conalcohol.jpeg')}}" alt="" class="circle">
+              @endif
 
               <style type="text/css"> 
                             .strok1 {

@@ -60,13 +60,20 @@
 
     <div class="input-field col s12">
         <h4 class="titulos">Precio</h4>
-        <input class="center datos" type="number" name="precio" value="{{ old('precio') }}">
+        <input class="center datos" type="text" name="precio" value="{{ old('precio') }}">
     </div>
 
     <div class="input-field col s12">
         <h4 class="titulos">Celiaco</h4>
-        <input class="center datos" type="number" name="celiaco" value="{{ old('celiaco') }}">
+        <div class="center datos">
+            <select name="celiaco" type="number">
+                <option value="" disabled selected>Elige una opción</option>
+                <option value="1">Si</option>
+                <option value="0">No</option>
+            </select>
+        </div>
     </div>
+
     <div class="input-field col s12">
         <h4 class="titulos">Tiempo de Servicio</h4>
         <input class="center datos validate" placeholder="hh:mm:ss" type="text" name="tiempo_coccion" value="{{ old('tiempo_servicio') }}">

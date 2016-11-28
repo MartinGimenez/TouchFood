@@ -23,21 +23,17 @@
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
         <li><a href="{{ route('user.logout') }}" <button type="button" class="waves-effect waves-light btn-large red darken-2">Salir</button></a></li>
-        <!--li><a href="{{ route('user.login') }}" <button type="button" class="waves-effect waves-light btn-large red darken-2">Salir</button></a></li-->
         </ul>
         <ul class="left hide-on-med-and-down">
-          <!--a class="btn-floating btn-large waves-effect waves-light red darken-3 z-depth-3"><i class="material-icons">replay</i></a-->
-          <!--li><a href="">{{ Auth::user()->name }}</a></li-->
           <li><a href="{{ route('menu.categorias') }}" <button type="button" class="waves-effect waves-light btn-large red darken-2">Menú</button></a></li>
           <li><a href="{{ route('pedido.index') }}" <button type="button" class="waves-effect waves-light btn-large red darken-2">Pedido</button></a></li>
           <li><a href="{{ route('pagos.index') }}" <button type="button" class="waves-effect waves-light btn-large red darken-2">Pago</button></a></li>
           
         </ul>
         <ul class="side-nav" id="mobile-demo">
-          <!--li><a href="">{{ Auth::user()->name }}</a></li-->
           <li><a href="{{ route('menu.categorias') }}" <button type="button" class="waves-effect waves-light btn-large red darken-2">Menú</button></a></li>
-          <li><a href="#!" <button type="button" class="waves-effect waves-light btn-large red darken-2">Pedido</button></a></li>
-          <li><a href="#!" <button type="button" class="waves-effect waves-light btn-large red darken-2">Pago</button></a></li>
+          <li><a href="{{ route('pedido.index') }}" <button type="button" class="waves-effect waves-light btn-large red darken-2">Pedido</button></a></li>
+          <li><a href="{{ route('pagos.index') }}" <button type="button" class="waves-effect waves-light btn-large red darken-2">Pago</button></a></li>
           <li><a href="{{ route('user.logout') }}" <button type="button" class="waves-effect waves-light btn-large red darken-2">Salir</button></a></li>
         </ul>
       </div>

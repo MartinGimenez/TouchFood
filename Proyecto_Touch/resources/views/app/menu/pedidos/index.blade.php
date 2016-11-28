@@ -5,7 +5,7 @@
 
 
       	<div class="card-panel red darken-2 z-depth-3">
-			<table class="bordered responsive-table centered">
+			<table class="bordered centered">
 
 				
 

@@ -51,32 +51,40 @@
                     <h4 class="titulos">Ingredientes</h4>
                     <input class="center datos" name="ingredientes" type="text" value="{{ $postre->ingredientes }}">
                 </div>
+
                 <div class="input-field col s12">
                     <h4 class="titulos">Categoria</h4>
-                    <input class="center datos" name="categoria" type="text" value="{{ $postre->categoria }}">
-                </div>
-                <div class="input-field col s12">
-                    <h4 class="titulos">Precio</h4>
-                    <input class="center datos" name="precio" type="number" value="{{ $postre->precio }}">
-                </div>
-        
-                <div class="input-field col s12 center datos">
-                    <h4 class="titulos">Celiaco</h4>
                     <div class="center datos">
-                        <select name="estado" type="text" value="{{ $postre->celiaco }}">
-                            <option value="" disabled selected>Elige una opción</option>
-                            <option value="0">0</option>
-                            <option value="1">1</option>
+                        <select name="estado" type="text">
+                            <option value="{{ $postre->categoria }}" disabled selected>{{ $postre->categoria }}</option>
+                            <option value="postres">Postres</option>
+                            <option value="cafeteria">Cafeteria</option>
                         </select>
                     </div>
                 </div>
+
+                <div class="input-field col s12">
+                    <h4 class="titulos">Precio</h4>
+                    <input class="center datos" name="precio" type="text" value="{{ $postre->precio }}">
+                </div>
+        
+                <div class="input-field col s12">
+                    <h4 class="titulos">Celiaco</h4>
+                     <div class="center datos">
+                        <select name="celiaco" type="number">
+                            <option value="" disabled selected>Elige una opción</option>
+                            <option value="1">Si</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+                </div>
+
                 <div class="input-field col s12">
                     <h4 class="titulos">Tiempo de preparacion</h4>
                     <input class="center datos" name="tiempo_preparacion" type="text" value="{{ $postre->tiempo_preparacion }}">
                 </div>
 
                 <div class="col s12 center">
-                    <button class="white-text waves-effect waves-light btn-large red darken-2 z-depth-5 center" style="float:left;" type="submit" >Atrás</button>
                     <button class="white-text waves-effect waves-light btn-large red darken-2 z-depth-5 center" style="float:right;" type="submit" >Modificar postre</button>
                 </div>
             </form>

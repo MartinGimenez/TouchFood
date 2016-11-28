@@ -51,8 +51,9 @@
     <div class="input-field col s12">
         <h4 class="titulos">Categoria</h4>
         <div class="center datos">
-            <select name="estado" type="text">
+            <select name="categoria" type="text">
                 <option value="" disabled selected>Elige una opción</option>
+                <option value="pollos">Pollos</option>
                 <option value="carnes">Carnes</option>
                 <option value="cerdos">Cerdos</option>
                 <option value="Vegetales">Vegetales</option>
@@ -71,13 +72,13 @@
 
     <div class="input-field col s12">
         <h4 class="titulos">Precio</h4>
-        <input type="number" name="precio" value="{{ old('precio') }}">
+        <input type="text" name="precio" value="{{ old('precio') }}">
     </div>
 
     <div class="input-field col s12">
         <h4 class="titulos">Celiaco</h4>
         <div class="center datos">
-            <select name="estado" type="text">
+            <select name="celiaco" type="number">
                 <option value="" disabled selected>Elige una opción</option>
                 <option value="1">Si</option>
                 <option value="0">No</option>

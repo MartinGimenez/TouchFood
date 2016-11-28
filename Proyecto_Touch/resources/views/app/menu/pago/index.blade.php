@@ -19,7 +19,7 @@
 		</div>
 
       	<div class="card-panel red darken-2 z-depth-3">
-			<table class="bordered responsive-table centered">
+			<table class="bordered  centered">
 			    <thead>
 			        <tr>
 			            <th data-field="name" class="tituloscyp">Comida</th>
@@ -98,13 +98,13 @@
 	</div>
 
 	<div class="col s12">
-      	<div class="card-panel red darken-2 z-depth-5">
+      	
 			   
 			       	<ul  class="center">
 
 			       		<!-- 							REALIZAR PAGOS									  -->
 
-			            <a href="{{ route('pagado.index') }}" <button class="tiempoyprecio_total1 red darken-2" type="submit">¡Realizar pago!</button></a>
+			            <a href="{{ route('pagado.index') }}" class="waves-effect waves-light btn-large red darken-2" type="submit">¡Realizar pago!</a>
 			            
 			        </ul>
 			        <style type="text/css"> 
@@ -117,7 +117,7 @@
                     </style>
 			    
 			
-		</div>
+		
 	</div>
 
 </div>  

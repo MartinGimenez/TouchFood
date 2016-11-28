@@ -51,6 +51,21 @@
               <?php if($categoria == "verduras"): ?>
               <img src="<?php echo e(asset('images/Iconos/verduras.jpg')); ?>" alt="" class="circle">
               <?php endif; ?>
+              <?php if($categoria == "vegetales"): ?>
+              <img src="<?php echo e(asset('images/Iconos/vegetales.jpeg')); ?>" alt="" class="circle">
+              <?php endif; ?>
+              <?php if($categoria == "postres"): ?>
+              <img src="<?php echo e(asset('images/Iconos/postres.jpeg')); ?>" alt="" class="circle">
+              <?php endif; ?>
+              <?php if($categoria == "cafeteria"): ?>
+              <img src="<?php echo e(asset('images/Iconos/cafeteria.jpeg')); ?>" alt="" class="circle">
+              <?php endif; ?>
+              <?php if($categoria == "bebida-s-alcohol"): ?>
+              <img src="<?php echo e(asset('images/Iconos/sinalcohol.jpeg')); ?>" alt="" class="circle">
+              <?php endif; ?>
+              <?php if($categoria == "bebida-c-alcohol"): ?>
+              <img src="<?php echo e(asset('images/Iconos/conalcohol.jpeg')); ?>" alt="" class="circle">
+              <?php endif; ?>
 
               <style type="text/css"> 
                             .strok1 {

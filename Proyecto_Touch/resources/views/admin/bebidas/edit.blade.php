@@ -51,32 +51,40 @@
                     <h4 class="titulos">Ingredientes</h4>
                     <input class="center datos" name="ingredientes" type="text" value="{{ $bebida->ingredientes }}">
                 </div>
+
                 <div class="input-field col s12">
                     <h4 class="titulos">Categoria</h4>
-                    <input class="center datos" name="categoria" type="text" value="{{ $bebida->categoria }}">
-                </div>
-                <div class="input-field col s12">
-                    <h4 class="titulos">Precio</h4>
-                    <input class="center datos" name="precio" type="number" value="{{ $bebida->precio }}">
-                </div>
-        
-                <div class="input-field col s12 center datos">
-                    <h4 class="titulos">Celiaco</h4>
                     <div class="center datos">
-                        <select name="estado" type="text" value="{{ $bebida->celiaco }}">
-                            <option value="" disabled selected>Elige una opción</option>
-                            <option value="0">0</option>
-                            <option value="1">1</option>
+                        <select name="categoria" type="text">
+                            <option value="{{ $bebida->categoria }}" disabled selected>{{ $bebida->categoria }}</option>
+                            <option value="bebida-s-alcohol">Bebida-s-alcohol</option>
+                            <option value="bebida-c-alcohol">Bebida-c-alcohol</option>
                         </select>
                     </div>
                 </div>
+
+                <div class="input-field col s12">
+                    <h4 class="titulos">Precio</h4>
+                    <input class="center datos" name="precio" type="text" value="{{ $bebida->precio }}">
+                </div>
+        
+                <div class="input-field col s12">
+                    <h4 class="titulos">Celiaco</h4>
+                    <div class="center datos">
+                        <select name="celiaco" type="number">
+                            <option value="" disabled selected>Elige una opción</option>
+                            <option value="1">Si</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+                </div>
+                
                 <div class="input-field col s12">
                     <h4 class="titulos">Tiempo de servicio</h4>
                     <input class="center datos" name="tiempo_servicio" type="text" value="{{ $bebida->tiempo_servicio }}">
                 </div>
 
                 <div class="col s12 center">
-                    <button class="white-text waves-effect waves-light btn-large red darken-2 z-depth-5 center" style="float:left;" type="submit" >Atrás</button>
                     <button class="white-text waves-effect waves-light btn-large red darken-2 z-depth-5 center" style="float:right;" type="submit" >Modificar bebida</button>
                 </div>
             </form>
