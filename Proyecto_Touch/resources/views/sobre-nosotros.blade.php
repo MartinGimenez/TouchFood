@@ -11,6 +11,10 @@
 
       <!--Let browser know website is optimized for mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <style type="text/css">
+  html, body { height: 100%; margin: 0; padding: 0; }
+  #map { height: 50%; }
+</style>
     </head>
 
     <body>
@@ -61,6 +65,8 @@
       <li><a class="waves-effect red-text" href="#!">Ayuda</a></li>
     </ul>
     <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons red-text">trending_flat</i></a>
+
+
     <div class="row">
       <div class="card">
         <div class="row">
@@ -109,6 +115,7 @@
               </ul>
             </h1>
           </div>
+
           <div class="input-field col s12">    
             <h1 class="titulos">Tecnologias utilizadas</h1>
             <h1 class="descripcion">
@@ -124,8 +131,34 @@
             </h1>
           </div>
         </div>
+
       </div>
+
     </div>
+                <h1 class="titulos">Lugar de trabajo</h1>
+            <div id="map"></div>
+            <script type="text/javascript">
+              var map;
+              var myLatLng = {lat: -34.774420, lng: -58.267559};
+
+              function initMap() {
+                map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: -34.774420, lng: -58.267559},
+                zoom: 16
+              });
+                var marker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                title: 'Universidad Nacional Arturo Jauretche'
+  });
+  
+
+              }
+            </script>
+
+
+
+          </div>
 
   <!--      FOOTER        -->
     <footer class="page-footer red darken-2 z-depth-3">
@@ -165,6 +198,9 @@
     <!--    FIN     DEL     FOOTER-->
 
 
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDuAV3VFgdpfHg_AdX3mDVgY0W5bJQX7bM&callback=initMap">
+    </script>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="{!! asset('js/materialize.min.js') !!}" ></script>
