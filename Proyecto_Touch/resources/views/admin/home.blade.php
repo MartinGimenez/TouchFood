@@ -7,10 +7,9 @@
         <div class="card">    
             <div class="container white darken-3">
                 <div class="content center white darken-3">
-        		<h5 class="red-text">Tu comida a un toque</h5>
                 <div class="stroke-custom">touch<b>food</b></div>
 
-                <a href="" <button type="button" class="white-text waves-effect waves-light btn-large red darken-2 z-depth-3">Acerca de nosotros<i class="material-icons right">assignment_ind</i></button></a>
+                <a href="{{ route('sobre-nosotros-admin') }}" <button type="button" class="white-text waves-effect waves-light btn-large red darken-2 z-depth-3">Acerca de nosotros<i class="material-icons right">assignment_ind</i></button></a>
 
                 <style type="text/css"> 
                     .stroke-custom {

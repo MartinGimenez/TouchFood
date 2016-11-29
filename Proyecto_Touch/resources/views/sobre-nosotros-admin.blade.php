@@ -1,0 +1,123 @@
+@extends('admin.template.main')
+
+@section('content')
+
+
+
+<div class="row">
+      <div class="card">
+        <div class="row">
+          <div class="input-field col s12">
+            <h1 class="titulos">Objetivos</h1>
+            <h1 class="descripcion">Touchfood tiene como objetivo la autogestión del cliente enfocado en dos tipos de usuario, los cuales son:
+              ·El cliente: Que se manejara con un logueo de la propia mesa que ocupe, donde pueda realizar pedidos y pagar directamente desde la app.
+              ·El administrador: El cual tendrá el control de las mesas, platos (comidas,bebidas y postres), pedidos y llevar una cuenta de los reportes.</h1>
+            <style type="text/css"> 
+              .titulos {
+                text-align: left;
+                color: red;
+                font-family: Calibri;
+                font-size: 70px;
+                letter-spacing: 10;
+                }
+            </style>
+            <style type="text/css"> 
+              .descripcion {
+                text-align: left;
+                color: grey;
+                font-family: Calibri;
+                font-size: 25px;
+                letter-spacing: 10;
+                }
+            </style>
+          </div>
+          
+          <div class="input-field col s12">  
+            <h1 class="titulos">Alcance</h1>
+            <h1 class="descripcion">La aplicación estará destinada a ofrecer servicios que sirvan para la optimización del negocio de restaurantes,
+            reduciendo tiempos de espera para el cliente y otorgándoles mayor control de gestión a los administradores.</h1>
+          </div>
+
+          <div class="input-field col s12">  
+            <h1 class="titulos">Integrantes</h1>
+            <h1 class="descripcion">
+              <ul>
+                <li>Armanno Matias Nahuel</li> 
+                <li>Navarro Gabriel</li>
+                <li>Garcia Leonardo</li>
+                <li>Martin Gimenez</li>
+                <li>Aguirre Iván Gabriel</li>
+                <li>Leguizamon Gonzalo</li> 
+                <li>Cabado Leonel</li>
+              </ul>
+            </h1>
+          </div>
+
+          <div class="input-field col s12">    
+            <h1 class="titulos">Tecnologias utilizadas</h1>
+            <h1 class="descripcion">
+              <ul>
+                <li><b>Servidor:</b> Apache brindado por XAMPP</li>
+                <li><b>Framework MVC:</b> Laravel.</li>
+                <li><b>Back End:</b> Lenguaje PHP.</li>
+                <li><b>Base de datos:</b> Mysql gestionadas desde el motor PHPmyadmin y el workspace.</li>
+                <li><b>Front End:</b> Framework Materialize, el cual utiliza las tecnologías (CSS3, HTML5, Javascript, Jquery).</li>
+                <li><b>Test:</b> PHP Unit, Selenium.</li>
+                <li><b>Documentación:</b> SRS IEE 830.</li>
+              </ul>
+            </h1>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+                <h1 class="titulos">Lugar de trabajo</h1>
+            <div id="map"></div>
+            <script type="text/javascript">
+              var map;
+              var myLatLng = {lat: -34.774420, lng: -58.267559};
+
+              function initMap() {
+                map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: -34.774420, lng: -58.267559},
+                zoom: 16
+              });
+                var marker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                title: 'Universidad Nacional Arturo Jauretche'
+  });
+  
+
+              }
+            </script>
+
+
+
+     </div>
+
+
+
+
+<script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDuAV3VFgdpfHg_AdX3mDVgY0W5bJQX7bM&callback=initMap">
+    </script>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="{!! asset('js/materialize.min.js') !!}" ></script>
+    <script src="{!! asset('js/init.js') !!}" ></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+@endsection
