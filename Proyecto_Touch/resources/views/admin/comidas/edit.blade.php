@@ -8,7 +8,7 @@
     <div class="card">
         <div class="row">
             <h4 class="tituloscyp">Modificar {{ $comida->name }}</h4>
-            <form class="col s12" method="POST" action="{{ route('admin.comidas.update', $comida->id) }}">
+            <form class="col s12" method="POST" action="{{ route('admin.comidas.update', $comida->id_plato) }}">
                 
                     <style type="text/css"> 
                         .tituloscyp {
