@@ -119,6 +119,29 @@
 			
 		
 	</div>
+	<div class="container">
+	<div class="row">
+		<div class="col-md-10 col-md-offset-1">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<form action="" method="POST">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                      <script
+                        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                        data-key="pk_test_Ptvbrt1Bs5azOl6H4YEVlQ6U"
+                        data-amount="{{$sumatarjeta}}"
+                        data-description="Total a pagar: $ {{$suma}} "
+                        data-label="Pagar con tarjeta de credito"
+                        data-currency="ARS"
+                        data-locale="auto"
+                        data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                      </script>
+                    </form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
 </div>  
 

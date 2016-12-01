@@ -11,15 +11,6 @@
 |
 */
 
-Route::get ('sobre-nosotros-admin', [
-	'uses' 	=>	'NosotrosController@admin',
-	'as'	=>	'sobre-nosotros-admin'
-]);
-
-Route::get ('sobre-nosotros-usuario', [
-	'uses' 	=>	'NosotrosController@usuario',
-	'as'	=>	'sobre-nosotros-usuario'
-]);
 
 Route::get ('pedidos-listado', [
 	'uses' 	=>	'PedidosListadoController@show',
@@ -51,6 +42,7 @@ Route::get ('pagos', [
 	'uses' 	=>	'PagoController@index',
 	'as'	=>	'pagos.index'
 ]);
+Route::post('pagos', 'PagoController@post');
 
 
 Route::get ('pagado', [
@@ -135,6 +127,7 @@ Route::post('admin/register', [
 ]);
 
 Route::get('/admin/home', ['uses' => 'AdminController@index']);
+Route::get('/admin/home', ['uses' => 'ReportesController@reportes']);
 
 Route::get('menu/comidas/{categoria}','ComidasController@comidas_por_categoria');
 Route::get('menu/bebidas/{categoria}','BebidasController@bebidas_por_categoria');
@@ -157,13 +150,23 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('comenzar', function () {
     return view('comenzar');
 });
+	Route::get ('sobre-nosotros-admin', [
+	'uses' 	=>	'NosotrosController@admin',
+	'as'	=>	'sobre-nosotros-admin'
+]);
+
+Route::get ('sobre-nosotros-usuario', [
+	'uses' 	=>	'NosotrosController@usuario',
+	'as'	=>	'sobre-nosotros-usuario'
+]);
+
 });
 
 
 
 
 
-Route::group(['prefix' => 'admin'], function(){
+Route::group(['prefix' => 'admin','middleware' => 'auth'], function(){
 
 	Route::resource('comidas','ComidasController');
 	Route::get('comidas/{id}/destroy', [

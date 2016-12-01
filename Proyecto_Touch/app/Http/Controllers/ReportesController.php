@@ -47,6 +47,16 @@ class ReportesController extends Controller
 
        
     }
+    public function reportes()
+    {
+        $ocupadas = DB::table('mesas')->where('estado','=','ocupada')->count();    
+        $disponibles = DB::table('mesas')->where('estado','=','desocupada')->count();       
+
+        $comidas = DB::table('pedidoscomidas')->count(); 
+        $bebidas = DB::table('pedidosbebidas')->count(); 
+        $postres = DB::table('pedidospostres')->count(); 
+        return view ('admin.home')->with('comidas',$comidas)->with('bebidas',$bebidas)->with('postres',$postres)->with('ocupadas',$ocupadas)->with('disponibles',$disponibles);  ;   
+    }
 
     /**
      * Show the form for creating a new resource.

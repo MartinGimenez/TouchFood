@@ -11,6 +11,7 @@ use App\mesa;
 use Auth;
 use DB;
 
+
 class PagoController extends Controller
 {
     /**
@@ -24,6 +25,7 @@ class PagoController extends Controller
         $pedido = pedido::where('numero_mesa',$name)->where('estado','impago')->first();
         $id_pedido = $pedido->id_pedido;
         $suma=0;
+        $sumatarjeta=0;
 
 
         $pedidoscomidas = DB::table('pedidoscomidas')
@@ -66,8 +68,9 @@ class PagoController extends Controller
             $suma = ($suma + $pedidopostre->precio);
 
        }
+       $sumatarjeta=$suma*100;
 
-        return view('app.menu.pago.index')->with('pedidoscomidas',$pedidoscomidas)->with('pedidosbebidas',$pedidosbebidas)->with('pedidospostres',$pedidospostres)->with('suma',$suma);
+        return view('app.menu.pago.index')->with('pedidoscomidas',$pedidoscomidas)->with('pedidosbebidas',$pedidosbebidas)->with('pedidospostres',$pedidospostres)->with('suma',$suma)->with('sumatarjeta',$sumatarjeta);
     }
 
     /**
@@ -75,9 +78,13 @@ class PagoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function post(Request $request)
     {
-        //
+        $token = $request->stripeToken;
+        \Auth::user()->subscription('semanal')->create($token);
+
+
+        return redirect('comenzar');
     }
 
     /**

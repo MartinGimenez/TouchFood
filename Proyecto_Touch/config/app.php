@@ -139,6 +139,8 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
 
+        Laravel\Cashier\CashierServiceProvider::class,
+
         /*
          * Application Service Providers...
          */
