@@ -84,6 +84,17 @@ class PagoController extends Controller
         \Auth::user()->subscription('semanal')->create($token);
 
 
+
+        $name =Auth::user()->name;
+
+        pedido::where('numero_mesa', $name)
+          ->where('estado', 'impago')
+          ->update(['estado' => 'pago']);
+
+        mesa::where('name', $name)
+          ->update(['estado' => 'Desocupada']);
+
+
         return redirect('comenzar');
     }
 

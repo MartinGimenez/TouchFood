@@ -20,6 +20,7 @@
       <div class="col s4">
             <img class="responsive-img" src="{{ asset('images/touchfoodlogo2.png')}}">
             <a href="{{ route('pedido.agregar') }}" class="waves-effect waves-light btn-large red darken-4">Haz click para comenzar</a>
+            <a href="{{ route('user.logout') }}" class="waves-effect waves-light btn-large grey darken-3">Salir</a>
       </div>
       <div class="col s4">
       </div>
