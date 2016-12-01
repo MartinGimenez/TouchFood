@@ -122,6 +122,8 @@
             font-size: 20px;
             }   
         </style>
+
+        <a href="{{ route('sobre-nosotros-admin') }}" <button type="button" class="white-text waves-effect waves-light btn-large red darken-2 z-depth-3">Acerca de nosotros<i class="material-icons right">assignment_ind</i></button></a>
 </body>
 
 @endsection

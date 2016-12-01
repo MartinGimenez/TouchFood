@@ -140,25 +140,25 @@ Route::group(['prefix' => 'menu', 'middleware' => 'auth' ], function(){
 		'as'	=>	'menu.categorias'
 		]);
 	Route::resource('comidas','ComidasController');
-});
+	});
 
 Route::group(['middleware' => 'auth'], function () {
 	Route::get('bienvenida', [
 	'uses' 	=>	'BienvenidaController@index',
 	'as'	=>	'bienvenida'
-]);
+	]);
 	Route::get('comenzar', function () {
     return view('comenzar');
-});
+	});
 	Route::get ('sobre-nosotros-admin', [
 	'uses' 	=>	'NosotrosController@admin',
 	'as'	=>	'sobre-nosotros-admin'
-]);
+	]);
 
-Route::get ('sobre-nosotros-usuario', [
+	Route::get ('sobre-nosotros-usuario', [
 	'uses' 	=>	'NosotrosController@usuario',
 	'as'	=>	'sobre-nosotros-usuario'
-]);
+]	);
 
 });
 
@@ -166,7 +166,7 @@ Route::get ('sobre-nosotros-usuario', [
 
 
 
-Route::group(['prefix' => 'admin','middleware' => 'auth'], function(){
+Route::group(['prefix' => 'admin'], function(){
 
 	Route::resource('comidas','ComidasController');
 	Route::get('comidas/{id}/destroy', [
@@ -176,7 +176,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function(){
 	Route::post ('comidaslistado', [
 	'uses' 	=>	'ComidasController@comidas_por_categoria_admin',
 	'as'	=>	'comidas.listado'
-]);
+	]);
 	Route::resource('mesas','MesasController');
 	Route::get('mesas/{id}/destroy', [
 		'uses'	=>	'MesasController@destroy',
@@ -190,7 +190,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function(){
 	Route::post ('bebidalistado', [
 	'uses' 	=>	'BebidasController@bebidas_por_categoria_admin',
 	'as'	=>	'bebidas.listado'
-]);
+]	);
 	Route::resource('postres','PostresController');
 	Route::get('postres/{id}/destroy', [
 		'uses'	=>	'PostresController@destroy',
@@ -199,7 +199,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function(){
 	Route::post ('postreslistado', [
 	'uses' 	=>	'PostresController@postres_por_categoria_admin',
 	'as'	=>	'postres.listado'
-]);
+	]);
 
 	
 
@@ -214,7 +214,6 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function(){
 		'as'	=>	'pedidoslistadodetalle'
 	]);
 
-	//Route::resource('pedidos-listado','PedidosListadoController');
 	Route::get('pedidos-listado/{id}/destroy', [
 		'uses'	=>	'PedidosListadoController@destroy',
 		'as'	=>	'admin.pedidoslistado.destroy' 
