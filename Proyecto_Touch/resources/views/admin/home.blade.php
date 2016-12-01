@@ -74,38 +74,44 @@
     </script>
 
 <body>
-        <div id="columnchart_values" style="width: 1000px; height: 400px;"></div>
-<!--         //<a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a> -->
+  <div class="card">
+
+      <div class="row">
+        <div class="col l6">
+          <div id="columnchart_values" ></div>
+        </div>
+      </div>
 
         <div class="row">
-            <div class="col s12 m5">
+            <div class="col s6 m5">
               <div class="card red darken-1">
                 <div class="card-content white-text">
                   <span class="card-title" align="center">Recaudación Diaria</span>
                   <h4 align="center">$3500</h4>
                   </span>
                 </div>
-
               </div>
             </div>
-
-            <div class="col s12 m5">
+            <div class="col s6 m5">
               <div class="card green darken-1">
                 <div class="card-content white-text">
                   <span class="card-title" align="center">Recaudación Mensual</span>
                   <h4 align="center">$118.010</h4>
                 </div>
-
               </div>
             </div>
         </div>
 
 
+        <div class="row">
+          <div class="col s12 m6 l6">  
+            <div id="donutchart2" style="width: 600px; height: 300px;"></div>
+          </div>
+          <div class="col s12 m6 l6">
+            <div id="piechart_3d" style="width: 600px; height: 300px;"></div>
+          </div>
 
-        <div id="donutchart2" style="width: 700px; height: 400px;"></div>
-        
-        <div id="piechart_3d" style="width: 700px; height: 400px;"></div>
-
+        </div>
 
         <style type="text/css"> 
             .stroke-custom {
@@ -123,7 +129,7 @@
             }   
         </style>
 
-        <a href="{{ route('sobre-nosotros-admin') }}" <button type="button" class="white-text waves-effect waves-light btn-large red darken-2 z-depth-3">Acerca de nosotros<i class="material-icons right">assignment_ind</i></button></a>
+        
 </body>
 
 @endsection

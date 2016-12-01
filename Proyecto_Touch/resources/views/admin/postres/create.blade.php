@@ -50,7 +50,7 @@
     <div class="input-field col s12">
     <h4 class="titulos">Categoria</h4>
         <div class="center datos">
-        <select name="estado" type="text">
+        <select name="categoria" type="text">
             <option value="" disabled selected>Elige una opción</option>
             <option value="postres">Postres</option>
             <option value="cafeteria">Cafeteria</option>

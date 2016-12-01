@@ -126,8 +126,11 @@ Route::post('admin/register', [
 	'as'	=>	'admin.register'
 ]);
 
-Route::get('/admin/home', ['uses' => 'AdminController@index']);
-Route::get('/admin/home', ['uses' => 'ReportesController@reportes']);
+
+Route::get('/admin/home', [
+	'uses' => 'ReportesController@reportes',
+	'as'   => 'admin.home'
+]);
 
 Route::get('menu/comidas/{categoria}','ComidasController@comidas_por_categoria');
 Route::get('menu/bebidas/{categoria}','BebidasController@bebidas_por_categoria');

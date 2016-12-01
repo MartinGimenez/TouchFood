@@ -99,13 +99,8 @@
 
 	<div class="col s12">
       	
-			   
 			       	<ul  class="center">
-
-			       		<!-- 							REALIZAR PAGOS									  -->
-
 			            <a href="{{ route('pagado.index') }}" class="waves-effect waves-light btn-large red darken-2" type="submit">¡Realizar pago!</a>
-			            
 			        </ul>
 			        <style type="text/css"> 
                         .tiempoyprecio_total1 {
@@ -115,17 +110,15 @@
                             font-size:60px;
                         }
                     </style>
-			    
-			
-		
+			    	
+	
 	</div>
-	<div class="container">
-	<div class="row">
-		<div class="col-md-10 col-md-offset-1">
-			<div class="panel panel-default">
-				<div class="panel-body">
-					<form action="" method="POST">
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+	
+	<div class="col s6 offset-s3 l12 center">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<form action="" method="POST">
+                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                       <script
                         src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                         data-key="pk_test_Ptvbrt1Bs5azOl6H4YEVlQ6U"
@@ -136,12 +129,10 @@
                         data-locale="auto"
                         data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
                       </script>
-                    </form>
-				</div>
+                </form>
 			</div>
 		</div>
 	</div>
-</div>
 
 </div>  
 

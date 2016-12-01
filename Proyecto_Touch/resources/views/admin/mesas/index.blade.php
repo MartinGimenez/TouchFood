@@ -32,10 +32,7 @@
 			        	
 			        	<td><a href="{{ route('admin.mesas.destroy', $mesa->id) }}" class="btn-floating btn-large waves-effect waves-light red darken-3 z-depth-3"><i class="material-icons right">delete</i></a>
 			        	</td>
-
-			        	<td><a href="{{ route('admin.reportes', $mesa->id) }}" class="btn-floating btn-large waves-effect waves-light red darken-3 z-depth-3"><i class="material-icons right">equalizer</i></a>
-			        	</td>
-			        	
+	
 
 			      		<style type="text/css"> 
                             .agrandarletra {

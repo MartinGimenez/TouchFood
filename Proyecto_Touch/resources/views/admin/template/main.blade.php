@@ -36,6 +36,7 @@
       <ul id="nav-mobile" class="side-nav fixed">  
         <div align="center">
         <li> <img class="responsive-img" src="{{asset('images/logo200x200.png')}}"></li>
+        <li> <a href="{{ route('admin.home') }}">Home</a></li>
         </div>
         <li class="no-padding">
         <ul class="collapsible collapsible-accordion">
@@ -45,7 +46,7 @@
               <ul>
                 <li><a href="{{ route('admin.mesas.index') }}">Listado</a></li>
                 <li><a href="{{ route('mesas.register') }}">Agregar mesas</a></li>
-                <li><a href="#!">Combinar mesas</a></li>
+                <li><a class="subheader grey-text text-lighten-1" href="#!">Combinar mesas (próximamente)</a></li>
               </ul>
             </div>
           </li>
@@ -97,7 +98,7 @@
             <div class="collapsible-body">
               <ul>
                 <li><a href="{{ route('pedidoslistado') }}">Listado</a></li>
-                <li><a href="#!">Agregar pedidos</a></li>
+                <li><a class="subheader grey-text text-lighten-1" href="#!">Agregar pedidos (próximamente)</a></li>
               </ul>
             </div>
           </li>

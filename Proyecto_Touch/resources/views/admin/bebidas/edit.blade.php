@@ -56,7 +56,7 @@
                     <h4 class="titulos">Categoria</h4>
                     <div class="center datos">
                         <select name="categoria" type="text">
-                            <option value="{{ $bebida->categoria }}" disabled selected>{{ $bebida->categoria }}</option>
+                            <option value="" disabled selected>Elige una opción</option>
                             <option value="bebida-s-alcohol">Bebida-s-alcohol</option>
                             <option value="bebida-c-alcohol">Bebida-c-alcohol</option>
                         </select>
