@@ -70,6 +70,9 @@
     <div class="row">
       <div class="card">
         <div class="row">
+        <div class="input-field col s12 m6 offset-m3 l6 offset-l3">
+        <img class="responsive-img" src="{{asset('images/grupo1.jpeg')}}">
+        </div>
           <div class="input-field col s12">
             <h1 class="titulos">Objetivos</h1>
             <h1 class="descripcion">Touchfood tiene como objetivo la autogestión del cliente enfocado en dos tipos de usuario, los cuales son:
