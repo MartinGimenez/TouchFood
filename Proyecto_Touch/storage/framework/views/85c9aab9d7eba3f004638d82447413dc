@@ -17,7 +17,7 @@
     <header>
       <nav class="top-nav red darken-2">
         <div class="container stroke nav-wrapper">
-          <a><?php echo e(isset($titulo) ? $titulo : "Panel de Adm."); ?></a>
+          <a><?php echo e(isset($titulo) ? $titulo : "Panel de Administracion"); ?></a>
         </div>
 
         <style type="text/css"> 
@@ -102,6 +102,8 @@
             </div>
           </li>
         </ul>
+
+
 
       
           <li class="contenedor-div">

@@ -58,7 +58,7 @@
                         <select name="estado" type="text" value="{{ $mesa->estado }}">
                             <option value="" disabled selected>Elige una opción</option>
                             <option value="Ocupada">Ocupada</option>
-                            <option value="Desocupada">Desocupada</option>
+                            <option value="Desocupada">Disponible</option>
                         </select>
                     </div>
                 </div>

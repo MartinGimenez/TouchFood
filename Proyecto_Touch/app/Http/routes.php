@@ -222,7 +222,12 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function(){
 
 	Route::get('reportes/{id}', [
 		'uses'	=>	'ReportesController@index',
-		'as'	=>	'admin.reportes' 
+		'as'	=>	'admin.reports' 
+	]);
+
+	route::get('reportes', [
+		'uses'  =>  'ReportesController@estado_pedidos', 
+		'as'    =>  'admin.reportes'
 	]);
 
 

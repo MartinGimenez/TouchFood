@@ -1,6 +1,6 @@
 <html>
     <head class="red darken-3">
-        <title>Laravel</title>
+        <title>Touchfood</title>
 
         <link href='//fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -59,6 +59,12 @@
 
 
                 <a class="white-text stroke1" target="_blank" href="<?php echo e(action('Auth\AuthController@getLogin')); ?>">Usuario</a> <a class="white-text stroke1">|</a> <a class="white-text stroke1" target="_blank" href="<?php echo e(action('Auth\AdminController@getLogin')); ?>">Administrador</a>
+
+
+
+                
+
+
 
                 <style type="text/css"> 
                     .stroke {

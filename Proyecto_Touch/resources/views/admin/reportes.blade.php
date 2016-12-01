@@ -1,0 +1,124 @@
+@extends('admin.template.main')
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        var visitor = 1; //<?php echo $datos; ?>;
+      console.log(visitor);
+      
+
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart_mesas);
+      google.charts.setOnLoadCallback(drawChart_pedidos);
+
+      function drawChart_mesas() {
+
+        var data = google.visualization.arrayToDataTable(visitor);
+
+        var options = {
+          title: 'Estado de las Mesas',
+          pieHole: 0.5,
+          colors: ['#F78181', 'red']
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+
+        chart.draw(data, options);
+
+      }
+
+      var visitor_p = <?php echo $datos_p; ?>;
+      console.log(visitor);
+
+      function drawChart_pedidos() {
+
+        var data = google.visualization.arrayToDataTable(visitor_p);
+
+        var options = {
+          title: 'Estado de las Mesas',
+          pieHole: 0.5,
+          colors: ['#F78181', 'red']
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+
+        chart.draw(data, options);
+
+      }
+    </script>
+@section('content')
+
+<body>
+    <div class="row">
+        <div class="card">    
+            <div class="container white darken-3">
+                <div class="content center white darken-3">
+                <div class="stroke-custom">touch<b>food</b></div>
+
+                <div id="donutchart" style="width: 900px; height: 500px;"></div>
+
+                <div class="row">
+                    <div class="col s10 m4">
+                      <div class="card blue-grey">
+                        <div class="card-content white-text">
+                          <span class="card-title">Card Title</span>
+                          <p>I am a very simple card. I am good at containing small bits of information.
+                          I am convenient because I require little markup to use effectively.</p>
+                        </div>
+                        <div class="card-action">
+                          <a href="#">This is a link</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col s10 m4">
+                      <div class="card red">
+                        <div class="card-content white-text">
+                          <span class="card-title">Card Title</span>
+                          <p>I am a very simple card. I am good at containing small bits of information.
+                          I am convenient because I require little markup to use effectively.</p>
+                        </div>
+                        <div class="card-action">
+                          <a href="#">This is a link</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col s10 m4">
+                      <div class="card green">
+                        <div class="card-content white-text">
+                          <span class="card-title">Card Title</span>
+                          <p>I am a very simple card. I am good at containing small bits of information.
+                          I am convenient because I require little markup to use effectively.</p>
+                        </div>
+                        <div class="card-action">
+                          <a href="#">This is a link</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                
+
+                <a href="{{ route('sobre-nosotros-admin') }}" <button type="button" class="white-text waves-effect waves-light btn-large red darken-2 z-depth-3">Acerca de nosotros<i class="material-icons right">assignment_ind</i></button></a>
+
+                <style type="text/css"> 
+                    .stroke-custom {
+                    color: red;
+                    font-family: Calibri;
+                    font-size: 80px;
+                    }
+
+                <style type="text/css"> 
+                    .stroke1 {
+                    color: red;
+                    font-family: Calibri;
+                    font-size: 20px;
+                    }   
+                </style>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+@endsection

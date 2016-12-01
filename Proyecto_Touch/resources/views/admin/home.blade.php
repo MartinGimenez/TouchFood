@@ -2,17 +2,15 @@
 
 @section('content')
 
-<body>
-    <div class="row">
-        <div class="card">    
-            <div class="container white darken-3">
-                <div class="content center white darken-3">
-                <h5 class="red-text">Tu comida a un toque</h5>
-                <div class="stroke-custom">touch<b>food</b></div>
-       <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script type="text/javascript">
+    
     google.charts.load("current", {packages:['corechart']});
     google.charts.setOnLoadCallback(drawChart);
+    google.charts.setOnLoadCallback(drawChart1);
+    google.charts.setOnLoadCallback(drawChart2);
+    
     function drawChart() {
       var data = google.visualization.arrayToDataTable([
         ["Element", "Pedidos", { role: "style" } ],
@@ -31,23 +29,17 @@
 
       var options = {
         title: "Pedidos",
-        width: 600,
-        height: 400,
+        //width: 600,
+        //height: 400,
         bar: {groupWidth: "95%"},
         legend: { position: "none" },
       };
       var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
       chart.draw(view, options);
   }
-  </script>
-<div id="columnchart_values" style="width: 900px; height: 300px;"></div>
-                <html>
-  <head>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load("current", {packages:["corechart"]});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
+
+
+      function drawChart1() {
         var data = google.visualization.arrayToDataTable([
           ['Mesas', 'Disponibilidad'],
           ['Disponibles', {{ $disponibles }}],
@@ -62,32 +54,74 @@
         var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
         chart.draw(data, options);
       }
+
+      function drawChart2() {
+      var data = google.visualization.arrayToDataTable([
+        ['Task', 'Hours per Day'],
+        ['Pagos', {{ $pago }}],
+        ['Impagos', {{ $impago }}]
+      ]);
+
+      var options = {
+        title: 'Estado Pedidos',
+        pieHole: 0.4,
+      };
+
+      var chart = new google.visualization.PieChart(document.getElementById('donutchart2'));
+      chart.draw(data, options);
+    }
+
     </script>
-  </head>
-  <body>
-    <div id="piechart_3d" style="width: 600px; height: 200px;"></div>
-  </body>
-</html>
 
-                <style type="text/css"> 
-                    .stroke-custom {
-                    color: red;
-                    font-family: Calibri;
-                    font-size: 80px;
-                    }
+<body>
+        <div id="columnchart_values" style="width: 1000px; height: 400px;"></div>
+<!--         //<a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a> -->
 
-                <style type="text/css"> 
-                    .stroke1 {
-                    color: red;
-                    font-family: Calibri;
-                    font-size: 20px;
-                    }   
-                </style>
+        <div class="row">
+            <div class="col s12 m5">
+              <div class="card red darken-1">
+                <div class="card-content white-text">
+                  <span class="card-title" align="center">Recaudación Diaria</span>
+                  <h4 align="center">$3500</h4>
+                  </span>
                 </div>
+
+              </div>
+            </div>
+
+            <div class="col s12 m5">
+              <div class="card green darken-1">
+                <div class="card-content white-text">
+                  <span class="card-title" align="center">Recaudación Mensual</span>
+                  <h4 align="center">$118.010</h4>
                 </div>
+
+              </div>
             </div>
         </div>
-    </div>
+
+
+
+        <div id="donutchart2" style="width: 700px; height: 400px;"></div>
+        
+        <div id="piechart_3d" style="width: 700px; height: 400px;"></div>
+
+
+        <style type="text/css"> 
+            .stroke-custom {
+            color: red;
+            font-family: Calibri;
+            font-size: 80px;
+            }
+        </style>
+
+        <style type="text/css"> 
+            .stroke1 {
+            color: red;
+            font-family: Calibri;
+            font-size: 20px;
+            }   
+        </style>
 </body>
 
 @endsection

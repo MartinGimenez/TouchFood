@@ -50,12 +50,16 @@ class ReportesController extends Controller
     public function reportes()
     {
         $ocupadas = DB::table('mesas')->where('estado','=','ocupada')->count();    
-        $disponibles = DB::table('mesas')->where('estado','=','desocupada')->count();       
+        $disponibles = DB::table('mesas')->where('estado','=','desocupada')->count();
+
+        $pago = DB::table('pedidos')->where('estado','=','pago')->count();
+        $impago = DB::table('pedidos')->where('estado','=','impago')->count();
 
         $comidas = DB::table('pedidoscomidas')->count(); 
         $bebidas = DB::table('pedidosbebidas')->count(); 
         $postres = DB::table('pedidospostres')->count(); 
-        return view ('admin.home')->with('comidas',$comidas)->with('bebidas',$bebidas)->with('postres',$postres)->with('ocupadas',$ocupadas)->with('disponibles',$disponibles);  ;   
+        
+        return view ('admin.home')->with('comidas',$comidas)->with('bebidas',$bebidas)->with('postres',$postres)->with('ocupadas',$ocupadas)->with('disponibles',$disponibles)->with('pago',$pago)->with('impago',$impago); 
     }
 
     /**
@@ -63,17 +67,7 @@ class ReportesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         //

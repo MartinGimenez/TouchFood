@@ -51,7 +51,8 @@ class MesasController extends Controller
      */
     public function show($id)
     {
-        //
+        $mesas = Mesa::all();
+        return view('admin.index')->with('mesas',$mesas);
     }
 
     /**
